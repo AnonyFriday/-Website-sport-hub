@@ -18,7 +18,7 @@
 }
 
 header {
-    background-color: #f0c300;
+    background-color: black;
     overflow: hidden;
     padding: 8px 16px;
 }
@@ -40,8 +40,8 @@ header {
 
 #header__top .header__logo > span {
     font-size: 30px;
-    color: black;
-    text-shadow: 2px 4px 3px rgba(2, 0, 0, 0.2);
+    color: #f0c300;
+    text-shadow: 2px 4px 3px rgba(124, 155, 11, 0.747);
     margin-left: 20px;
 }
 
@@ -56,7 +56,7 @@ header {
     font-size: 15px;
     line-height: 50px;
 
-    color: black;
+    color: #f0c300;
     text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid black;
+    border: 1px solid #f0c300;
 }
 
 .header__menu li span {
@@ -75,15 +75,17 @@ header {
 }
 
 #header__div__search {
-    background-color: rgba(8, 5, 5, 0.164);
+    background-color: rgba(240, 195, 0, 0.8);
     height: 40px;
-    width: 300px;
+    width: 340px;
     margin-right: 20px;
     border-radius: 20px;
-    padding: 5px 0px 5px 10px;
+    padding: 5px 0px 5px 5px;
 }
 
 #header__div__search input {
+    font-family: "Lora", serif;
+    font-size: large;
     display: inline-block;
     height: 100%;
     width: 85%;
