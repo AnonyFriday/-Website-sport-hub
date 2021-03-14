@@ -284,8 +284,6 @@ li.category:nth-child(2) {
 
 .product {
     flex-basis: 25%;
-    padding: 20px;
-
     box-shadow: 5px 5px 10 12 black;
 }
 
