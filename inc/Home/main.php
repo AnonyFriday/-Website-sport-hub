@@ -4,8 +4,7 @@
             <li class="category">
                 <div class="category__content-container">
                     <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                        <img class="category__thumbnail-img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -18,8 +17,7 @@
             <li class="category">
                 <div class="category__content-container">
                     <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                        <img class="category__thumbnail-img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -32,8 +30,7 @@
             <li class="category">
                 <div class="category__content-container">
                     <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                        <img class="category__thumbnail-img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -46,8 +43,7 @@
             <li class="category">
                 <div class="category__content-container">
                     <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                        <img class="category__thumbnail-img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -60,8 +56,7 @@
             <li class="category">
                 <div class="category__content-container">
                     <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                        <img class="category__thumbnail-img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -74,8 +69,7 @@
             <li class="category">
                 <div class="category__content-container">
                     <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                        <img class="category__thumbnail-img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -92,9 +86,7 @@
         <h2 class="section-header">top picks</h2>
         <ul class="list-products">
             <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
+                <div class="product__image"><img src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103" alt="Product Image"></div>
                 <div class="product__info">
                     <div class="product__title">
                         <h3>Shin Guard</h3>
@@ -105,9 +97,7 @@
                 </div>
             </li>
             <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
+                <div class="product__image"><img src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103" alt="Product Image"></div>
                 <div class="product__info">
                     <div class="product__title">
                         <h3>Shin Guard</h3>
@@ -118,9 +108,7 @@
                 </div>
             </li>
             <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
+                <div class="product__image"><img src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103" alt="Product Image"></div>
                 <div class="product__info">
                     <div class="product__title">
                         <h3>Shin Guard</h3>
@@ -131,9 +119,7 @@
                 </div>
             </li>
             <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
+                <div class="product__image"><img src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103" alt="Product Image"></div>
                 <div class="product__info">
                     <div class="product__title">
                         <h3>Shin Guard</h3>
@@ -150,9 +136,7 @@
         <h2 class="section-header">featured collection</h2>
         <ul class="list-products">
             <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image" width="300px" height="300px"></div>
+                <div class="product__image"><img src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103" alt="Product Image" width="300px" height="300px"></div>
                 <div class="product__info">
                     <div class="product__title">
                         <h3>Shin Guard</h3>
