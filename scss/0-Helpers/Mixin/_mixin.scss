@@ -1,0 +1,36 @@
+//  =================================
+//  MEDIA QUERY
+//  =================================
+
+// Media Query
+// $breakpoint is a map from partial scss _variables.scss
+// Currently support 2 type of width ( max-width: 425px, min-width: 426px)
+@mixin compatitble-with-device($device-type: "laptop", $size: null) {
+    $breakpoint-value: map-get($breakpoint, $device-type);
+
+    @if (type-of($breakpoint-value) == "map") {
+        // if the device has size
+        $breakpoint-value: map-get($breakpoint-value, $size);
+    }
+
+    $mobile-large-width-value: map-get(
+        map-get($breakpoint, "mobile"),
+        "l"
+    ); // the average medium of all responsive devices
+
+    @if $breakpoint-value == null {
+        @warn "The website cannot fully compatible with the device's type `#{$device-type} with the size `#{$size}`"; // check if developer mistyped
+    } @else if $breakpoint-value <= $mobile-large-width-value {
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+    }
+}
+
+//  =================================
+//  
+//  =================================

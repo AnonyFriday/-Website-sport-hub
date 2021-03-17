@@ -5,12 +5,12 @@
 
 
 // 0-HELPERS
-@import './0-Helpers/typography';
-@import './0-Helpers/color';
-@import './0-Helpers/size';
-@import './0-Helpers/mixin';
+@import "./0-Helpers/Variable/breakpoint",
+        "./0-Helpers/Variable/color",
+        "./0-Helpers/Variable/size",
+        "./0-Helpers/Variable/typography";
 
-
+@import "./0-Helpers/Mixin/mixin";
 
 // 1-BASES
 @import './1-Bases/reset';
