@@ -31,7 +31,9 @@
     }
 }
 
-// Centre
-@mixin centre-component {
-    margin: auto 0;
+//  =================================
+//  CENTRE BLOCK
+//  =================================
+@mixin centred-block {
+    margin: 0 auto;
 }

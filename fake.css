@@ -95,15 +95,6 @@
 }
 
 
-/* Clearfix*/
-#header__div__search::after {
-    overflow: auto;
-}
-
-
-
-
-
 /** HEADER MULTI-LEVEL MENU */
 .navigation-multilevel  {
     position: relative;
@@ -134,6 +125,7 @@
     left: 0;
     width: 200%;
 }
+
 
 
 /* Lv 2 Menu */
