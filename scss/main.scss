@@ -2,18 +2,22 @@
 //  IMPORT PARTIAL FILES
 //  =================================
 
-
-
 // 0-HELPERS
-@import "./0-Helpers/Variable/breakpoint",
-        "./0-Helpers/Variable/color",
-        "./0-Helpers/Variable/size",
-        "./0-Helpers/Variable/typography";
+@import "./0-Helpers/Variable/breakpoint";
+@import "./0-Helpers/Variable/color";
+@import "./0-Helpers/Variable/size";
+@import "./0-Helpers/Variable/typography";
 
 @import "./0-Helpers/Mixin/mixin";
 
 // 1-BASES
-@import './1-Bases/reset';
-@import './1-Bases/initial';
+@import "./1-Bases/reset";
+@import "./1-Bases/initial";
 
+// 2-LAYOUTS
+@import "./2-Layouts/Header/header";
+@import "./2-Layouts/Header/navigation";
 
+// 3-MODULES
+@import "./3-Modules/logo";
+@import "./3-Modules/search-bar";

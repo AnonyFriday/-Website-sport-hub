@@ -2,8 +2,10 @@
 
 
 /** || GENERAL */
+
+
 /** || HEADER */
-header {
+.header {
     z-index: 2;
     background-color: black;
     padding: 0px 16px;
@@ -11,7 +13,9 @@ header {
     top: 0;
 }
 
-.header__flex {
+
+.header__content {
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,23 +24,21 @@ header {
     margin: 0 auto;
 }
 
-#header__top {
-    height: 50px;
-}
-
-#header__top .header__logo > span {
+.logo {
     font-size: 30px;
     color: #f0c300;
     text-shadow: 2px 4px 3px rgba(124, 155, 11, 0.747);
     margin-left: 20px;
 }
 
-.header__menu li {
+/** MENU */
+
+.header__list li {
     display: inline-block;
     padding: 5px 20px;
 }
 
-.header__menu li > a {
+.header__list li > a {
     display: inline-block;
     position: relative;
     font-size: 18px;
@@ -45,7 +47,7 @@ header {
     text-transform: uppercase;
 }
 
-.header__menu a:hover::after {
+.header__list a:hover::after {
     content: "";
     position: absolute;
     left: 0;
@@ -54,10 +56,12 @@ header {
     border: 1px solid #f0c300;
 }
 
-.header__menu li span {
+.header__list li span {
     display: inline-block;
     margin-left: 6px;
 }
+
+
 
 #header__div__search {
     background-color: rgba(240, 195, 0, 0.8);
@@ -90,51 +94,55 @@ header {
     outline: 0;
 }
 
+
 /* Clearfix*/
 #header__div__search::after {
     overflow: auto;
 }
 
+
+
+
+
 /** HEADER MULTI-LEVEL MENU */
-.header__main__category {
+.navigation-multilevel  {
     position: relative;
 }
 
-.header__main__category ul {
+.navigation-multilevel  ul {
     display: none;
     position: absolute;
 }
 
-li.header__main__category:hover {
-    background-color: #f0c300;
-}
-
-li.header__main__category:hover > a {
-    color: black;
-}
-
-li.header__main__category:hover > ul {
-    display: block;
-    top: 101%;
-    left: 0;
-    width: 200%;
-    outline: 1px solid #f0c300;
-}
-
-.header__main__category ul li {
+.navigation-multilevel  ul li {
     display: block;
     line-height: 50px;
     background-color: black;
 }
 
+.navigation-multilevel :hover {
+    background-color: #f0c300;
+}
+
+.navigation-multilevel :hover > a {
+    color: black;
+}
+
+.navigation-multilevel :hover > ul {
+    display: block;
+    top: 101%;
+    left: 0;
+    width: 200%;
+}
+
+
 /* Lv 2 Menu */
-li.header__main__category:hover > .list__sub__categories {
+li.navigation-multilevel :hover > .list__sub__categories {
     display: block;
     top: 0;
     left: 100%;
-    width: 200%;
-    outline: 1px solid #f0c300;
-}
+    width: fit-content;
+
 
 /** || MAIN CONTAINER */
 main {
@@ -148,6 +156,10 @@ main {
     margin: 0 auto;
     width: 90%;
 }
+
+
+
+
 
 /** || CATEGORY IMAGE */
 .categories__galery ul {

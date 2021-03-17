@@ -1,0 +1,29 @@
+//  =================================
+//  HEADER
+//  =================================
+
+.header {
+    z-index: 2;
+    background-color: black;
+    padding: 0px 16px;
+    position: sticky;
+    top: 0;
+
+    &__content {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        margin-left: 20px;
+    }
+
+    &__search-bar {
+        width: 380px;
+    }
+}

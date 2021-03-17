@@ -1,0 +1,84 @@
+.navigation-base {
+    > li {
+        display: inline-block;
+        padding: 5px 20px;
+
+        a {
+            display: inline-block;
+            position: relative;
+            font-size: 18px;
+            line-height: 50px;
+            color: #f0c300;
+            text-transform: uppercase;
+
+            &:hover::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 1px solid #f0c300;
+            }
+
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.navigation-multilevel {
+    position: relative;
+
+    ul {
+        display: none;
+        position: absolute;
+
+        li {
+            display: block;
+            line-height: 50px;
+            background-color: black;
+            a {
+                color: black;
+                display: block;
+                line-height: 50px;
+                text-indent: 20px;
+                background-color: #f0c300;
+            }
+
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: #f0c300;
+
+        a {
+            color: black;
+        }
+
+        > ul {
+            display: block;
+            top: 101%;
+            left: 0;
+            width: 150%;
+
+            .navigation-lv2:hover {
+                a {
+                    background-color: black;
+                    color: #f0c300;
+                }
+
+                position: relative;
+                ul {
+                    display: block;
+                    top: 0;
+                    left: 100%;
+                    width: 150%;
+                }
+            }
+        }
+    }
+}

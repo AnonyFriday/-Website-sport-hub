@@ -17,31 +17,31 @@
 
 <body>
     <!-- Header will be reusable by using Promise later -->
-    <header>
-        <div id="header__top" class="header__flex">
-            <h1>
-                <a class="header__logo" href="/index.html">
-                    <span class="header__icon">🅂🄿🄾🅁🅃 🄷🅄🄱</span>
-                </a>
+    <header class="header">
+        <section class="header__content">
+            <h1 class="header__logo logo">
+                <a ref="/index.html">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
             </h1>
-            <ul class="header__menu">
+
+            <ul class="header__list navigation-base">
                 <li><a href="#"><i class="fas fa-comment"></i><span>Contact Us</span></a></li>
                 <li><a href="#"><i class="fas fa-user-alt"></i><span>Login</span></a></li>
                 <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Cart</span></a></li>
             </ul>
-        </div>
+        </section>
 
-        <div id="header__bottom" class="header__flex">
+        <section class="header__content">
             <!-- Content will be populated later on-->
-            <ul class="header__menu">
+            <ul class="header__list navigation-base">
                 <li><a href="#">Home</a></li>
-                <li class="header__main__category">
+
+                <li class="navigation-multilevel">
                     <a href="#">Soccer</a>
                     <ul>
-                        <li><a href="#">Sub-Category</a></li>
-                        <li class="header__main__category">
+                        <li><a href=" #">Sub-Category</a></li>
+                        <li class="navigation-lv2">
                             <a href="#">Sub-Category</a>
-                            <ul class="list__sub__categories">
+                            <ul>
                                 <li><a href="#">Sub-Category</a></li>
                                 <li><a href="#">Sub-Category</a></li>
                                 <li><a href="#">Sub-Category</a></li>
@@ -52,42 +52,66 @@
                     </ul>
                 </li>
 
-                <li class="header__main__category">
-                    <a href="#">Volleyball</a>
+                <li class="navigation-multilevel">
+                    <a href="#">Soccer</a>
                     <ul>
-                        <li><a href="#">Sub-Category</a></li>
-                        <li><a href="#">Sub-Category</a></li>
+                        <li><a href=" #">Sub-Category</a></li>
+                        <li class="navigation-lv2">
+                            <a href="#">Sub-Category</a>
+                            <ul>
+                                <li><a href="#">Sub-Category</a></li>
+                                <li><a href="#">Sub-Category</a></li>
+                                <li><a href="#">Sub-Category</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Sub-Category</a></li>
                         <li><a href="#">Sub-Category</a></li>
                     </ul>
                 </li>
-                <li class="header__main__category">
-                    <a href="#">Baseball</a>
+
+                <li class="navigation-multilevel">
+                    <a href="#">Soccer</a>
                     <ul>
-                        <li><a href="#">Sub-Category</a></li>
-                        <li><a href="#">Sub-Category</a></li>
+                        <li><a href=" #">Sub-Category</a></li>
+                        <li class="navigation-lv2">
+                            <a href="#">Sub-Category</a>
+                            <ul>
+                                <li><a href="#">Sub-Category</a></li>
+                                <li><a href="#">Sub-Category</a></li>
+                                <li><a href="#">Sub-Category</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Sub-Category</a></li>
                         <li><a href="#">Sub-Category</a></li>
                     </ul>
                 </li>
-                <li class="header__main__category">
-                    <a href="#">Basketball</a>
+
+                <li class="navigation-multilevel">
+                    <a href="#">Soccer</a>
                     <ul>
-                        <li><a href="#">Sub-Category</a></li>
-                        <li><a href="#">Sub-Category</a></li>
+                        <li><a href=" #">Sub-Category</a></li>
+                        <li class="navigation-lv2">
+                            <a href="#">Sub-Category</a>
+                            <ul>
+                                <li><a href="#">Sub-Category</a></li>
+                                <li><a href="#">Sub-Category</a></li>
+                                <li><a href="#">Sub-Category</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Sub-Category</a></li>
                         <li><a href="#">Sub-Category</a></li>
                     </ul>
                 </li>
             </ul>
 
-            <form id="header__div__search">
-                <input type="search" name="header__search__query" id="header__search__query" placeholder="Search products..." autocomplete="off" spellcheck="false">
-                <button type="submit" name="header__search__submit">
+            <form class="header__search-bar search-bar">
+                <input type="search" class="search-bar__input" name="query" placeholder="Search products..." autocomplete="off" spellcheck="false">
+                <button type="submit" class="search-bar__button" name="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-        </div>
+
+        </section>
     </header>
 
     <!--End File -->
