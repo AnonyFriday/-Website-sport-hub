@@ -22,6 +22,8 @@ header {
 
 main {
     z-index: 1;
+    height: fit-content;
+    background: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
 }
 
 button {

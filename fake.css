@@ -143,7 +143,7 @@ main {
     background: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
 }
 
-.container__content-center {
+.main__container {
     padding-top: 2em;
     margin: 0 auto;
     width: 90%;
@@ -154,7 +154,7 @@ main {
 
 
 /** || CATEGORY IMAGE */
-.categories__galery ul {
+.categories ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -169,8 +169,8 @@ main {
     padding: 20px;
 }
 
-li.category:nth-child(1),
-li.category:nth-child(2) {
+.category:nth-child(1),
+.category:nth-child(2) {
     flex-basis: 100%;
     margin-bottom: 20px;
 }
