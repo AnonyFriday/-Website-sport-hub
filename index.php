@@ -1,4 +1,4 @@
-<?php include("inc/header.php"); ?>
+<?php include("inc/components/header.php"); ?>
 
 <!-- Main -->
 <main>
@@ -155,4 +155,4 @@
     </div>
 </main>
 
-<?php include("inc/footer.php"); ?>
+<?php include("inc/components/footer.php"); ?>
