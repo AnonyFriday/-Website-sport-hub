@@ -37,3 +37,14 @@
 @mixin centred-block {
     margin: 0 auto;
 }
+
+
+
+//  =================================
+//  DISPLAY FLEX FOR THE CONTAINER
+//  =================================
+@mixin flex-container($dir: null, $wrap: null) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}

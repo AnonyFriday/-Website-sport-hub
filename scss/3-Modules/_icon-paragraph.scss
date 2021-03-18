@@ -1,0 +1,24 @@
+
+
+//  =================================
+//  DISPLAY FLEX FOR THE CONTAINER
+//  =================================
+@mixin flex-container($dir: null, $wrap: null) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+
+.icon-pagragraph {
+    @include flex-container();
+    
+    icon {
+        font-size: large;
+    }
+
+    p {
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+    }
+}

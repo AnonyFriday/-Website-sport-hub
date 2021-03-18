@@ -1,0 +1,21 @@
+
+
+.footer {
+    &__logo {
+        @include centred-block;
+    }
+
+    &-content {
+        @include flex-container($dir: row, $wrap: nowrap);
+    }
+}
+
+.footer-content {
+    &__right, &__left {
+
+    }
+
+    &__left {
+        
+    }
+}
