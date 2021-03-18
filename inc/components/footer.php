@@ -1,12 +1,12 @@
-<!-- Footer will be reusable later -->
 <footer class="footer">
-    <h1 class="footer__logo logo">
-        <a ref="/index.html">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
-    </h1>
+    <div class="footer__logo">
+        <h1 class="logo ">
+            <a ref="#">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
+        </h1>
+    </div>
 
     <section class="footer-content">
-
-        <!--Right side of the footer-->
+        <!--Left side of the footer-->
         <div class="footer-content__left">
             <h3 class="footer-content__title">find us on</h3>
             <ul class="icon-wrapper">
@@ -25,8 +25,7 @@
             </ul>
         </div>
 
-        //! Will change the content later
-        <!--Left side of the footer-->
+        <!--Right side of the footer-->
         <div class="footer-content__right">
             <h3 class="footer-content__title">contact us on </h3>
             <ul class="icon-wrapper">
@@ -44,9 +43,6 @@
                 </li>
             </ul>
         </div>
-
-        
-
     </section>
 </footer>
 

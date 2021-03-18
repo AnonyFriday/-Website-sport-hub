@@ -5,7 +5,7 @@
 // Media Query
 // $breakpoint is a map from partial scss _variables.scss
 // Currently support 2 type of width ( max-width: 425px, min-width: 426px)
-@mixin compatitble-with-device($device-type: "laptop", $size: null) {
+@mixin compatible-with-device($device-type: "laptop", $size: null) {
     $breakpoint-value: map-get($breakpoint, $device-type);
 
     @if (type-of($breakpoint-value) == "map") {
@@ -31,14 +31,12 @@
     }
 }
 
-
 //  =================================
 //  CENTRE BLOCK
 //  =================================
 @mixin centred-block {
     margin: 0 auto;
 }
-
 
 //  =================================
 //  DISPLAY FLEX FOR THE CONTAINER

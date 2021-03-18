@@ -7,6 +7,12 @@
   text-decoration: none;
 }
 
+a:visited,
+a:active,
+a:focus {
+  color: black;
+}
+
 img {
   width: 100%;
 }
@@ -41,6 +47,8 @@ header {
 
 main {
   z-index: 1;
+  height: fit-content;
+  background: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
 }
 
 button {
@@ -57,7 +65,7 @@ form:focus {
 
 .header {
   z-index: 2;
-  background-color: black;
+  background-color: #ebb734;
   padding: 0px 16px;
   position: sticky;
   top: 0;
@@ -150,6 +158,77 @@ form:focus {
   width: 150%;
 }
 
+.container-center {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.footer {
+  color: #f0c300;
+  background-color: black;
+  width: 100%;
+}
+.footer__logo {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 10px solid #f0c300;
+  margin-bottom: 20px;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.footer-content__right, .footer-content__left {
+  display: flex;
+  flex-direction: column;
+}
+.footer-content__right {
+  flex: 0 0 35%;
+  align-items: flex-end;
+}
+.footer-content__right .icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.footer-content__right .icon-wrapper__item {
+  margin-bottom: 20px;
+}
+.footer-content__right .icon-wrapper__item a {
+  order: 1;
+  margin-left: 1rem;
+}
+.footer-content__left {
+  flex: 0 0 35%;
+  align-items: flex-start;
+}
+.footer-content__left .icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 12rem;
+  justify-content: space-between;
+}
+.footer-content__left .icon-wrapper__item p {
+  display: none;
+}
+.footer-content__title {
+  text-transform: uppercase;
+  font-size: 2em;
+  margin-bottom: 2vh;
+  white-space: nowrap;
+}
+@media (max-width: 425px) {
+  .footer-content__title {
+    font-size: 1em;
+    margin-bottom: 1vh;
+  }
+}
+
 .logo {
   display: inline-block;
 }
@@ -191,6 +270,29 @@ form:focus {
   border-radius: 50%;
   outline: 0;
   color: #f0c300;
+}
+
+.icon-pagragraph {
+  display: flex;
+}
+.icon-pagragraph a {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: #f0c300;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 10px;
+}
+.icon-pagragraph i {
+  font-size: larger;
+}
+.icon-pagragraph p {
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

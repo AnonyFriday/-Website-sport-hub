@@ -1,47 +1,73 @@
-
-/* EXPERIMENTAL FEATURES */
 .footer {
+    color: #f0c300;
+    background-color: black;
     width: 100%;
-    height: 100%;
-    color: black;
 
     &__logo {
-        @include centred-block;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 10px solid #f0c300;
+        margin-bottom: 20px;
     }
 
     &-content {
         @include flex-container($dir: row, $wrap: nowrap);
+        justify-content: space-between;
+        padding: 2rem;
     }
 }
 
 .footer-content {
-    &__right, &__left, .icon-wrapper {
+    &__right,
+    &__left {
         @include flex-container($dir: column);
-        justify-content: space-between;
-        align-items: center;
-
     }
 
     &__right {
-        flex: 0 0 25%;
+        flex: 0 0 35%;
+        align-items: flex-end;
+
         .icon-wrapper {
-            @include flex-container($dir: row);
+            @include flex-container($dir: column);
+            &__item {
+                margin-bottom: 20px;
+                a {
+                    order: 1;
+                    margin-left: 1rem;
+                }
+            }
+            align-items: flex-end;
         }
     }
 
     &__left {
-        flex: 0 0 25%;
+        flex: 0 0 35%;
+        align-items: flex-start;
+
         .icon-wrapper {
-            @include flex-container($dir: column);
+            @include flex-container($dir: row);
+            width: 12rem;
+            justify-content: space-between;
+            &__item {
+                p {
+                    display: none;
+                }
+            }
         }
     }
 
     &__title {
         text-transform: uppercase;
-        font-size: 2rem;
-        flex: 1 1 30%;
+        font-size: 2em;
+        margin-bottom: 2vh;
+        white-space: nowrap;
+    }
+
+    @include compatible-with-device("mobile", "l") {
+        &__title {
+            font-size: 1em;
+            margin-bottom: 1vh;
+        }
     }
 }
-
-
-

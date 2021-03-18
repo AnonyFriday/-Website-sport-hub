@@ -2,7 +2,7 @@
 
 <!-- Main -->
 <main>
-    <div class="container-center">
+    <!-- <div class="container-center">
         <ul class="categories">
 
             <li class="category">
@@ -169,7 +169,8 @@
                 </li>
             </ul>
         </section>
-    </div>
+    </div> -->
 </main>
+<!-- End File -->
 
 <?php include("inc/components/footer.php"); ?>

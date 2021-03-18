@@ -4,7 +4,7 @@
 
 html {
     scroll-behavior: smooth;
-    @include compatitble-with-device("mobile", "l") {
+    @include compatible-with-device("mobile", "l") {
         font-size: 10px;
     }
 }
