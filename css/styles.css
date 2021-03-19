@@ -18,7 +18,7 @@ img {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 button {
@@ -322,18 +322,17 @@ form:focus {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .categories {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: calc($gap * -1) 0 0 calc($gap * -1);
   width: 100%;
+  justify-content: space-between;
 }
 .categories > * {
-  padding: 2rem 0 0 2rem;
-}
-.categories .category {
-  flex: 0 0 50%;
+  margin: 0 0 1% 0;
+  flex: 0 0 calc((100% - calc(1% * (2 - 1))) / 2);
 }
 .categories .category:nth-child(1) {
   flex-basis: 100%;

@@ -50,13 +50,18 @@
 //  =================================
 //  DISPLAY FLEX WITH RESPONSIVE ON EACH ITEM
 //  =================================
-@mixin responsive-flex-container($dir: null, $wrap: wrap) {
+//! Just only available for flex-box's row
+@mixin responsive-flex-container($dir: null, $wrap: wrap, $items-per-line: 1, $gap-space: 0%) {
     @include flex-container($dir, $wrap);
-    $gap: 2rem;
-    padding: calc($gap * -1) 0 0 calc($gap * -1);
     width: 100%;
 
+    $total-gap-horizontal: calc(#{$gap-space} * (#{$items-per-line} - 1));
+    $total-gap-vertial: $gap-space;
+
+    $maximum-item-width: calc((100% - #{$total-gap-horizontal}) / #{$items-per-line});
+
     > * {
-        padding: $gap 0 0 $gap;
+        margin: 0 0 $total-gap-vertial 0;
+        flex: 0 0 $maximum-item-width;
     }
 }
