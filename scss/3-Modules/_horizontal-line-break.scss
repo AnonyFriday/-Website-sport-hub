@@ -1,0 +1,26 @@
+hr {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    position: relative;
+    text-align: center;
+}
+
+hr::after {
+    content: "§";
+    display: inline-block;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    background: transparent;
+}
+
+.line--border-black-content-black {
+    @include line-break-color($content: black, $line: black);
+}
+
+.line--border-yellow-content-yellow {
+    @include line-break-color($content: #f0c300, $line: #f0c300);
+}

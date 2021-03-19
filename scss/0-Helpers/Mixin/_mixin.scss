@@ -65,3 +65,25 @@
         flex: 0 0 $maximum-item-width;
     }
 }
+
+//  =========================================
+//  FIX CORNER BORDER + OVERFLOW + TRANSITION
+//  =========================================
+//  Set negative z-index for image, positive z-index for
+//  parent's elements
+
+@mixin scale-image-no-overflow-border() {
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+//  =========================================
+//  CHANGING COLOR FOR HORIZONTAL LINE BREAK
+//  =========================================
+@mixin line-break-color($content: black, $line: black) {
+    border-top: medium double $line;
+    color: $content;
+}

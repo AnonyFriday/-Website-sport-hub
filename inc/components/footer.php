@@ -5,7 +5,7 @@
                 <a ref="#">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
             </h1>
         </div>
-
+        <hr class="line--border-yellow-content-yellow">
         <section class="footer-content">
             <!--Left side of the footer-->
             <div class="footer-content__left">

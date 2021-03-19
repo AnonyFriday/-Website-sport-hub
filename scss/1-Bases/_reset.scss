@@ -8,15 +8,16 @@
     text-decoration: none;
 }
 
+div {
+    border: 0;
+    outline: 0;
+}
+
 a:visited,
 a:active,
 a:focus {
     color: black;
 }
-
-// img {
-//     width: 100%;
-// }
 
 ul {
     list-style: none;
