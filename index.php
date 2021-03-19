@@ -2,14 +2,83 @@
 
 <!-- Main -->
 <main>
-    <!-- <div class="container-center">
+    <div class="container--center">
         <ul class="categories">
-
             <li class="category">
-                <div class="category__content-container">
-                    <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
+                <div class="category__content">
+                    <div class="category__thumbnail-cover">
+                        <img class="category__img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                            alt="Category thumbnail">
+                    </div>
+                    <div class="category__info">
+                        <div class="category__desc">
+                            <p>Basketball</p>
+                        </div>
+                        <div class="category__links"><a>Buy Now</a></div>
+                    </div>
+                </div>
+            </li>
+            <li class="category">
+                <div class="category__content">
+                    <div class="category__thumbnail-cover">
+                        <img class="category__img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                            alt="Category thumbnail">
+                    </div>
+                    <div class="category__info">
+                        <div class="category__desc">
+                            <p>Basketball</p>
+                        </div>
+                        <div class="category__links"><a>Buy Now</a></div>
+                    </div>
+                </div>
+            </li>
+            <li class="category">
+                <div class="category__content">
+                    <div class="category__thumbnail-cover">
+                        <img class="category__img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                            alt="Category thumbnail">
+                    </div>
+                    <div class="category__info">
+                        <div class="category__desc">
+                            <p>Basketball</p>
+                        </div>
+                        <div class="category__links"><a>Buy Now</a></div>
+                    </div>
+                </div>
+            </li>
+            <li class="category">
+                <div class="category__content">
+                    <div class="category__thumbnail-cover">
+                        <img class="category__img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                            alt="Category thumbnail">
+                    </div>
+                    <div class="category__info">
+                        <div class="category__desc">
+                            <p>Basketball</p>
+                        </div>
+                        <div class="category__links"><a>Buy Now</a></div>
+                    </div>
+                </div>
+            </li>
+            <li class="category">
+                <div class="category__content">
+                    <div class="category__thumbnail-cover">
+                        <img class="category__img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                            alt="Category thumbnail">
+                    </div>
+                    <div class="category__info">
+                        <div class="category__desc">
+                            <p>Basketball</p>
+                        </div>
+                        <div class="category__links"><a>Buy Now</a></div>
+                    </div>
+                </div>
+            </li>
+            <li class="category">
+                <div class="category__content">
+                    <div class="category__thumbnail-cover">
+                        <img class="category__img" src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                            alt="Category thumbnail">
                     </div>
                     <div class="category__info">
                         <div class="category__desc">
@@ -20,76 +89,7 @@
                 </div>
             </li>
 
-            <li class="category">
-                <div class="category__content-container">
-                    <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
-                    </div>
-                    <div class="category__info">
-                        <div class="category__desc">
-                            <p>Basketball</p>
-                        </div>
-                        <div class="category__links"><a>Buy Now</a></div>
-                    </div>
-                </div>
-            </li>
-            <li class="category">
-                <div class="category__content-container">
-                    <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
-                    </div>
-                    <div class="category__info">
-                        <div class="category__desc">
-                            <p>Basketball</p>
-                        </div>
-                        <div class="category__links"><a>Buy Now</a></div>
-                    </div>
-                </div>
-            </li>
-            <li class="category">
-                <div class="category__content-container">
-                    <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
-                    </div>
-                    <div class="category__info">
-                        <div class="category__desc">
-                            <p>Basketball</p>
-                        </div>
-                        <div class="category__links"><a>Buy Now</a></div>
-                    </div>
-                </div>
-            </li>
-            <li class="category">
-                <div class="category__content-container">
-                    <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
-                    </div>
-                    <div class="category__info">
-                        <div class="category__desc">
-                            <p>Basketball</p>
-                        </div>
-                        <div class="category__links"><a>Buy Now</a></div>
-                    </div>
-                </div>
-            </li>
-            <li class="category">
-                <div class="category__content-container">
-                    <div class="category__thumbnail-padded-aspect-ratio-container">
-                        <img class="category__thumbnail-img"
-                            src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg" alt="Category thumbnail">
-                    </div>
-                    <div class="category__info">
-                        <div class="category__desc">
-                            <p>Basketball</p>
-                        </div>
-                        <div class="category__links"><a>Buy Now</a></div>
-                    </div>
-                </div>
-            </li>
+
         </ul>
 
         <section class="products-top-pick">
@@ -169,7 +169,7 @@
                 </li>
             </ul>
         </section>
-    </div> -->
+    </div>
 </main>
 <!-- End File -->
 

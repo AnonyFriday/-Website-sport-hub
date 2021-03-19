@@ -1,8 +1,13 @@
+.categories {
+    @include responsive-flex-container($dir: row);
 
-//! Experimental
-.container-center {
-    @include centred-block;
-    padding-top: 2em;
+    .category {
+        flex: 0 0 50%;
+    }
+
+    @for $i from 1 through 2 {
+        .category:nth-child(#{$i}) {
+            flex-basis: 100%;
+        }
+    }
 }
-
-

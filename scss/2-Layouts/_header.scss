@@ -4,8 +4,7 @@
 
 .header {
     z-index: 2;
-    background-color: #ebb734;
-    padding: 0px 16px;
+    background-color: black;
     position: sticky;
     top: 0;
 
@@ -26,4 +25,8 @@
     &__search-bar {
         width: 380px;
     }
+}
+
+.header::before {
+    
 }

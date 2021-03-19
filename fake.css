@@ -175,7 +175,7 @@ main {
     margin-bottom: 20px;
 }
 
-.category__content-container {
+.category__content {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -229,12 +229,12 @@ main {
     color: #f0c300;
 }
 
-.category__content-container:hover .category__thumbnail-img {
+.category__content:hover .category__thumbnail-img {
     transform: scale(1.1);
     opacity: 1;
 }
 
-.category__content-container:hover .category__info {
+.category__content:hover .category__info {
     opacity: 1;
 }
 
