@@ -51,10 +51,10 @@
 //  DISPLAY FLEX WITH RESPONSIVE ON EACH ITEM
 //  =================================
 //! Just only available for flex-box's row
-@mixin responsive-flex-container($dir: null, $wrap: wrap, $items-per-line: 1, $gap-space: 0%) {
+@mixin responsive-flex-row-container($dir: null, $wrap: wrap, $items-per-line: 1, $gap-space: 0%) {
     @include flex-container($dir, $wrap);
+    justify-content: space-between;
     width: 100%;
-
     $total-gap-horizontal: calc(#{$gap-space} * (#{$items-per-line} - 1));
     $total-gap-vertial: $gap-space;
 

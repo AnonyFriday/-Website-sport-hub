@@ -1,8 +1,7 @@
 .categories {
-    @include responsive-flex-container($dir: row, $wrap: wrap, $items-per-line: 2, $gap-space: 1%);
+    padding-top: 2rem;
 
-    justify-content: space-between;
-
+    @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 2, $gap-space: 1%);
     @for $i from 1 through 2 {
         .category:nth-child(#{$i}) {
             flex-basis: 100%;
