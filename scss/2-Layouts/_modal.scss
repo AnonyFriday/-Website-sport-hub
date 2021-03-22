@@ -1,0 +1,78 @@
+.modal-cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-modal-background-transparent;
+    z-index: 4;
+    @include flex-container() {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+$social-media: "facebook" #5770a6, "twitter" #6db7ef, "google " #e06555;
+
+.modal {
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    &__title {
+        font-size: x-large;
+        margin-bottom: 20px;
+    }
+
+    &__social-media {
+        @include flex-container($dir: column, $wrap: null);
+
+        @each $name, $bg-color in $social-media {
+            .btn-text-#{$name} {
+                background-color: #{$bg-color};
+                color: white;
+            }
+        }
+    }
+
+    .btn,
+    input {
+        display: inline-block;
+        padding: 12px;
+        width: 100%;
+        border-radius: 4px;
+        margin: 5px 0;
+        line-height: 1em;
+    }
+
+    hr {
+        margin: 1em 0;
+    }
+}
+
+.modal__social-media {
+    @each $name, $bg-color in $social-media {
+        .btn-text-#{$name} {
+            background-color: #{$bg-color};
+            color: white;
+
+            i {
+                display: inline-block;
+                font-size: x-large;
+                width: 30px;
+
+                @include compatible-with-device("mobile", "l") {
+                    font-size: small;
+                }
+            }
+
+            p {
+                display: inline-block;
+            }
+        }
+    }
+}
