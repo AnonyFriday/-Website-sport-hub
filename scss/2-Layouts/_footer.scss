@@ -58,14 +58,12 @@
     &__title {
         text-transform: uppercase;
         font-size: 2em;
-        margin-bottom: 2vh;
+        margin-bottom: 2vw;
         white-space: nowrap;
     }
 
-    @include compatible-with-device("mobile", "l") {
-        &__title {
-            font-size: 1em;
-            margin-bottom: 1vh;
-        }
+    @include compatible-with-device("tablet") {
+        font-size: 10px;
+        margin-bottom: 1vh;
     }
 }

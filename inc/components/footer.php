@@ -31,16 +31,16 @@
                 <h3 class="footer-content__title">contact us on </h3>
                 <ul class="icon-wrapper">
                     <li class="icon-pagragraph icon-wrapper__item">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <p>Twitter</p>
+                        <a href="#"><i class="fas fa-phone-square-alt"></i></a>
+                        <p>0232-232-323</p>
                     </li>
                     <li class="icon-pagragraph icon-wrapper__item">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <p>Facebook</p>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <p>gearup@ait.nsw.edu.au</p>
                     </li>
                     <li class="icon-pagragraph icon-wrapper__item">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <p>Linkedin</p>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+                        <p>7 Kelly Street, Ultimo, NSW</p>
                     </li>
                 </ul>
             </div>

@@ -5,7 +5,7 @@
 html {
     scroll-behavior: smooth;
     @include compatible-with-device("mobile", "l") {
-        font-size: 10px;
+        font-size: 2vw;
     }
 }
 
@@ -17,7 +17,6 @@ body {
 header {
     z-index: 2;
     max-width: 100%;
-    min-width: 50%;
 }
 
 main {

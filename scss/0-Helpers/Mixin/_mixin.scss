@@ -13,19 +13,19 @@
         $breakpoint-value: map-get($breakpoint-value, $size);
     }
 
-    $mobile-large-width-value: map-get(
+    $default-mobile-large-width-value: map-get(
         map-get($breakpoint, "mobile"),
         "l"
     ); // the average medium of all responsive devices
 
     @if $breakpoint-value == null {
         @warn "The website cannot fully compatible with the device's type `#{$device-type} with the size `#{$size}`"; // check if developer mistyped
-    } @else if $breakpoint-value <= $mobile-large-width-value {
+    } @else if $breakpoint-value <= $default-mobile-large-width-value {
         @media (max-width: $breakpoint-value) {
             @content;
         }
     } @else {
-        @media (min-width: $breakpoint-value) {
+        @media (min-width: $default-mobile-large-width-value) and (max-width: $breakpoint-value) {
             @content;
         }
     }
