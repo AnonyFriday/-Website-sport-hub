@@ -32,7 +32,7 @@ html {
 }
 @media (max-width: 425px) {
   html {
-    font-size: 2vw;
+    font-size: 1rem;
   }
 }
 
@@ -285,6 +285,7 @@ form textarea {
 .footer-content__right, .footer-content__left {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .footer-content__right {
   flex: 0 0 35%;
@@ -324,7 +325,12 @@ form textarea {
 @media (min-width: 425px) and (max-width: 768px) {
   .footer-content {
     font-size: 10px;
-    margin-bottom: 1vh;
+    padding-bottom: 1vh;
+  }
+}
+@media (max-width: 375px) {
+  .footer-content {
+    font-size: 1rem;
   }
 }
 

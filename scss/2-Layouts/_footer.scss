@@ -19,7 +19,7 @@
 .footer-content {
     &__right,
     &__left {
-        @include flex-container($dir: column);
+        @include flex-container($dir: column, $wrap: wrap);
     }
 
     &__right {
@@ -62,8 +62,13 @@
         white-space: nowrap;
     }
 
+    //! Non-responsive design
     @include compatible-with-device("tablet") {
         font-size: 10px;
-        margin-bottom: 1vh;
+        padding-bottom: 1vh;
+    }
+
+    @include compatible-with-device("mobile", "m") {
+        font-size: 1rem;
     }
 }
