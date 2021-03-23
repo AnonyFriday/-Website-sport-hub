@@ -2,62 +2,145 @@
 
 <!-- Main -->
 <main>
-    <section class="collection">
-        <div class="collection__sidebar"></div>
-        <ul class="collection__list-products">
-            <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
-                <div class="product__info">
-                    <div class="product__title">
-                        <h3>Shin Guard</h3>
+    <section class="collection container--center">
+        <div class="collection__sidebar">
+            <details class="details__item">
+                <summary class="details__summary">
+                    <span>Gender</span>
+                </summary>
+                <form class="details__content">
+                    <input type="checkbox" name="gender" value="male" checked></input>
+                </form>
+            </details>
+
+        </div>
+        <div class="collection__content">
+            <h2 class="collection__title">{Category's Name}</h2>
+            <ul class="collection__list-products">
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
                     </div>
-                    <div class="product__price">
-                        <p>23.33$</p>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
-                <div class="product__info">
-                    <div class="product__title">
-                        <h3>Shin Guard</h3>
+                </li>
+
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
                     </div>
-                    <div class="product__price">
-                        <p>23.33$</p>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
-                <div class="product__info">
-                    <div class="product__title">
-                        <h3>Shin Guard</h3>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
                     </div>
-                    <div class="product__price">
-                        <p>23.33$</p>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="product">
-                <div class="product__image"><img
-                        src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                        alt="Product Image"></div>
-                <div class="product__info">
-                    <div class="product__title">
-                        <h3>Shin Guard</h3>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
                     </div>
-                    <div class="product__price">
-                        <p>23.33$</p>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="product">
+                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                    </div>
+                    <div class="product__info">
+                        <div class="product__title">
+                            <h3>Shin Guard</h3>
+                        </div>
+                        <div class="product__price">
+                            <p>23.33$</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
     </section>
 </main>
 <!-- End File -->

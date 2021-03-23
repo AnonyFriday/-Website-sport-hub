@@ -1,20 +1,30 @@
 .collection {
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 1vh auto;
+    border-radius: 10px;
+
     &__sidebar {
         float: left;
-        width: 20%;
-        height: 300px;
-        background-color: red;
+        width: 30%;
+        height: 40vh;
+        border-right: 1px solid rgb(158, 151, 151);
     }
 
-    &__list-products {
+    &__content {
+        width: 70%;
         float: right;
-        background-color: white;
-        @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 3, $gap-space: 1%) {
-            width: 70%;
+        overflow-y: scroll;
+
+        .collection__list-products {
+            @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 3, $gap-space: 0%) {
+                justify-content: flex-start;
+                height: 100vh;
+            }
         }
 
-        .product {
-            text-align: center;
+        .collection__title {
+            padding: 2rem;
         }
     }
 
