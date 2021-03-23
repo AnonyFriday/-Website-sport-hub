@@ -265,6 +265,7 @@ form textarea {
 }
 
 .footer {
+  clear: both;
   color: #f0c300;
   background-color: black;
   width: 100%;
@@ -512,6 +513,7 @@ form textarea {
   flex-basis: 25%;
   padding: 20px;
   box-shadow: 5px 5px 10 12 black;
+  text-align: center;
 }
 
 .product__image img {
@@ -679,6 +681,35 @@ hr::after {
 .list-products > * {
   margin: 0 0 3% 0;
   flex: 0 0 calc((100% - calc(3% * (4 - 1))) / 4);
+}
+
+.collection__sidebar {
+  float: left;
+  width: 20%;
+  height: 300px;
+  background-color: red;
+}
+.collection__list-products {
+  float: right;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  width: 70%;
+}
+.collection__list-products > * {
+  margin: 0 0 1% 0;
+  flex: 0 0 calc((100% - calc(1% * (3 - 1))) / 3);
+}
+.collection__list-products .product {
+  text-align: center;
+}
+.collection::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .contactus {

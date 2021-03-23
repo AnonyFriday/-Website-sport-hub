@@ -98,8 +98,6 @@
             </ul>
         </section>
 
-        <hr class="line--border-black-content-black">
-
         <section class="container__top-pick">
             <h2 class="section-header top-pick__header">top picks</h2>
             <ul class="list-products">

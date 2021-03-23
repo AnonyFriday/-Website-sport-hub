@@ -65,6 +65,8 @@
         margin: 0 0 $total-gap-vertial 0;
         flex: 0 0 $maximum-item-width;
     }
+
+    @content;
 }
 
 //  =========================================
