@@ -1,29 +1,31 @@
 .collection {
-    height: fit-content;
+    height: auto;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 1vh auto;
     border-radius: 10px;
 
     &__sidebar {
         float: left;
-        width: 30%;
-        height: 40vh;
-        border-right: 1px solid rgb(158, 151, 151);
+        width: 25%;
+        height: auto;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-radius: 10px;
+        margin: 1% 0 0 1%;
     }
 
     &__content {
         width: 70%;
         float: right;
-        overflow-y: scroll;
+        min-height: 100vh;
 
         .collection__list-products {
             @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 3, $gap-space: 0%) {
                 justify-content: flex-start;
-                height: 100vh;
             }
         }
 
         .collection__title {
+            text-align: center;
             padding: 2rem;
         }
     }
@@ -33,4 +35,9 @@
         clear: both;
         display: table;
     }
+}
+
+.details__item {
+    box-shadow: none;
+    background-color: transparent;
 }

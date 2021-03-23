@@ -56,6 +56,7 @@
     @include flex-container($dir, $wrap);
     justify-content: space-between;
     width: 100%;
+    height: auto;
     $total-gap-horizontal: calc(#{$gap-space} * (#{$items-per-line} - 1));
     $total-gap-vertial: $gap-space;
 

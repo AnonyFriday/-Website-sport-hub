@@ -1,0 +1,54 @@
+.checkbox-wrapper {
+    width: 100%;
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+
+    span {
+        display: inline-block;
+        font-size: large;
+        font-family: "Poppins", sans-serif;
+        margin-left: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: black;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+        display: inline-block;
+        height: 2em;
+        width: 2em;
+        outline: none;
+        appearance: none;
+        border: 2px solid black;
+        background-color: white;
+        position: relative;
+
+        //! Manually referencing icons is not recommended. Just temporarily use if for the
+        //! school project
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
+            content: "\f00c";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        &:hover {
+            background-color: aliceblue;
+        }
+
+        &:checked:after {
+            display: block;
+            color: white;
+        }
+
+        &:checked {
+            background-color: #4c6ef5;
+        }
+    }
+}
