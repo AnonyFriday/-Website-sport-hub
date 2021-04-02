@@ -1,9 +1,11 @@
 <!-- HEADER -->
 <?php
 $page_title = "Sporthub - Sport Mall";
-require_once("../private/initializer.php");
 ?>
-<?php include_once(SHARED_PATH . "/component/header.php") ?>
+<?php
+require_once("../private/initializer.php");
+include_once(SHARED_PATH . "/component/header.php")
+?>
 
 <!-- MAIN -->
 <main>
@@ -21,7 +23,8 @@ require_once("../private/initializer.php");
                             <div class="category__desc">
                                 <p>Basketball</p>
                             </div>
-                            <div class="category__links"><a>Buy Now</a></div>
+                            <div class="category__links"><a href=<?php echo url_for("/inc/collection.php") ?>>Buy
+                                    Now</a></div>
                         </div>
                     </div>
                 </li>

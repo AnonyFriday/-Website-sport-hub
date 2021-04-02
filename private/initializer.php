@@ -29,6 +29,6 @@ define("WWW_ROOT", $doc_root);
 //  ===============================================/ 
 //  Include other partial files
 //  ===============================================/ 
-require_once("../private/shared/ultility/functions.php");
-require_once(DATABASE_PATH . "/db_connection.php");
-require_once(DATABASE_PATH . "/db_query.php");
+require(SHARED_PATH . "/ultility/functions.php");
+require(DATABASE_PATH . "/db_connection.php");
+require(DATABASE_PATH . "/db_query.php");

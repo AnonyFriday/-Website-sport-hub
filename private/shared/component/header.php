@@ -27,11 +27,14 @@ if (!isset($page_title)) {
             <div class="container--center">
                 <section class="header__content">
                     <h1 class="header__logo logo">
-                        <a ref="#">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
+                        <a href=<?php echo url_for("/index.php"); ?>>🅂🄿🄾🅁🅃 🄷🅄🄱</a>
                     </h1>
 
                     <ul class="header__list navigation-base">
-                        <li><a href="#"><i class="fas fa-comment"></i><span>Contact Us</span></a></li>
+                        <li><a href=<?php echo url_for("/inc/contactus.php") ?>><i
+                                    class="fas fa-comment"></i><span>Contact
+                                    Us</span></a>
+                        </li>
                         <li><a href="#"><i class="fas fa-user-alt"></i><span>Login</span></a></li>
                         <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Cart</span></a></li>
                     </ul>
@@ -40,7 +43,7 @@ if (!isset($page_title)) {
                 <section class="header__content">
                     <!-- Content will be populated later on-->
                     <ul class="header__list navigation-base">
-                        <li><a href="#">Home</a></li>
+                        <li><a href=<?php echo url_for("/index.php"); ?>>Home</a></li>
 
                         <li class="navigation-multilevel">
                             <a href="#">Soccer</a>
