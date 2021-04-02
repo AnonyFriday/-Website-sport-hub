@@ -1,3 +1,9 @@
+<?php
+if (!isset($page_title)) {
+    $page_title = "Sport Hub";
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +16,18 @@
         <script src="https://kit.fontawesome.com/0376e78535.js" crossorigin="anonymous"></script>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href=<?php echo url_for("/css/styles.css") ?>>
 
-        <title>Sport</title>
+        <title><?= $page_title ?></title>
     </head>
 
     <body>
         <!-- Reusable Header -->
-        <header class="header">
+        <header class=" header">
             <div class="container--center">
                 <section class="header__content">
                     <h1 class="header__logo logo">
-                        <a ref="/index.html">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
+                        <a ref="#">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
                     </h1>
 
                     <ul class="header__list navigation-base">

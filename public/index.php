@@ -1,6 +1,11 @@
-<?php include("inc/components/header.php"); ?>
+<!-- HEADER -->
+<?php
+$page_title = "Sporthub - Sport Mall";
+require_once("../private/initializer.php");
+?>
+<?php include_once(SHARED_PATH . "/component/header.php") ?>
 
-<!-- Main -->
+<!-- MAIN -->
 <main>
     <div class="container--center">
         <section class="container__categories">
@@ -177,6 +182,7 @@
         </section>
     </div>
 </main>
-<!-- End File -->
 
-<?php include("inc/components/footer.php"); ?>
+
+<!-- FOOTER -->
+<?php include_once(SHARED_PATH . "/component/footer.php") ?>

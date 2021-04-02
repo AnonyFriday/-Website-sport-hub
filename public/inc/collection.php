@@ -1,6 +1,7 @@
-<?php include("../components/header.php"); ?>
+<!-- HEADER -->
+<?php include_once(SHARED_PATH . "/component/header.php") ?>
 
-<!-- Main -->
+<!-- MAIN -->
 <main>
     <section class="collection container--center">
         <div class="collection__sidebar">
@@ -20,7 +21,7 @@
                     </div>
                 </form>
             </details>
-            
+
             <details class="details__item">
                 <summary class="details__summary">
                     <span>Size</span>
@@ -171,6 +172,6 @@
 
     </section>
 </main>
-<!-- End File -->
 
-<?php include("../components/footer.php"); ?>
+<!-- FOOTER -->
+<?php include_once(SHARED_PATH . "/component/footer.php") ?>

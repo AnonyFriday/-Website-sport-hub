@@ -1,5 +1,7 @@
-<?php include("header.php"); ?>
+<!-- HEADER -->
+<?php include_once(SHARED_PATH . "/component/header.php") ?>
 
+<!-- MAIN -->
 <main>
     <section class="contactus container--center">
         <div class="form contactus__form">
@@ -83,8 +85,5 @@
     </section>
 </main>
 
-
-
-<!-- End File -->
-
-<?php include("footer.php"); ?>
+<!-- FOOTER -->
+<?php include_once(SHARED_PATH . "/component/footer.php") ?>
