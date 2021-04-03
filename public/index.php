@@ -16,7 +16,7 @@ include_once(SHARED_PATH . "/component/header.php")
                     <div class="category__content">
                         <div class="category__thumbnail-cover">
                             <img class="category__img"
-                                src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
+                                src="https://res.cloudinary.com/dyio102qf/image/upload/v1596813113/vfzvduptpmfbepzxambx.jpg"
                                 alt="Category thumbnail">
                         </div>
                         <div class="category__info">

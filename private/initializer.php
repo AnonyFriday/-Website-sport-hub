@@ -12,6 +12,7 @@ define("SHARED_PATH", PRIVATE_PATH . "/shared");
 define("DATABASE_PATH", PRIVATE_PATH . "/database");
 define("PUBLIC_PATH", PROJECT_PATH . "/public");
 
+
 //  ===============================================/ 
 //  Assign the root URL to a PHP constant
 //  * Do not need to include the domain
@@ -32,3 +33,4 @@ define("WWW_ROOT", $doc_root);
 require(SHARED_PATH . "/ultility/functions.php");
 require(DATABASE_PATH . "/db_connection.php");
 require(DATABASE_PATH . "/db_query.php");
+$dbConnection = db_connect();

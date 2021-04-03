@@ -48,7 +48,11 @@
     </div>
 
 </footer>
-
 </body>
 
 </html>
+
+<!-- Disconnect the database -->
+<?php
+db_disconnect($dbConnection);
+?>
