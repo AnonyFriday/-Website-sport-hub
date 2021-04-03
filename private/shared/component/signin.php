@@ -1,7 +1,8 @@
 <div class="modal-cover">
     <div class="form modal">
-        <h3 class="form__title modal__title ">Sign in with us</h3>
-        <form class="form__content">
+        <span class="modal__close-button">x</span>
+        <h3 class=" form__title modal__title ">Sign in with us</h3>
+        <form class=" form__content">
             <input class="modal__email" type="email" name="email" placeholder="Email" autocomplete="off"
                 spellcheck="false">
             <input class="modal__password" type="password" name="password" placeholder="Password" autocomplete="off"

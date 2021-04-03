@@ -19,6 +19,7 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 20px;
+    position: relative;
 
     &__social-media {
         @include flex-container($dir: column, $wrap: null);
@@ -33,6 +34,16 @@
 
     hr {
         margin: 1em 0;
+    }
+
+    //! Experimental
+    &__close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        font-weight: bold;
+        color: black;
     }
 }
 
