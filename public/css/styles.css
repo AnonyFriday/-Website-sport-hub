@@ -180,7 +180,7 @@ form textarea {
   top: 0;
 }
 .header__content {
-  height: 60px;
+  height: max-content;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

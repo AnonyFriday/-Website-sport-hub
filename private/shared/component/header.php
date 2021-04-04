@@ -12,6 +12,7 @@ $headerTitles = [
     ],
     "navigation_bottom" => [
         "home" => "home",
+        "all_products" => "all products",
     ]
 ];
 
@@ -70,7 +71,11 @@ $categories = query_all_records("category");
                         </li>
 
                         <!-- Populate data into header -->
-                        <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
+                        <?php while ($category = mysqli_fetch_assoc($categories)) {
+                        // Remove "all products" from header
+                        if ($category["category_id"] == 6) {
+                            continue;
+                        } ?>
                         <li class="navigation__item--hover">
                             <a href="#" class="navigation__item"><?= $category["category_name"] ?></a>
                             <ul class="navigation__sub-list">
@@ -78,7 +83,9 @@ $categories = query_all_records("category");
                                 $collections = query_all_records_where_condition("collection", ["category_id" => $category["category_id"]]);
                                 while ($collection = mysqli_fetch_assoc($collections)) {
                                 ?>
-                                <li><a href="#" class="navigation__item"><?= $collection["collection_name"]; ?></a></li>
+                                <li><a href=<?php echo url_for("/inc/collection.php?id=" . $collection["collection_id"]) ?>
+                                        class=" navigation__item"><?= $collection["collection_name"]; ?></a>
+                                </li>
                                 <?php }; ?>
                             </ul>
                         </li>

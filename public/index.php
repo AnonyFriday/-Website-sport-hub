@@ -1,6 +1,7 @@
 <!-- HEADER -->
 <?php
 $page_title = "Sporthub - Sport Mall";
+
 ?>
 <?php
 require_once("../private/initializer.php");
@@ -25,81 +26,6 @@ include_once(SHARED_PATH . "/component/header.php")
                             </div>
                             <div class="category__links"><a href=<?php echo url_for("/inc/collection.php") ?>>Buy
                                     Now</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="category">
-                    <div class="category__content">
-                        <div class="category__thumbnail-cover">
-                            <img class="category__img"
-                                src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
-                                alt="Category thumbnail">
-                        </div>
-                        <div class="category__info">
-                            <div class="category__desc">
-                                <p>Basketball</p>
-                            </div>
-                            <div class="category__links"><a>Buy Now</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="category">
-                    <div class="category__content">
-                        <div class="category__thumbnail-cover">
-                            <img class="category__img"
-                                src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
-                                alt="Category thumbnail">
-                        </div>
-                        <div class="category__info">
-                            <div class="category__desc">
-                                <p>Basketball</p>
-                            </div>
-                            <div class="category__links"><a>Buy Now</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="category">
-                    <div class="category__content">
-                        <div class="category__thumbnail-cover">
-                            <img class="category__img"
-                                src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
-                                alt="Category thumbnail">
-                        </div>
-                        <div class="category__info">
-                            <div class="category__desc">
-                                <p>Basketball</p>
-                            </div>
-                            <div class="category__links"><a>Buy Now</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="category">
-                    <div class="category__content">
-                        <div class="category__thumbnail-cover">
-                            <img class="category__img"
-                                src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
-                                alt="Category thumbnail">
-                        </div>
-                        <div class="category__info">
-                            <div class="category__desc">
-                                <p>Basketball</p>
-                            </div>
-                            <div class="category__links"><a>Buy Now</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="category">
-                    <div class="category__content">
-                        <div class="category__thumbnail-cover">
-                            <img class="category__img"
-                                src="./asset/TestingImages/pexels-tima-miroshnichenko-5586491.jpg"
-                                alt="Category thumbnail">
-                        </div>
-                        <div class="category__info">
-                            <div class="category__desc">
-                                <p>Basketball</p>
-                            </div>
-                            <div class="category__links"><a>Buy Now</a></div>
                         </div>
                     </div>
                 </li>
