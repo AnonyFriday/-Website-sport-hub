@@ -3,8 +3,19 @@ if (!isset($page_title)) {
     $page_title = "Sport Hub";
 };
 
-$categories  = query_all_records("category");
+$headerTitles = [
+    "logo" => "🅂🄿🄾🅁🅃 🄷🅄🄱",
+    "navigation_up" => [
+        "contact_us" => "contact us",
+        "login" => "login",
+        "cart"  => "cart"
+    ],
+    "navigation_bottom" => [
+        "home" => "home",
+    ]
+];
 
+$categories = query_all_records("category");
 ?>
 
 
@@ -23,7 +34,9 @@ $categories  = query_all_records("category");
         <!-- CSS -->
         <link rel="stylesheet" href=<?php echo url_for("/css/styles.css") ?>>
 
-        <title><?= $page_title ?></title>
+        <title>
+            <?= $page_title ?>
+        </title>
     </head>
 
     <body>
@@ -32,32 +45,40 @@ $categories  = query_all_records("category");
             <div class="container--center">
                 <section class="header__content">
                     <h1 class="header__logo logo">
-                        <a href=<?php echo url_for("/index.php"); ?>>🅂🄿🄾🅁🅃 🄷🅄🄱</a>
+                        <a href=<?php echo url_for("/index.php"); ?>>
+                            <?= $headerTitles["logo"]; ?>
+                        </a>
                     </h1>
 
-                    <ul class="header__list navigation-base">
-                        <li><a href=<?php echo url_for("/inc/contactus.php") ?>><i
-                                    class="fas fa-comment"></i><span>Contact Us</span></a></li>
-                        <li><a href="#"><i class="fas fa-user-alt"></i><span>Login</span></a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Cart</span></a></li>
+                    <ul class="navigation">
+                        <li><a class="navigation__item" href=<?php echo url_for("/inc/contactus.php") ?>><i
+                                    class="fas fa-comment"></i><span><?= $headerTitles["navigation_up"]["contact_us"]; ?></span></a>
+                        </li>
+                        <li><a class="navigation__item" href="#"><i class="fas fa-user-alt"></i><span>
+                                    <?= $headerTitles["navigation_up"]["login"]; ?></span></a></li>
+                        <li><a class="navigation__item" href="#"><i class="fas fa-shopping-cart"></i><span>
+                                    <?= $headerTitles["navigation_up"]["cart"]; ?></span></a></li>
                     </ul>
                 </section>
 
                 <section class="header__content">
                     <!-- Content will be populated later on-->
-                    <ul class="header__list navigation-base">
-                        <li><a href=<?php echo url_for("/index.php"); ?>>Home</a></li>
+                    <ul class="navigation">
+                        <li><a class="navigation__item" href=<?php echo url_for("/index.php"); ?>>
+                                <?= $headerTitles["navigation_bottom"]["home"] ?>
+                            </a>
+                        </li>
 
                         <!-- Populate data into header -->
                         <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
-                        <li class="navigation-multilevel">
-                            <a href="#"><?= $category["category_name"] ?></a>
-                            <ul>
+                        <li class="navigation__item--hover">
+                            <a href="#" class="navigation__item"><?= $category["category_name"] ?></a>
+                            <ul class="navigation__sub-list">
                                 <?php
                                 $collections = query_all_records_where_condition("collection", ["category_id" => $category["category_id"]]);
                                 while ($collection = mysqli_fetch_assoc($collections)) {
                                 ?>
-                                <li><a href="#"><?= $collection["collection_name"] ?></li>
+                                <li><a href="#" class="navigation__item"><?= $collection["collection_name"]; ?></a></li>
                                 <?php }; ?>
                             </ul>
                         </li>
@@ -71,7 +92,6 @@ $categories  = query_all_records("category");
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
-
                 </section>
             </div>
         </header>

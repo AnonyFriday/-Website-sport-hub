@@ -1,64 +1,93 @@
 //  =================================
-//  NAVIGATION MULTILEVEL
+//  NAVIGATION
 //  =================================
 //! EXPERIMENTAL:
 //! Not proficient for other parts using this navigation
 //! Available for header.scss only
 
-.navigation-base {
+.navigation {
     > li {
         display: inline-block;
-        padding: 5px 20px;
+        padding: 1em;
 
-        a {
-            display: inline-block;
-            position: relative;
-            font-size: 18px;
-            line-height: 50px;
-            color: #f0c300;
-            text-transform: uppercase;
-
-            &:hover::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                border: 1px solid #f0c300;
-            }
-
-            i {
-                margin-right: 5px;
-            }
+        // For item with icon
+        i {
+            margin-right: 5px;
         }
+    }
+
+    &__sub-list {
+        display: none;
     }
 }
 
-.navigation-multilevel {
+.navigation__item {
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 2em;
+    text-transform: uppercase;
+
+    &:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid #f0c300;
+    }
+}
+
+.navigation__item:link,
+.navigation__item:visited {
+    color: #f0c300;
+}
+
+//  =================================
+//  SUB NAVIGATION
+//  =================================
+.navigation__item--hover:hover {
     position: relative;
 
-    ul {
-        display: none;
+    .navigation__sub-list {
+        display: block;
+        width: max-content;
+        height: min-content;
         position: absolute;
-
-        li {
-            display: block;
-            line-height: 50px;
-            background-color: black;
-            a {
-                color: black;
-                display: block;
-                line-height: 40px;
-                text-indent: 20px;
-                background-color: #f0c300;
-            }
-
-            &:hover {
-                background-color: black;
-            }
-        }
-    }
-
-    &:hover {
+        top: 100%;
+        left: 1em;
     }
 }
+
+.navigation__sub-list {
+    background-color: #f0c300;
+    opacity: 0.8;
+    border-radius: 1em;
+    overflow: hidden;
+
+    .navigation__item:link,
+    .navigation__item:visited {
+        color: #000;
+    }
+
+    .navigation__item {
+        display: block;
+        padding: 1em;
+        transition: 0.5 background-color ease-out;
+    }
+
+    .navigation__item:hover,
+    .navigation__item:focus {
+        background-color: #000;
+        color: #f0c300;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+//  =================================
+//  MEDIA QUERY FOR NAVIGATION
+//  =================================
+//! ON PROGRESS

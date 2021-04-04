@@ -14,8 +14,7 @@ div {
 }
 
 a:visited,
-a:active,
-a:focus {
+a:link {
   color: black;
 }
 
@@ -181,34 +180,40 @@ form textarea {
   top: 0;
 }
 .header__content {
-  height: 10vh;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 .header__logo {
   margin-left: 20px;
 }
 .header__search-bar {
-  width: 380px;
+  max-width: 380px;
 }
 
-.navigation-base > li {
+.navigation > li {
   display: inline-block;
-  padding: 5px 20px;
+  padding: 1em;
 }
-.navigation-base > li a {
+.navigation > li i {
+  margin-right: 5px;
+}
+.navigation__sub-list {
+  display: none;
+}
+
+.navigation__item {
   display: inline-block;
   position: relative;
-  font-size: 18px;
-  line-height: 50px;
-  color: #f0c300;
+  font-size: 1.2rem;
+  line-height: 2em;
   text-transform: uppercase;
 }
-.navigation-base > li a:hover::after {
+.navigation__item:hover::after {
   content: "";
   position: absolute;
   left: 0;
@@ -216,34 +221,52 @@ form textarea {
   bottom: 0;
   border: 1px solid #f0c300;
 }
-.navigation-base > li a i {
-  margin-right: 5px;
+
+.navigation__item:link,
+.navigation__item:visited {
+  color: #f0c300;
 }
 
-.navigation-multilevel {
+.navigation__item--hover:hover {
   position: relative;
 }
-.navigation-multilevel ul {
-  display: none;
+.navigation__item--hover:hover .navigation__sub-list {
+  display: block;
+  width: max-content;
+  height: min-content;
   position: absolute;
+  top: 100%;
+  left: 1em;
 }
-.navigation-multilevel ul li {
-  display: block;
-  line-height: 50px;
-  background-color: black;
-}
-.navigation-multilevel ul li a {
-  color: black;
-  display: block;
-  line-height: 40px;
-  text-indent: 20px;
+
+.navigation__sub-list {
   background-color: #f0c300;
+  opacity: 0.8;
+  border-radius: 1em;
+  overflow: hidden;
 }
-.navigation-multilevel ul li:hover {
-  background-color: black;
+.navigation__sub-list .navigation__item:link,
+.navigation__sub-list .navigation__item:visited {
+  color: #000;
 }
+.navigation__sub-list .navigation__item {
+  display: block;
+  padding: 1em;
+  transition: 0.5 background-color ease-out;
+}
+.navigation__sub-list .navigation__item:hover,
+.navigation__sub-list .navigation__item:focus {
+  background-color: #000;
+  color: #f0c300;
+}
+.navigation__sub-list .navigation__item:hover::after,
+.navigation__sub-list .navigation__item:focus::after {
+  display: none;
+}
+
 .container--center {
-  width: 80%;
+  width: 80vw;
+  max-width: 80%;
   height: inherit;
   margin: 0 auto;
 }
