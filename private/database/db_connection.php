@@ -23,7 +23,7 @@ function db_disconnect($link)
 
 
 // ======================================
-// Detech Database Connection if fail
+// Detect Database Connection if fail
 // ======================================
 function db_confirm_connection()
 {
@@ -31,6 +31,18 @@ function db_confirm_connection()
         $msg = "Cannot connect to the database. \n";
         $msg = "Error Code: " . mysqli_connect_errno() . "\n";
         $msg = "Error: " . mysqli_connect_error() . "\n";
+        exit($msg);
+    }
+}
+
+
+// ======================================
+// Confirm Database's query status
+// ======================================
+function db_confirm_result_set($result_set, $query)
+{
+    if (!$result_set) {
+        $msg = "Cannot retrieve back the result set from query : \n $query";
         exit($msg);
     }
 }

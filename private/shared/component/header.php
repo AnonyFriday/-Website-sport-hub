@@ -2,8 +2,13 @@
 if (!isset($page_title)) {
     $page_title = "Sport Hub";
 };
+
+$categories  = query_all_records("category");
+
 ?>
 
+
+<!-- Main -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +28,7 @@ if (!isset($page_title)) {
 
     <body>
         <!-- Reusable Header -->
-        <header class=" header">
+        <header class="header">
             <div class="container--center">
                 <section class="header__content">
                     <h1 class="header__logo logo">
@@ -32,9 +37,7 @@ if (!isset($page_title)) {
 
                     <ul class="header__list navigation-base">
                         <li><a href=<?php echo url_for("/inc/contactus.php") ?>><i
-                                    class="fas fa-comment"></i><span>Contact
-                                    Us</span></a>
-                        </li>
+                                    class="fas fa-comment"></i><span>Contact Us</span></a></li>
                         <li><a href="#"><i class="fas fa-user-alt"></i><span>Login</span></a></li>
                         <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Cart</span></a></li>
                     </ul>
@@ -45,73 +48,20 @@ if (!isset($page_title)) {
                     <ul class="header__list navigation-base">
                         <li><a href=<?php echo url_for("/index.php"); ?>>Home</a></li>
 
+                        <!-- Populate data into header -->
+                        <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
                         <li class="navigation-multilevel">
-                            <a href="#">Soccer</a>
+                            <a href="#"><?= $category["category_name"] ?></a>
                             <ul>
-                                <li><a href=" #">Sub-Category</a></li>
-                                <li class="navigation-lv2">
-                                    <a href="#">Sub-Category</a>
-                                    <ul>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Sub-Category</a></li>
-                                <li><a href="#">Sub-Category</a></li>
+                                <?php
+                                $collections = query_all_records_where_condition("collection", ["category_id" => $category["category_id"]]);
+                                while ($collection = mysqli_fetch_assoc($collections)) {
+                                ?>
+                                <li><a href="#"><?= $collection["collection_name"] ?></li>
+                                <?php }; ?>
                             </ul>
                         </li>
-
-                        <li class="navigation-multilevel">
-                            <a href="#">Soccer</a>
-                            <ul>
-                                <li><a href=" #">Sub-Category</a></li>
-                                <li class="navigation-lv2">
-                                    <a href="#">Sub-Category</a>
-                                    <ul>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Sub-Category</a></li>
-                                <li><a href="#">Sub-Category</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="navigation-multilevel">
-                            <a href="#">Soccer</a>
-                            <ul>
-                                <li><a href=" #">Sub-Category</a></li>
-                                <li class="navigation-lv2">
-                                    <a href="#">Sub-Category</a>
-                                    <ul>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Sub-Category</a></li>
-                                <li><a href="#">Sub-Category</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="navigation-multilevel">
-                            <a href="#">Soccer</a>
-                            <ul>
-                                <li><a href=" #">Sub-Category</a></li>
-                                <li class="navigation-lv2">
-                                    <a href="#">Sub-Category</a>
-                                    <ul>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                        <li><a href="#">Sub-Category</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Sub-Category</a></li>
-                                <li><a href="#">Sub-Category</a></li>
-                            </ul>
-                        </li>
+                        <?php }; ?>
                     </ul>
 
                     <form class="header__search-bar search-bar">

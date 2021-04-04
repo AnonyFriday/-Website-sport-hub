@@ -48,7 +48,7 @@
             a {
                 color: black;
                 display: block;
-                line-height: 50px;
+                line-height: 40px;
                 text-indent: 20px;
                 background-color: #f0c300;
             }
@@ -60,32 +60,5 @@
     }
 
     &:hover {
-        background-color: #f0c300;
-
-        a {
-            color: black;
-        }
-
-        > ul {
-            display: block;
-            top: 101%;
-            left: 0;
-            width: 150%;
-
-            .navigation-lv2:hover {
-                a {
-                    background-color: black;
-                    color: #f0c300;
-                }
-
-                position: relative;
-                ul {
-                    display: block;
-                    top: 0;
-                    left: 100%;
-                    width: 150%;
-                }
-            }
-        }
     }
 }

@@ -7,3 +7,11 @@ function url_for(string $script_path)
     }
     return WWW_ROOT . $script_path;
 }
+
+
+function secure_http(string $url)
+{
+    if (isset($url)) {
+        
+    }
+}

@@ -181,7 +181,7 @@ form textarea {
   top: 0;
 }
 .header__content {
-  height: 50px;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -235,39 +235,13 @@ form textarea {
 .navigation-multilevel ul li a {
   color: black;
   display: block;
-  line-height: 50px;
+  line-height: 40px;
   text-indent: 20px;
   background-color: #f0c300;
 }
 .navigation-multilevel ul li:hover {
   background-color: black;
 }
-.navigation-multilevel:hover {
-  background-color: #f0c300;
-}
-.navigation-multilevel:hover a {
-  color: black;
-}
-.navigation-multilevel:hover > ul {
-  display: block;
-  top: 101%;
-  left: 0;
-  width: 150%;
-}
-.navigation-multilevel:hover > ul .navigation-lv2:hover {
-  position: relative;
-}
-.navigation-multilevel:hover > ul .navigation-lv2:hover a {
-  background-color: black;
-  color: #f0c300;
-}
-.navigation-multilevel:hover > ul .navigation-lv2:hover ul {
-  display: block;
-  top: 0;
-  left: 100%;
-  width: 150%;
-}
-
 .container--center {
   width: 80%;
   height: inherit;
