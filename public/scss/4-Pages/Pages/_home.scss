@@ -19,6 +19,4 @@
     box-shadow: 8px 8px 30px -10px black;
 }
 
-.list-products {
-    @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 4, $gap-space: 3%);
-}
+

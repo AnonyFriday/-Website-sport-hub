@@ -3,27 +3,25 @@
 
     &__content {
         position: relative;
-        width: 100%;
-        height: 100%;
+        @include fill-entire-container();
+        @include scale-image-no-overflow-border();
+
         border-radius: 20px;
         box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
-        @include scale-image-no-overflow-border();
         overflow: hidden;
     }
 
     &__thumbnail-cover {
         @include scale-image-no-overflow-border();
         z-index: 1;
-        height: 100%;
-        width: 100%;
+        @include fill-entire-container();
     }
 
     &__img {
         z-index: -1;
         display: block;
         object-fit: cover;
-        height: 100%;
-        width: 100%;
+        @include fill-entire-container();
 
         -webkit-filter: brightness(100%);
         filter: brightness(100%);
@@ -47,6 +45,10 @@
         font-size: 2rem;
         margin-bottom: 1rem;
         color: white;
+
+        p {
+            word-spacing: 2px;
+        }
     }
 
     &__links {

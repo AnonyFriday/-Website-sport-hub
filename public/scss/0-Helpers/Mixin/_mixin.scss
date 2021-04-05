@@ -91,3 +91,12 @@
     border-top: medium double $line;
     color: $content;
 }
+
+//  =========================================
+//  FILL THE ENTIRE DIV
+//  =========================================
+@mixin fill-entire-container() {
+    width: 100%;
+    height: 100%;
+    @content;
+}

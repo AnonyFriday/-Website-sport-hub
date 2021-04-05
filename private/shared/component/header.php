@@ -83,7 +83,7 @@ $categories = query_all_records("category");
                                 $collections = query_all_records_where_condition("collection", ["category_id" => $category["category_id"]]);
                                 while ($collection = mysqli_fetch_assoc($collections)) {
                                 ?>
-                                <li><a href=<?php echo url_for("/inc/collection.php?id=" . $collection["collection_id"]) ?>
+                                <li><a href=<?php echo url_for("/inc/collection.php?collection_id=" . secure_http($collection["collection_id"])) ?>
                                         class=" navigation__item"><?= $collection["collection_name"]; ?></a>
                                 </li>
                                 <?php }; ?>

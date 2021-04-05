@@ -60,111 +60,111 @@ include_once(SHARED_PATH . "/component/header.php") ?>
         </div>
         <div class="collection__content">
             <h2 class="collection__title">Soccer</h2>
-            <ul class="collection__list-products">
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+            <ul class="collection__list__thumbnail-thumbnail-product">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>
                 </li>
-                <li class="product">
-                    <div class="product__image"><img src="/asset/TestingImages/testing-product.png" alt="Product Image">
+                <li class="thumbnail-product">
+                    <div class="thumbnail-product__image"><img src="/asset/TestingImages/testing-thumbnail-product.png" alt="thumbnail-product Image">
                     </div>
-                    <div class="product__info">
-                        <div class="product__title">
+                    <div class="thumbnail-product__info">
+                        <div class="thumbnail-product__title">
                             <h3>Shin Guard</h3>
                         </div>
-                        <div class="product__price">
+                        <div class="thumbnail-product__price">
                             <p>23.33$</p>
                         </div>
                     </div>

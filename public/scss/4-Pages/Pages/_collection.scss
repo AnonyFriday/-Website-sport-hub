@@ -18,7 +18,7 @@
         float: right;
         min-height: 100vh;
 
-        .collection__list-products {
+        .collection__list__thumbnail-thumbnail-product {
             @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 3, $gap-space: 0%) {
                 justify-content: flex-start;
             }
