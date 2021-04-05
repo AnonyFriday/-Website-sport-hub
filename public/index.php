@@ -1,11 +1,17 @@
 <!-- HEADER -->
 <?php
 $page_title = "Sporthub - Sport Mall";
-
 ?>
+
 <?php
 require_once("../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php")
+?>
+
+<?php
+// | Get list of category from database
+$categories = query_all_records("category");
+
 ?>
 
 <!-- MAIN -->
@@ -13,22 +19,25 @@ include_once(SHARED_PATH . "/component/header.php")
     <div class="container--center">
         <section class="container__categories">
             <ul class="categories">
+                <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
                 <li class="category">
                     <div class="category__content">
                         <div class="category__thumbnail-cover">
-                            <img class="category__img"
-                                src="https://res.cloudinary.com/dyio102qf/image/upload/v1596813113/vfzvduptpmfbepzxambx.jpg"
-                                alt="Category thumbnail">
+                            <img class="category__img" src=<?= $category["image_url"] ?> alt=" Category thumbnail">
                         </div>
                         <div class="category__info">
                             <div class="category__desc">
-                                <p>Basketball</p>
+                                <p> <?= $category["category_name"] ?></p>
                             </div>
                             <div class="category__links"><a href=<?php echo url_for("/inc/collection.php") ?>>Buy
                                     Now</a></div>
                         </div>
                     </div>
                 </li>
+
+                <?php };
+                mysqli_free_result($categories);
+                ?>
             </ul>
         </section>
 

@@ -12,6 +12,11 @@ function url_for(string $script_path)
 function secure_http(string $url)
 {
     if (isset($url)) {
-        
     }
+}
+
+
+function is_request($res)
+{
+    return $_SERVER["REQUEST_METHOD"] == strtoupper($res);
 }

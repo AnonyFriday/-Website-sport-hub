@@ -87,6 +87,7 @@ $categories = query_all_records("category");
                                         class=" navigation__item"><?= $collection["collection_name"]; ?></a>
                                 </li>
                                 <?php }; ?>
+                                <?php mysqli_free_result($collections); ?>
                             </ul>
                         </li>
                         <?php }; ?>
@@ -99,7 +100,10 @@ $categories = query_all_records("category");
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
+
+                    <?php mysqli_free_result($categories); ?>
                 </section>
+
             </div>
         </header>
 
