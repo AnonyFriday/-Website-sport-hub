@@ -1,0 +1,74 @@
+.footer {
+    color: #f0c300;
+    background-color: black;
+    width: 100%;
+
+    &__logo {
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    &-content {
+        @include flex-container($dir: row, $wrap: nowrap);
+        justify-content: space-between;
+        padding: 2rem;
+    }
+}
+
+.footer-content {
+    &__right,
+    &__left {
+        @include flex-container($dir: column, $wrap: wrap);
+    }
+
+    &__right {
+        flex: 0 0 35%;
+        align-items: flex-end;
+
+        .icon-wrapper {
+            @include flex-container($dir: column);
+            &__item {
+                margin-bottom: 20px;
+                a {
+                    order: 1;
+                    margin-left: 1rem;
+                }
+            }
+            align-items: flex-end;
+        }
+    }
+
+    &__left {
+        flex: 0 0 35%;
+        align-items: flex-start;
+
+        .icon-wrapper {
+            @include flex-container($dir: row);
+            width: 12rem;
+            justify-content: space-between;
+            &__item {
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 2em;
+        margin-bottom: 2vw;
+        white-space: nowrap;
+    }
+
+    //! Non-responsive design
+    @include compatible-with-device("tablet") {
+        font-size: 10px;
+        padding-bottom: 1vh;
+    }
+
+    @include compatible-with-device("mobile", "m") {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,34 @@
+.modal-cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-modal-background-transparent;
+    z-index: 4;
+    @include flex-container() {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.modal {
+    max-width: 80%;
+    padding: 20px;
+
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative;
+
+    &__textfield {
+        line-height: 3em;
+        font-size: 1em;
+        text-indent: 1em;
+        margin: 1em 0 1em 0;
+    }
+
+    hr {
+        margin: 1em 0;
+    }
+}

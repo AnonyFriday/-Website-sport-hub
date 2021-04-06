@@ -1,0 +1,125 @@
+//  =================================
+//  MEDIA QUERY
+//  =================================
+
+// Media Query
+// $breakpoint is a map from partial scss _variables.scss
+// Currently support 2 type of width ( max-width: 425px, min-width: 426px)
+@mixin compatible-with-device($device-type: "laptop", $size: null) {
+    $breakpoint-value: map-get($breakpoint, $device-type);
+
+    @if (type-of($breakpoint-value) == "map") {
+        // if the device has size
+        $breakpoint-value: map-get($breakpoint-value, $size);
+    }
+
+    $default-mobile-large-width-value: map-get(
+        map-get($breakpoint, "mobile"),
+        "l"
+    ); // the average medium of all responsive devices
+
+    @if $breakpoint-value == null {
+        @warn "The website cannot fully compatible with the device's type `#{$device-type} with the size `#{$size}`"; // check if developer mistyped
+    } @else if $breakpoint-value <= $default-mobile-large-width-value {
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $default-mobile-large-width-value) and (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+}
+
+//  =================================
+//  CENTRE BLOCK
+//  =================================
+@mixin centred-block {
+    margin: 0 auto;
+}
+
+//  =================================
+//  DISPLAY FLEX FOR THE CONTAINER
+//  =================================
+@mixin flex-container($dir: null, $wrap: null) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    @content;
+}
+
+//  =================================
+//  DISPLAY FLEX WITH RESPONSIVE ON EACH ITEM
+//  =================================
+//! Just only available for flex-box's row
+@mixin responsive-flex-row-container($dir: null, $wrap: wrap, $items-per-line: 1, $gap-space: 0%) {
+    @include flex-container($dir, $wrap);
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    $total-gap-horizontal: calc(#{$gap-space} * (#{$items-per-line} - 1));
+    $total-gap-vertial: $gap-space;
+
+    $maximum-item-width: calc((100% - #{$total-gap-horizontal}) / #{$items-per-line});
+
+    > * {
+        margin: 0 0 $total-gap-vertial 0;
+        flex: 0 0 $maximum-item-width;
+    }
+
+    @content;
+}
+
+//  =========================================
+//  FIX CORNER BORDER + OVERFLOW + TRANSITION
+//  =========================================
+//  Set negative z-index for image, positive z-index for
+//  parent's elements
+@mixin scale-image-no-overflow-border() {
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+//  =========================================
+//  CHANGING COLOR FOR HORIZONTAL LINE BREAK
+//  =========================================
+@mixin line-break-color($content: black, $line: black) {
+    border-top: medium double $line;
+    color: $content;
+}
+
+//  =========================================
+//  FILL THE ENTIRE DIV
+//  =========================================
+@mixin fill-entire-container() {
+    width: 100%;
+    height: 100%;
+}
+
+//  =========================================
+//  CLEAR FIX FOR FLOATTING ITEMS
+//  =========================================
+@mixin cleafix() {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+//  ============================================
+//  UNIQUE CONTAINER WHITE FOR SPECIFIC ELEMENTS
+//  ============================================
+@mixin container__white-paddded-box-shadow {
+    border: none;
+    outline: none;
+    background-color: white;
+    margin: 3rem 0;
+    border-radius: 20px;
+    box-shadow: 8px 8px 30px -10px black;
+    padding: 1em;
+    @content;
+}

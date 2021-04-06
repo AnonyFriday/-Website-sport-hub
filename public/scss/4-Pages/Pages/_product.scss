@@ -1,0 +1,81 @@
+.product {
+    @include container__white-paddded-box-shadow {
+        font-size: 1em;
+    }
+
+    &__image {
+        float: left;
+        width: 50%;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            @include fill-entire-container();
+        }
+    }
+
+    &__info {
+        float: right;
+        width: 45%;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+
+    &__price {
+        margin-bottom: 20px;
+    }
+
+    @include cleafix();
+    @include compatible-with-device("tablet") {
+        font-size: 1rem;
+    }
+}
+
+.info-container {
+    margin-bottom: 2em;
+    &__item {
+        font-size: 0.8em;
+        margin-bottom: 10px;
+
+        * {
+            margin: 0.5em 0 0.5em 0;
+        }
+    }
+}
+
+.bottom-controls {
+    &__quantity-select {
+        display: inline-block;
+        font-size: 3em;
+        width: 30%;
+        max-width: 4em;
+        min-width: 2em;
+        margin-right: 0.5em;
+    }
+
+    &__addToCart-button {
+        display: block;
+        text-align: center;
+        margin: 2em 0 2em 0;
+
+        a {
+            text-transform: uppercase;
+            font-weight: bolder;
+            cursor: pointer;
+            color: black;
+            display: block;
+            height: 3em;
+            width: 100%;
+            line-height: 3em;
+            background-color: #eab92d;
+            border-radius: 2px;
+            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+        }
+    }
+}

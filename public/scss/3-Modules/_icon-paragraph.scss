@@ -1,0 +1,30 @@
+//  =================================
+//  DISPLAY FLEX FOR THE CONTAINER
+//  =================================
+
+.icon-pagragraph {
+    @include flex-container();
+
+    a {
+        display: inline-block;
+
+        width: 2rem;
+        height: 2rem;
+        background-color: #f0c300;
+        text-align: center;
+        line-height: 2rem;
+        border-radius: 10px;
+    }
+
+    i {
+        font-size: larger;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 800;
+
+        @include flex-container($dir: column);
+        justify-content: center;
+    }
+}

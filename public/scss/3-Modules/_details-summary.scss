@@ -1,0 +1,39 @@
+.details {
+    &__item {
+        background-color: rgba(0, 0, 0, 0.01);
+        margin: 10px auto;
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__summary {
+        padding: $padding-details;
+        user-select: none;
+        text-align: start;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include compatible-with-device("mobile", "l") {
+            font-size: 2rem;
+        }
+    }
+
+    &__content {
+        text-align: start;
+        padding: $padding-details;
+        border-top: 1px solid rgba(74, 49, 49, 0.3);
+        cursor: default;
+        font-weight: 300px;
+        line-height: 1.5;
+    }
+}

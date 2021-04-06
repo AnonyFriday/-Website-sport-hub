@@ -1,0 +1,14 @@
+.list_thumbnail-product {
+    @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 4, $gap-space: 3%);
+}
+
+.thumbnail-product {
+    flex-basis: 25%;
+    padding: 20px;
+    box-shadow: 5px 5px 10 12 black;
+    text-align: center;
+}
+
+.thumbnail-product__image img {
+    @include fill-entire-container();
+}
