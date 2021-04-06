@@ -42,9 +42,22 @@
     }
 }
 
+//  =================================
+//  SUBMIT APPLIED FOR MODAL FORM
+//  =================================
 .btn-control {
     background-color: $color-bg;
     filter: brightness(80%);
     text-transform: uppercase;
     text-align: center;
+}
+
+.btn__modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: translate(-50%, 0);
+    color: black;
 }

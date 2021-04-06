@@ -7,7 +7,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
 <main>
     <div class="modal-cover">
         <div class="form modal">
-            <span class="modal__close-button">x</span>
+            <span class="btn__modal-close">x</span>
             <h3 class="form__title modal__title ">Sign in with us</h3>
             <form class="form__content">
                 <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off"
@@ -15,8 +15,8 @@ include_once(SHARED_PATH . "/component/header.php") ?>
                 <input class="modal__textfield" type="password" name="password" placeholder="Password"
                     autocomplete="off" spellcheck="false">
                 <div class="modal__confirm-control">
-                    <button class="btn btn-control" type="submit" value="Sign In"></button>
-                    <button class="btn btn-control" type="submit" value="Register"></button>
+                    <input class="btn btn-control" type="submit" value="Sign In"></input>
+                    <input class="btn btn-control" type="submit" value="Register"></input>
                 </div>
 
                 <hr class="line--border-black-content-black">

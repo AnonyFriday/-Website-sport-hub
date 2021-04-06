@@ -15,6 +15,11 @@ body {
     background-color: $color-transparent-bg;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 header {
     z-index: 3;
     max-width: 100%;

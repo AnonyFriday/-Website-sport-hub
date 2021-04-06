@@ -41,6 +41,11 @@ body {
   background-color: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
 }
 
+html,
+body {
+  height: 100%;
+}
+
 header {
   z-index: 3;
   max-width: 100%;
@@ -100,15 +105,6 @@ form textarea {
 }
 .modal hr {
   margin: 1em 0;
-}
-.modal::before {
-  content: "x";
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: black;
 }
 
 .header {
@@ -354,6 +350,16 @@ form textarea {
   filter: brightness(80%);
   text-transform: uppercase;
   text-align: center;
+}
+
+.btn__modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  transform: translate(-50%, 0);
+  color: black;
 }
 
 .logo {

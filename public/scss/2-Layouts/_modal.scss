@@ -31,14 +31,4 @@
     hr {
         margin: 1em 0;
     }
-
-    &::before {
-        content: "x";
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 2rem;
-        font-weight: bold;
-        color: black;
-    }
 }
