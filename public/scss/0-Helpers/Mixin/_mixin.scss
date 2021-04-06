@@ -75,7 +75,6 @@
 //  =========================================
 //  Set negative z-index for image, positive z-index for
 //  parent's elements
-
 @mixin scale-image-no-overflow-border() {
     overflow: hidden;
     -webkit-backface-visibility: hidden;
@@ -98,5 +97,29 @@
 @mixin fill-entire-container() {
     width: 100%;
     height: 100%;
+}
+
+//  =========================================
+//  CLEAR FIX FOR FLOATTING ITEMS
+//  =========================================
+@mixin cleafix() {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+//  ============================================
+//  UNIQUE CONTAINER WHITE FOR SPECIFIC ELEMENTS
+//  ============================================
+@mixin container__white-paddded-box-shadow {
+    border: none;
+    outline: none;
+    background-color: white;
+    margin: 3rem 0;
+    border-radius: 20px;
+    box-shadow: 8px 8px 30px -10px black;
+    padding: 1em;
     @content;
 }

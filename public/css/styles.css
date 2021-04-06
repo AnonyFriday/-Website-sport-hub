@@ -627,7 +627,7 @@ form textarea {
 
 .section-header {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 0em;
   text-transform: uppercase;
   font-size: 2em;
   padding: 5px 10px;
@@ -636,6 +636,12 @@ form textarea {
   border-radius: 10px;
   margin-top: 10px;
   width: fit-content;
+  max-width: 100%;
+}
+@media (min-width: 425px) and (max-width: 1024px) {
+  .section-header {
+    font-size: 1em;
+  }
 }
 
 hr {
@@ -777,6 +783,7 @@ hr::after {
   margin: 3rem 0;
   border-radius: 20px;
   box-shadow: 8px 8px 30px -10px black;
+  padding: 1em;
 }
 
 .collection {
@@ -824,6 +831,89 @@ hr::after {
 .details__item {
   box-shadow: none;
   background-color: transparent;
+}
+
+.product {
+  border: none;
+  outline: none;
+  background-color: white;
+  margin: 3rem 0;
+  border-radius: 20px;
+  box-shadow: 8px 8px 30px -10px black;
+  padding: 1em;
+  font-size: 1em;
+}
+.product__image {
+  float: left;
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.product__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.product__info {
+  float: right;
+  width: 45%;
+}
+.product__title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+.product__price {
+  margin-bottom: 20px;
+}
+.product::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  .product {
+    font-size: 1rem;
+  }
+}
+
+.info-container {
+  margin-bottom: 2em;
+}
+.info-container__item {
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+.info-container__item * {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.bottom-controls__quantity-select {
+  display: inline-block;
+  font-size: 3em;
+  width: 30%;
+  max-width: 4em;
+  min-width: 2em;
+  margin-right: 0.5em;
+}
+.bottom-controls__addToCart-button {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em 0;
+}
+.bottom-controls__addToCart-button a {
+  text-transform: uppercase;
+  font-weight: bolder;
+  cursor: pointer;
+  color: black;
+  display: block;
+  height: 3em;
+  width: 100%;
+  line-height: 3em;
+  background-color: #eab92d;
+  border-radius: 2px;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
 
 .contactus {
