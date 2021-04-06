@@ -283,6 +283,8 @@ form textarea {
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .btn > * {
   vertical-align: middle;
@@ -307,6 +309,7 @@ form textarea {
 }
 .btn-text-facebook p {
   display: inline-block;
+  text-transform: none;
 }
 
 .btn-text-twitter {
@@ -325,6 +328,7 @@ form textarea {
 }
 .btn-text-twitter p {
   display: inline-block;
+  text-transform: none;
 }
 
 .btn-text-google {
@@ -343,13 +347,17 @@ form textarea {
 }
 .btn-text-google p {
   display: inline-block;
+  text-transform: none;
 }
 
 .btn-control {
   background-color: #ebb734;
-  filter: brightness(80%);
   text-transform: uppercase;
   text-align: center;
+}
+
+.btn-control[value] {
+  font-weight: 700;
 }
 
 .btn__modal-close {

@@ -36,7 +36,7 @@ $categories = query_all_records("category");
         <link rel="stylesheet" href=<?php echo url_for("/css/styles.css") ?>>
 
         <!-- Java Script-->
-        <!-- <script src=<?= url_for("/js/index.js") ?>></script> -->
+        <script src=<?= url_for("/js/index.js") ?>></script>
 
         <title>
             <?= $page_title ?>
@@ -88,7 +88,7 @@ $categories = query_all_records("category");
                                 while ($collection = mysqli_fetch_assoc($collections)) {
                                 ?>
                                 <li><a href=<?php echo url_for("/inc/collection.php?collection_id=" . secure_http($collection["collection_id"])) ?>
-                                        class=" navigation__item"><?= $collection["collection_name"]; ?></a>
+                                        class="navigation__item"><?= $collection["collection_name"]; ?></a>
                                 </li>
                                 <?php }; ?>
                                 <?php mysqli_free_result($collections); ?>
