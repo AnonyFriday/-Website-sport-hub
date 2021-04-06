@@ -11,7 +11,6 @@ if (is_request("POST")) {
 }
 
 ?>
-
 <main>
     <div class="modal-cover">
         <div class="modal form">
