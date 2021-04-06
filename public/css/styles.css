@@ -15,7 +15,7 @@ div {
 
 a:visited,
 a:link {
-  color: black;
+  color: initial;
 }
 
 ul {
@@ -28,6 +28,7 @@ button {
 
 html {
   scroll-behavior: smooth;
+  font-size: 1rem;
 }
 @media (max-width: 425px) {
   html {
@@ -61,7 +62,6 @@ form {
 }
 form input:not([type=checkbox]) {
   width: 100%;
-  height: 100%;
 }
 form:focus {
   border: 1px solid black;
@@ -86,91 +86,29 @@ form textarea {
 
 .modal {
   max-width: 80%;
-  max-height: 80%;
   padding: 20px;
   background-color: white;
   border: 1px solid black;
   border-radius: 20px;
   position: relative;
 }
-.modal__social-media {
-  display: flex;
-  flex-direction: column;
-}
-.modal__social-media .btn-text-facebook {
-  background-color: #5770a6;
-  color: white;
-}
-.modal__social-media .btn-text-twitter {
-  background-color: #6db7ef;
-  color: white;
-}
-.modal__social-media .btn-text-google {
-  background-color: #e06555;
-  color: white;
+.modal__textfield {
+  line-height: 3em;
+  font-size: 1em;
+  text-indent: 1em;
+  margin: 1em 0 1em 0;
 }
 .modal hr {
   margin: 1em 0;
 }
-.modal__close-button {
+.modal::before {
+  content: "x";
   position: absolute;
   top: 0;
   right: 0;
   font-size: 2rem;
   font-weight: bold;
   color: black;
-}
-
-.modal__social-media .btn-text-facebook {
-  background-color: #5770a6;
-  color: white;
-}
-.modal__social-media .btn-text-facebook i {
-  display: inline-block;
-  font-size: x-large;
-  width: 30px;
-}
-@media (max-width: 425px) {
-  .modal__social-media .btn-text-facebook i {
-    font-size: small;
-  }
-}
-.modal__social-media .btn-text-facebook p {
-  display: inline-block;
-}
-.modal__social-media .btn-text-twitter {
-  background-color: #6db7ef;
-  color: white;
-}
-.modal__social-media .btn-text-twitter i {
-  display: inline-block;
-  font-size: x-large;
-  width: 30px;
-}
-@media (max-width: 425px) {
-  .modal__social-media .btn-text-twitter i {
-    font-size: small;
-  }
-}
-.modal__social-media .btn-text-twitter p {
-  display: inline-block;
-}
-.modal__social-media .btn-text-google {
-  background-color: #e06555;
-  color: white;
-}
-.modal__social-media .btn-text-google i {
-  display: inline-block;
-  font-size: x-large;
-  width: 30px;
-}
-@media (max-width: 425px) {
-  .modal__social-media .btn-text-google i {
-    font-size: small;
-  }
-}
-.modal__social-media .btn-text-google p {
-  display: inline-block;
 }
 
 .header {
@@ -339,6 +277,83 @@ form textarea {
   .footer-content {
     font-size: 1rem;
   }
+}
+
+.btn {
+  text-align: start;
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn > * {
+  vertical-align: middle;
+}
+.btn:visited, .btn:link {
+  color: white;
+}
+
+.btn-text-facebook {
+  background-color: #5770a6;
+  display: block;
+}
+.btn-text-facebook i {
+  display: inline-block;
+  font-size: x-large;
+  width: 3rem;
+}
+@media (max-width: 425px) {
+  .btn-text-facebook i {
+    font-size: small;
+  }
+}
+.btn-text-facebook p {
+  display: inline-block;
+}
+
+.btn-text-twitter {
+  background-color: #6db7ef;
+  display: block;
+}
+.btn-text-twitter i {
+  display: inline-block;
+  font-size: x-large;
+  width: 3rem;
+}
+@media (max-width: 425px) {
+  .btn-text-twitter i {
+    font-size: small;
+  }
+}
+.btn-text-twitter p {
+  display: inline-block;
+}
+
+.btn-text-google {
+  background-color: #e06555;
+  display: block;
+}
+.btn-text-google i {
+  display: inline-block;
+  font-size: x-large;
+  width: 3rem;
+}
+@media (max-width: 425px) {
+  .btn-text-google i {
+    font-size: small;
+  }
+}
+.btn-text-google p {
+  display: inline-block;
+}
+
+.btn-control {
+  background-color: #ebb734;
+  filter: brightness(80%);
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .logo {

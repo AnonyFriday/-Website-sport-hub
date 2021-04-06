@@ -1,0 +1,50 @@
+.btn {
+    text-align: start;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    > * {
+        vertical-align: middle;
+    }
+
+    &:visited,
+    &:link {
+        color: white;
+    }
+}
+
+//  =================================
+//  LINKS FOR MODAL FORM
+//  =================================
+
+@each $name, $bg-color in $social-media {
+    .btn-text-#{$name} {
+        background-color: #{$bg-color};
+        display: block;
+
+        i {
+            display: inline-block;
+            font-size: x-large;
+            width: 3rem;
+
+            @include compatible-with-device("mobile", "l") {
+                font-size: small;
+            }
+        }
+
+        p {
+            display: inline-block;
+        }
+    }
+}
+
+.btn-control {
+    background-color: $color-bg;
+    filter: brightness(80%);
+    text-transform: uppercase;
+    text-align: center;
+}

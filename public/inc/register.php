@@ -1,15 +1,21 @@
+<?php
+require_once("../../private/initializer.php");
+include_once(SHARED_PATH . "/component/header.php") ?>
+
 <div class="modal-cover">
-    <div class="form modal">
-        <span class="modal__close-button">x</span>
-        <h3 class=" form__title modal__title ">Sign in with us</h3>
-        <form class=" form__content">
-            <input class="modal__email" type="email" name="email" placeholder="Email" autocomplete="off"
+    <div class="modal">
+        <h3 class="modal__title">Sign in with us</h3>
+        <form class="modal__form">
+
+            <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off"
                 spellcheck="false">
-            <input class="modal__password" type="password" name="password" placeholder="Password" autocomplete="off"
+            <input class="modal__textfield" type="password" name="password" placeholder="Password" autocomplete="off"
+                spellcheck="false">
+            <input class="modal__textfield" type="retype-password" placeholder="Confirm Password" autocomplete="off"
                 spellcheck="false">
             <div class="modal__confirm-control">
-                <input type="submit" value="Sign In">
-                <input type="button" value="Register">
+                <input class="btn btn-control" type="submit" value="Register">
+                <input class="btn btn-control" type="button" value="Already have account">
             </div>
 
             <hr class="line--border-black-content-black">
@@ -39,3 +45,6 @@
         </form>
     </div>
 </div>
+
+<!-- FOOTER -->
+<?php include_once(SHARED_PATH . "/component/footer.php") ?>

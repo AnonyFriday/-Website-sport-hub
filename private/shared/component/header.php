@@ -35,6 +35,9 @@ $categories = query_all_records("category");
         <!-- CSS -->
         <link rel="stylesheet" href=<?php echo url_for("/css/styles.css") ?>>
 
+        <!-- Java Script-->
+        <!-- <script src=<?= url_for("/js/index.js") ?>></script> -->
+
         <title>
             <?= $page_title ?>
         </title>
@@ -55,7 +58,8 @@ $categories = query_all_records("category");
                         <li><a class="navigation__item" href=<?php echo url_for("/inc/contactus.php") ?>><i
                                     class="fas fa-comment"></i><span><?= $headerTitles["navigation_up"]["contact_us"]; ?></span></a>
                         </li>
-                        <li><a class="navigation__item" href="#"><i class="fas fa-user-alt"></i><span>
+                        <li><a class="navigation__item" href=<?php echo url_for("/inc/signin.php") ?>><i
+                                    class="fas fa-user-alt"></i><span>
                                     <?= $headerTitles["navigation_up"]["login"]; ?></span></a></li>
                         <li><a class="navigation__item" href="#"><i class="fas fa-shopping-cart"></i><span>
                                     <?= $headerTitles["navigation_up"]["cart"]; ?></span></a></li>
