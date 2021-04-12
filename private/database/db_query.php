@@ -12,6 +12,7 @@ function query_all_records(string $table)
     return $result_set;
 }
 
+
 // ===============================================/
 // Query all records where condition
 // ! Currently available for 1 condition
@@ -23,6 +24,23 @@ function query_all_records_where_condition(string $table, array $condition)
     foreach ($condition as $key => $value) {
         $query .= "$key='" . $value . "'";
     }
+
+    //! Security warning: SQL Injection
+    $result_set = mysqli_query($dbConnection, $query);
+    db_confirm_result_set($result_set, $query);
+    return $result_set;
+}
+
+
+// ===============================================/
+// Query all records where condition
+// ! Currently available for 1 condition
+// ===============================================/
+function query_random_records(string $table, int $limit)
+{
+    global $dbConnection;
+    $query  = "SELECT * FROM $table ORDER BY RAND() ";
+    $query .= "LIMIT $limit";
 
     //! Security warning: SQL Injection
     $result_set = mysqli_query($dbConnection, $query);

@@ -4,6 +4,7 @@
 require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php") ?>
 
+
 <main>
     <div class="container--center">
         <section class="product">
@@ -71,6 +72,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
         </section>
     </div>
 </main>
+
 
 <!-- FOOTER -->
 <?php include_once(SHARED_PATH . "/component/footer.php") ?>

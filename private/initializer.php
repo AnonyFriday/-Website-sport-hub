@@ -32,6 +32,12 @@ define("WWW_ROOT", $doc_root);
 //  Include other partial files
 //  ===============================================/ 
 require(SHARED_PATH . "/utility/functions.php");
+require(SHARED_PATH . "/utility/validations.php");
+require(SHARED_PATH . "/utility/constants.php");
 require(DATABASE_PATH . "/db_connection.php");
 require(DATABASE_PATH . "/db_query.php");
 $dbConnection = db_connect();
+
+//  ===============================================/ 
+//  Define Constants
+//  ===============================================/ 

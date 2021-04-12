@@ -22,6 +22,7 @@ function is_request(string $res)
     return $_SERVER["REQUEST_METHOD"] == strtoupper($res);
 }
 
+
 function redirect_to(string $destination)
 {
     header("Location: " . url_for($destination));
