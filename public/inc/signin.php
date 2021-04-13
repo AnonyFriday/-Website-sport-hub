@@ -11,7 +11,6 @@ if (is_request("POST")) {
         redirect_to("inc/register.php");
     }
 }
-
 ?>
 
 

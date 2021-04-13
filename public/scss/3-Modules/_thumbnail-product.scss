@@ -1,4 +1,4 @@
-.list_thumbnail-product {
+.list__thumbnail-product {
     margin-top: 1em;
     @include responsive-flex-row-container($dir: row, $wrap: wrap, $items-per-line: 4, $gap-space: 0%);
 }
@@ -36,6 +36,6 @@
     font-size: 1.5em;
     border-radius: 10px;
     background-color: rgba($color: #000000, $alpha: 0.9);
-    color: #daaa1e;
+    color: #f0c303;
     padding: 0.5em;
 }

@@ -551,7 +551,7 @@ button {
   margin: 5px 0;
   width: 100%;
   border-radius: 8px;
-  box-shadow: inset 0 0 0.25rem #ddd;
+  box-shadow: inset 0 0 0.25rem #cfc3c3;
   padding: 1em;
 }
 .form__content textarea:focus,
@@ -653,7 +653,7 @@ button {
   opacity: 1;
 }
 
-.list_thumbnail-product {
+.list__thumbnail-product {
   margin-top: 1em;
   display: flex;
   flex-direction: row;
@@ -662,7 +662,7 @@ button {
   width: 100%;
   height: auto;
 }
-.list_thumbnail-product > * {
+.list__thumbnail-product > * {
   margin: 0 0 0% 0;
   flex: 0 0 calc((100% - calc(0% * (4 - 1))) / 4);
 }
@@ -701,7 +701,7 @@ button {
   font-size: 1.5em;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.9);
-  color: #daaa1e;
+  color: #f0c303;
   padding: 0.5em;
 }
 

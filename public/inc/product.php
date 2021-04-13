@@ -2,39 +2,53 @@
 
 <?php
 require_once("../../private/initializer.php");
-include_once(SHARED_PATH . "/component/header.php") ?>
+include_once(SHARED_PATH . "/component/header.php");
 
 
+$topPicks = query_random_records("product", 4);
+if (is_request("GET")) {
+    $product_id = $_GET["id"];
+    $products    = query_all_records_where_condition("product", [PRODUCT_ID => $product_id]);
+} else {
+    $product  = [];
+}
+
+?>
 <main>
     <div class="container--center">
         <section class="product">
+            <?php while ($product = mysqli_fetch_assoc($products)) { ?>
             <div class="product__image">
-                <img src="https://res.cloudinary.com/dyio102qf/image/upload/v1617528004/category/category_baseball_xkwktp.jpg"
-                    alt="Product Image">
+                <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="Product Image">
             </div>
             <div class="product__info">
                 <div class="bottom-info">
-                    <h2 class="product__title section-header">Net Ball</h2>
-                    <p class="product__price">$ 3000.0</p>
+                    <h2 class="product__title section-header"><?= $product[PRODUCT_NAME] ?></h2>
+                    <p class="product__price"><?= $product[PRODUCT_PRICE] ?> $</p>
 
+                    <!-- ERROR on size -->
                     <div class="info-container">
                         <div class="info-container__item">
-                            <h3 class="section-header">Size</h3>
-                            <p>Infor</p>
+                            <h3 class="section-header">size</h3>
+                            <p> <?= $product[SIZE_ID] ?></p>
                         </div>
                         <div class="info-container__item">
-                            <h3 class="section-header">Product Information</h3>
-                            <p>Infor</p>
+                            <h3 class="section-header">information</h3>
+                            <p> <?= $product[PRODUCT_INFORMATION] ?></p>
                         </div>
                     </div>
+                    <?php };
+                mysqli_free_result($products);
+                    ?>
                 </div>
+
                 <div class="bottom-controls">
 
                     <select class="bottom-controls__quantity-select" name="quantity">
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                     </select>
 
                     <div class="bottom-controls__addToCart-button">
@@ -52,22 +66,33 @@ include_once(SHARED_PATH . "/component/header.php") ?>
                 </div>
         </section>
 
-        <section class=" container__top-pick">
+        <section class="container__top-pick">
             <h2 class="section-header top-pick__header">top picks</h2>
-            <ul class="list_thumbnail-product">
+            <ul class="list__thumbnail-product">
+                <?php while ($topPick = mysqli_fetch_assoc($topPicks)) { ?>
                 <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img
-                            src="https://cdn.shopify.com/s/files/1/0066/6563/3903/products/pic_382e8468-e23d-4f96-a313-943668371165_812x.progressive.jpg?v=1613425103"
-                            alt="thumbnail-product Image"></div>
+                    <div class="thumbnail-product__image overlay--relative">
+                        <img src=<?= $topPick[PRODUCT_IMAGE_URL] ?> alt="thumbnail-product Image" />
+                        <div class="overlay">
+                            <div class="overlay__link">
+                                <a href=<?= url_for("/inc/product.php?id=" . $topPick[PRODUCT_ID]) ?>>Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="thumbnail-product__info">
                         <div class="thumbnail-product__title">
-                            <h3>Shin Guard</h3>
+                            <h3><?= $topPick[PRODUCT_NAME]; ?></h3>
                         </div>
                         <div class="thumbnail-product__price">
-                            <p>23.33$</p>
+                            <p><?= $topPick[PRODUCT_PRICE]; ?> $ </p>
                         </div>
                     </div>
                 </li>
+
+                <?php };
+                mysqli_free_result($topPicks);
+                ?>
+
             </ul>
         </section>
     </div>

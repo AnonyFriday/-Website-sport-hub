@@ -27,14 +27,15 @@ $topFeatures   = query_random_records("product", 4);
                 <li class="category">
                     <div class="category__content">
                         <div class="category__thumbnail-cover">
-                            <img class="category__img" src=<?= $category["image_url"] ?> alt=" Category thumbnail">
+                            <img class="category__img" src=<?= $category[CATEGORY_IMAGE_URL] ?>
+                                alt=" Category thumbnail">
                         </div>
                         <div class="category__info">
                             <div class="category__desc">
-                                <p> <?= $category["category_name"] ?></p>
+                                <p> <?= $category[CATEGORY_NAME] ?></p>
                             </div>
                             <div class="category__links"><a
-                                    href=<?php echo url_for("/inc/collection.php?category_id=" . $category["category_id"]) ?>>Buy
+                                    href=<?php echo url_for("/inc/collection.php?category_id=" . $category[CATEGORY_ID]) ?>>Buy
                                     Now</a></div>
                         </div>
                     </div>
@@ -48,7 +49,7 @@ $topFeatures   = query_random_records("product", 4);
 
         <section class="container__top-pick">
             <h2 class="section-header top-pick__header">top picks</h2>
-            <ul class="list_thumbnail-product">
+            <ul class="list__thumbnail-product">
                 <!-- Loop random product inside the product table-->
 
                 <?php while ($product = mysqli_fetch_assoc($hotPicks)) { ?>
@@ -57,7 +58,7 @@ $topFeatures   = query_random_records("product", 4);
                         <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="thumbnail-product Image" />
                         <div class="overlay">
                             <div class="overlay__link">
-                                <a href=<?= url_for("/") ?>>Buy Now</a>
+                                <a href=<?= url_for("/inc/product.php?id=" . $product[PRODUCT_ID]) ?>>Buy Now</a>
                             </div>
                         </div>
                     </div>
