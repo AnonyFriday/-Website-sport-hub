@@ -23,6 +23,7 @@ $topFeatures   = query_random_records("product", 4);
         <section class="container__categories">
             <ul class="categories">
                 <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
+
                 <li class="category">
                     <div class="category__content">
                         <div class="category__thumbnail-cover">
@@ -38,6 +39,7 @@ $topFeatures   = query_random_records("product", 4);
                         </div>
                     </div>
                 </li>
+
                 <?php };
                 mysqli_free_result($categories);
                 ?>
@@ -51,8 +53,13 @@ $topFeatures   = query_random_records("product", 4);
 
                 <?php while ($product = mysqli_fetch_assoc($hotPicks)) { ?>
                 <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img src=<?= $product[PRODUCT_IMAGE_URL] ?>
-                            alt="thumbnail-product Image">
+                    <div class="thumbnail-product__image overlay--relative">
+                        <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="thumbnail-product Image" />
+                        <div class="overlay">
+                            <div class="overlay__link">
+                                <a href=<?= url_for("/") ?>>Buy Now</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="thumbnail-product__info">
                         <div class="thumbnail-product__title">
@@ -75,13 +82,17 @@ $topFeatures   = query_random_records("product", 4);
             <ul class="list_thumbnail-product">
                 <?php while ($product = mysqli_fetch_assoc($topFeatures)) { ?>
                 <li class="thumbnail-product">
-                    <div class="thumbnail-product__image">
+                    <div class="thumbnail-product__image overlay--relative">
                         <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="Images">
+                        <div class="overlay">
+                            <div class="overlay__link">
+                                <a href="#">Buy Now</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="thumbnail-product__info">
                         <div class="thumbnail-product__title">
-                            <h3>
-                                <?= $product[PRODUCT_NAME] ?> </h3>
+                            <h3><?= $product[PRODUCT_NAME] ?></h3>
                         </div>
                         <div class="thumbnail-product__price">
                             <p><?= $product[PRODUCT_PRICE] ?> $</p>

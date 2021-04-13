@@ -35,20 +35,3 @@ main {
 button {
     cursor: pointer;
 }
-
-form {
-    text-align: center;
-
-    input:not([type="checkbox"]) {
-        width: 100%;
-    }
-
-    &:focus {
-        border: 1px solid black;
-    }
-
-    textarea {
-        resize: none;
-        overflow: auto;
-    }
-}

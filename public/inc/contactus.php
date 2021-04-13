@@ -14,7 +14,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
                 <input type="text" name="lname" placeholder="Last name" required>
                 <input type="text" name="email" placeholder="Email" maxlength="100" required>
                 <textarea placeholder="Write your comments..." cols="30" rows="5" wrap="off" required></textarea>
-                <input class="btn" type="submit" value="Submit">
+                <input class="form__btn btn btn-control" type="submit" value="Submit">
 
             </form>
         </div>

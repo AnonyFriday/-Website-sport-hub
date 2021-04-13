@@ -5,8 +5,7 @@
 
 .thumbnail-product {
     flex-basis: 25%;
-    padding: 20px;
-    box-shadow: 5px 5px 10 12 black;
+    padding: 1em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -17,22 +16,24 @@
     flex-basis: 2;
     img {
         @include fill-entire-container();
+        transform: scale(0.8, 0.8);
     }
 }
 
 .thumbnail-product__info {
     flex-basis: 1;
     margin-top: 1em;
-    padding: 1em;
     text-transform: uppercase;
 }
 
 .thumbnail-product__title {
     margin-bottom: 1em;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .thumbnail-product__price {
+    font-weight: bold;
+    font-size: 1.5em;
     border-radius: 10px;
     background-color: rgba($color: #000000, $alpha: 0.9);
     color: #daaa1e;
