@@ -2,7 +2,7 @@
 // ===============================================/
 // Query all records 
 // ===============================================/
-function query_all_records(string $table)
+function query_all_records($table)
 {
     global $dbConnection;
     $query = "SELECT * FROM $table";
@@ -16,7 +16,7 @@ function query_all_records(string $table)
 // Query all records where condition
 // ! Currently available for 1 condition
 // ===============================================/
-function query_all_records_where_condition(string $table, array $condition)
+function query_all_records_where_condition($table, $condition)
 {
     global $dbConnection;
     $query  = "SELECT * FROM $table WHERE ";
