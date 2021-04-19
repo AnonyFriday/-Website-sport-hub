@@ -4,18 +4,17 @@
 require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php");
 
-
 $topPicks = query_random_records("product", 4);
 if (is_request("GET")) {
     $product_id = $_GET["id"];
-    $products    = query_all_records_where_condition("product", [PRODUCT_ID => $product_id]);
+    $products    = query_all_records_where_condition(PRODUCT_TABLE, [PRODUCT_ID => $product_id]);
 } else {
     $product  = [];
 }
 
 ?>
 <main>
-    <div class="container--center">
+    <div class="container">
         <section class="product">
             <?php while ($product = mysqli_fetch_assoc($products)) { ?>
             <div class="product__image">
@@ -26,22 +25,28 @@ if (is_request("GET")) {
                     <h2 class="product__title section-header"><?= $product[PRODUCT_NAME] ?></h2>
                     <p class="product__price"><?= $product[PRODUCT_PRICE] ?> $</p>
 
-                    <!-- ERROR on size -->
+                    <!-- Populate on size -->
                     <div class="info-container">
+
                         <div class="info-container__item">
                             <h3 class="section-header">size</h3>
-                            <p> <?= $product[SIZE_ID] ?></p>
+                            <?php
+                                $sizes = query_all_records_where_condition("size", [SIZE_ID => $product[SIZE_ID]]);
+                                while ($size = mysqli_fetch_assoc($sizes)) {
+                                ?>
+                            <p><?= $size[SIZE_NAME]; ?></p>
+                            <?php }; ?>
+                            <?php mysqli_free_result($sizes); ?>
                         </div>
+
                         <div class="info-container__item">
                             <h3 class="section-header">information</h3>
                             <p> <?= $product[PRODUCT_INFORMATION] ?></p>
                         </div>
                     </div>
                     <?php };
-                mysqli_free_result($products);
-                    ?>
+                mysqli_free_result($products); ?>
                 </div>
-
                 <div class="bottom-controls">
 
                     <select class="bottom-controls__quantity-select" name="quantity">

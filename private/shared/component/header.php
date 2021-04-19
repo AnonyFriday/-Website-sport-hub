@@ -4,7 +4,6 @@ if (!isset($page_title)) {
 };
 
 $headerTitles = [
-    "logo" => "🅂🄿🄾🅁🅃 🄷🅄🄱",
     "navigation_up" => [
         "contact_us" => "contact us",
         "login" => "login",
@@ -46,11 +45,11 @@ $categories = query_all_records("category");
     <body>
         <!-- Reusable Header -->
         <header class="header">
-            <div class="container--center">
+            <div class="container">
                 <section class="header__content">
-                    <h1 class="header__logo logo">
-                        <a href=<?php echo url_for("/index.php"); ?>>
-                            <?= $headerTitles["logo"]; ?>
+                    <h1>
+                        <a href="#" class="logo">
+                            <img src=<?= url_for("/asset/logo/Logo-3.png") ?>>
                         </a>
                     </h1>
 
@@ -77,24 +76,26 @@ $categories = query_all_records("category");
                         <!-- Populate data into header -->
                         <?php while ($category = mysqli_fetch_assoc($categories)) {
                         // Remove "all products" from header
-                        if ($category["category_id"] == 6) {
+                        if ($category[CATEGORY_ID] == 6) {
                             continue;
                         } ?>
+
                         <li class="navigation__item--hover">
-                            <a href="#" class="navigation__item"><?= $category["category_name"] ?></a>
+                            <a href="#" class="navigation__item"><?= $category[CATEGORY_NAME] ?></a>
                             <ul class="navigation__sub-list">
                                 <?php
-                                $collections = query_all_records_where_condition("collection", ["category_id" => $category["category_id"]]);
+                                $collections = query_all_records_where_condition("collection", [CATEGORY_ID => $category[CATEGORY_ID]]);
                                 while ($collection = mysqli_fetch_assoc($collections)) {
                                 ?>
-                                <li><a href=<?php echo url_for("/inc/collection.php?collection_id=" . secure_http($collection["collection_id"])) ?>
-                                        class="navigation__item"><?= $collection["collection_name"]; ?></a>
+                                <li><a href=<?php echo url_for("/inc/collection.php?collection_id=" . secure_http($collection[COLLECTION_ID])) ?>
+                                        class="navigation__item"><?= $collection[COLLECTION_NAME]; ?></a>
                                 </li>
                                 <?php }; ?>
                                 <?php mysqli_free_result($collections); ?>
                             </ul>
                         </li>
                         <?php }; ?>
+                        <?php mysqli_free_result($categories); ?>
                     </ul>
 
                     <form class="header__search-bar search-bar">
@@ -104,10 +105,7 @@ $categories = query_all_records("category");
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
-
-                    <?php mysqli_free_result($categories); ?>
                 </section>
-
             </div>
         </header>
 

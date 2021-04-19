@@ -8,14 +8,10 @@
   text-decoration: none;
 }
 
-div {
-  border: 0;
-  outline: 0;
-}
-
 a:visited,
-a:link {
-  color: initial;
+a:link,
+a:focus {
+  text-decoration: none;
 }
 
 ul {
@@ -149,24 +145,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
-}
-
-html,
-body {
-  height: 100%;
-}
-
-header {
-  z-index: 3;
-  max-width: 100%;
-}
-
-main {
-  z-index: 2;
-  height: fit-content;
   background: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
-  overflow: auto;
 }
 
 button {
@@ -209,21 +188,19 @@ button {
   background-color: black;
   position: sticky;
   top: 0;
+  left: 0;
 }
 .header__content {
-  height: max-content;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-width: 100%;
-  margin: 0 auto;
-}
-.header__logo {
-  margin-left: 20px;
+  padding-top: 20px;
 }
 .header__search-bar {
-  max-width: 380px;
+  width: 380px;
 }
 
 .navigation > li {
@@ -235,6 +212,12 @@ button {
 }
 .navigation__sub-list {
   display: none;
+}
+.navigation > li:last-child {
+  padding-right: 0;
+}
+.navigation > li:first-child {
+  padding-left: 0;
 }
 
 .navigation__item {
@@ -253,8 +236,7 @@ button {
   border: 1px solid #f0c300;
 }
 
-.navigation__item:link,
-.navigation__item:visited {
+.navigation__item {
   color: #f0c300;
 }
 
@@ -295,10 +277,9 @@ button {
   display: none;
 }
 
-.container--center {
+.container {
   width: 80vw;
   max-width: 80%;
-  height: inherit;
   margin: 0 auto;
 }
 
@@ -469,18 +450,18 @@ button {
 
 .logo {
   display: inline-block;
+  vertical-align: middle;
 }
-.logo > a {
-  font-size: 30px;
-  color: #f0c300;
-  text-shadow: 2px 4px 3px rgba(124, 155, 11, 0.747);
+.logo img {
+  display: block;
+  max-width: 100%;
+  object-position: center center;
 }
 
 .search-bar {
   background-color: #f0c300;
   height: 40px;
   width: 360px;
-  margin-right: 20px;
   border-radius: 20px;
   padding: 5px 0px 5px 5px;
   display: flex;
@@ -703,6 +684,9 @@ button {
   background-color: rgba(0, 0, 0, 0.9);
   color: #f0c303;
   padding: 0.5em;
+  background-image: url(/public/asset/icons/dollar.png);
+  background-repeat: no-repeat;
+  background-position: calc(50% + 40px) center;
 }
 
 .category {
@@ -787,7 +771,6 @@ button {
 
 .section-header {
   display: inline-block;
-  margin-bottom: 0em;
   text-transform: uppercase;
   font-size: 2em;
   padding: 5px 10px;
@@ -1049,6 +1032,7 @@ hr::after {
 }
 .product__image {
   float: left;
+  max-width: 50%;
   width: 50%;
   border-radius: 10px;
   overflow: hidden;

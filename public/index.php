@@ -19,7 +19,7 @@ $topFeatures   = query_random_records("product", 4);
 
 <!-- MAIN -->
 <main>
-    <div class="container--center">
+    <div class="container">
         <section class="container__categories">
             <ul class="categories">
                 <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
@@ -51,7 +51,6 @@ $topFeatures   = query_random_records("product", 4);
             <h2 class="section-header top-pick__header">top picks</h2>
             <ul class="list__thumbnail-product">
                 <!-- Loop random product inside the product table-->
-
                 <?php while ($product = mysqli_fetch_assoc($hotPicks)) { ?>
                 <li class="thumbnail-product">
                     <div class="thumbnail-product__image overlay--relative">
@@ -80,14 +79,14 @@ $topFeatures   = query_random_records("product", 4);
 
         <section class="container__featured-collection">
             <h2 class="section-header featured-collection__header">featured collection</h2>
-            <ul class="list_thumbnail-product">
+            <ul class="list__thumbnail-product">
                 <?php while ($product = mysqli_fetch_assoc($topFeatures)) { ?>
                 <li class="thumbnail-product">
                     <div class="thumbnail-product__image overlay--relative">
-                        <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="Images">
+                        <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="thumbnail-product Images">
                         <div class="overlay">
                             <div class="overlay__link">
-                                <a href="#">Buy Now</a>
+                                <a href=<?= url_for("/inc/product.php?id=" . $product[PRODUCT_ID]) ?>>Buy Now</a>
                             </div>
                         </div>
                     </div>

@@ -11,5 +11,6 @@
 .container__top-pick,
 .container__featured-collection {
     text-align: center;
-    @include container__white-paddded-box-shadow();
+    @include container__white-paddded-box-shadow() {
+    }
 }

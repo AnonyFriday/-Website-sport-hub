@@ -19,6 +19,14 @@
     &__sub-list {
         display: none;
     }
+
+    > li:last-child {
+        padding-right: 0;
+    }
+
+    > li:first-child {
+        padding-left: 0;
+    }
 }
 
 .navigation__item {
@@ -38,8 +46,7 @@
     }
 }
 
-.navigation__item:link,
-.navigation__item:visited {
+.navigation__item {
     color: #f0c300;
 }
 

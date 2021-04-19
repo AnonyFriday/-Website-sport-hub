@@ -5,7 +5,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
 
 <!-- MAIN -->
 <main>
-    <section class="contactus container--center">
+    <section class="contactus container">
         <div class="form contactus__form">
             <h3 class="form__title contactus__title">How can we help you?</h3>
             <form class="form__content contactus__content">
