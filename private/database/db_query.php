@@ -47,3 +47,20 @@ function query_random_records($table, $limit)
     db_confirm_result_set($result_set, $query);
     return $result_set;
 }
+
+
+// ===============================================/
+// Query all records where condition
+// ! Currently available for 1 condition
+// ===============================================/
+function insert_random_records($table, $props)
+{
+    global $dbConnection;
+
+    $queryKeys   = "INSERT INTO $table (";
+    $queryValues = "VALUES (";
+    foreach ($props as $key => $value) {
+        $queryKeys   .= $key . ",";
+        $queryValues .= $value . ",";
+    }
+}

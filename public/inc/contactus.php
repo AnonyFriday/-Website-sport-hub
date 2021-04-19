@@ -1,21 +1,36 @@
 <!-- HEADER -->
 <?php
 require_once("../../private/initializer.php");
-include_once(SHARED_PATH . "/component/header.php") ?>
+include_once(SHARED_PATH . "/component/header.php");
+
+
+if (is_request("post")) {
+    $fname = $_POST[FORM_FIRST_NAME];
+    $lname = $_POST[FORM_LAST_NAME];
+    $email = $_POST[FORM_EMAIL];
+    $message = $_POST[FORM_MESSAGE];
+}
+
+?>
+
+
+
+
+
 
 <!-- MAIN -->
 <main>
     <section class="contactus container">
+
         <div class="form contactus__form">
             <h3 class="form__title contactus__title">How can we help you?</h3>
-            <form class="form__content contactus__content">
-
-                <input type="text" name="fname" placeholder="First name" required>
-                <input type="text" name="lname" placeholder="Last name" required>
-                <input type="text" name="email" placeholder="Email" maxlength="100" required>
-                <textarea placeholder="Write your comments..." cols="30" rows="5" wrap="off" required></textarea>
-                <input class="form__btn btn btn-control" type="submit" value="Submit">
-
+            <form class="form__content contactus__content" method="POST" action=<?= url_for("/inc/contactus.php") ?>>
+                <input type="text" name=<?= FORM_FIRST_NAME ?> placeholder="First name" required>
+                <input type="text" name=<?= FORM_LAST_NAME ?> placeholder="Last name" required>
+                <input type="text" name=<?= FORM_EMAIL ?> placeholder="Email" maxlength="100" required>
+                <textarea placeholder="Write your comments..." rows="20" wrap="off" required name=<?= FORM_MESSAGE ?>
+                    autocapitalize="none"></textarea>
+                <input class="form__btn btn btn-control" type="submit" name="Submit">
             </form>
         </div>
 
@@ -23,6 +38,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
 
         <div class="details">
             <h2>FAQ</h2>
+
             <details class="details__item faq-question">
                 <summary class="details__summary">
                     <span>How can I get free products</span>
@@ -43,6 +59,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
                     </p>
                 </div>
             </details>
+
             <details class="details__item faq-question">
                 <summary class="details__summary">
                     <span>How can I get free products</span>
@@ -63,6 +80,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
                     </p>
                 </div>
             </details>
+
             <details class="details__item faq-question">
                 <summary class="details__summary">
                     <span>How can I get free products</span>
@@ -83,6 +101,7 @@ include_once(SHARED_PATH . "/component/header.php") ?>
                     </p>
                 </div>
             </details>
+
         </div>
     </section>
 </main>

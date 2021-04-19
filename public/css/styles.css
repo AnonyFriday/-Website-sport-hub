@@ -548,6 +548,9 @@ button {
 .form__content input::not([type="submit"]) {
   background-color: #ddd;
 }
+.form__content textarea {
+  resize: none;
+}
 
 .form__btn {
   background-color: black;
@@ -617,11 +620,15 @@ button {
   color: black;
   display: block;
   height: 2em;
-  width: 7em;
+  width: 150px;
   background-color: #eab92d;
   border-radius: 10px;
   line-height: 2em;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0 10px;
+  font-weight: bold;
 }
 
 .category:hover .category__img {
@@ -752,11 +759,15 @@ button {
   color: black;
   display: block;
   height: 2em;
-  width: 7em;
+  width: 150px;
   background-color: #eab92d;
   border-radius: 10px;
   line-height: 2em;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0 10px;
+  font-weight: bold;
 }
 
 .category:hover .category__img {
@@ -956,7 +967,7 @@ hr::after {
   margin: 0 0 3% 0;
   flex: 0 0 calc((100% - calc(3% * (2 - 1))) / 2);
 }
-.categories .category:nth-child(1) {
+.categories .category:nth-of-type(1) {
   flex-basis: 100%;
   max-height: 50em;
 }

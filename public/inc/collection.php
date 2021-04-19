@@ -4,12 +4,15 @@ require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php");
 
 $collection_id = $_GET[COLLECTION_ID] ?? null;
+$category_id   = $_GET[CATEGORY_ID] ?? null;
+
 if (isset($collection_id)) {
     $products = query_all_records_where_condition(PRODUCT_TABLE, [COLLECTION_ID => $collection_id]);
+} else if (isset($category_id)) {
+    $products = query_all_records_where_condition(PRODUCT_TABLE, [CATEGORY_ID => $category_id]);
 } else {
-    redirect_to("/index.php");
+    $products = query_all_records(PRODUCT_TABLE);
 }
-
 ?>
 
 <!-- MAIN -->
@@ -70,7 +73,7 @@ if (isset($collection_id)) {
 
         <!-- LIST OF PRODUCTS-->
         <div class="collection__content">
-            <h2 class="collection__title">Soccer</h2>
+            <h2 class="collection__title">PRODUCTS</h2>
             <ul class="collection__list__thumbnail-thumbnail-product">
                 <?php while ($product = mysqli_fetch_assoc($products)) { ?>
                 <li class="thumbnail-product">

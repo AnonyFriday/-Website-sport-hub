@@ -1,5 +1,16 @@
 <?php
 
+// ALL PRODUCT
+define("ALL_PRODUCT", "all_product");
+
+// FORM
+define("FORM_TABLE", "form");
+define("FORM_FIRST_NAME", "form_fname");
+define("FORM_LAST_NAME", "form_lname");
+define("FORM_EMAIL", "form_email");
+define("FORM_MESSAGE", "form_message");
+
+
 // PRODUCT
 define("PRODUCT_TABLE", "product");
 define("PRODUCT_ID", "product_id");

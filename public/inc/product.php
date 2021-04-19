@@ -89,7 +89,7 @@ if (is_request("GET")) {
                             <h3><?= $topPick[PRODUCT_NAME]; ?></h3>
                         </div>
                         <div class="thumbnail-product__price">
-                            <p><?= $topPick[PRODUCT_PRICE]; ?> $ </p>
+                            <p><?= $topPick[PRODUCT_PRICE]; ?></p>
                         </div>
                     </div>
                 </li>

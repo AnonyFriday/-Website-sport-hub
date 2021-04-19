@@ -3,14 +3,13 @@ require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php") ?>
 
 <?php
-
 if (is_request("POST")) {
     if (isset($_POST["signin"])) {
         redirect_to("inc/signin.php");
     }
 }
-
 ?>
+
 <main>
     <div class="modal-cover">
         <div class="modal form">
