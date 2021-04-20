@@ -33,7 +33,7 @@ $categories = query_all_records("category");
         <script src="https://kit.fontawesome.com/0376e78535.js" crossorigin="anonymous"></script>
 
         <!-- CSS -->
-        <link rel="stylesheet" href=<?php echo url_for("/css/styles.css") ?>>
+        <link rel="stylesheet" href=<?php echo url_for("/css/style.css") ?>>
 
         <!-- Java Script-->
         <script src=<?= url_for("/js/index.js") ?>></script>
