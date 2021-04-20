@@ -14,6 +14,7 @@ if (isset($_POST["signin"])) {
     if ($result) {
         redirect_to("/index.php");
     } else {
+        redirect_to("/inc/signin.php");
     }
 }
 
@@ -29,10 +30,10 @@ if (isset($_POST["signin"])) {
             <!-- FORM CONTENT -->
             <form class="form__content" action=<?= url_for("/inc/signin.php") ?> method="POST">
                 <input class="modal__textfield" type="email" name=<?= USER_GMAIL ?> placeholder="Email" autocomplete="off" spellcheck="false" required>
-                <input class="modal__textfield" type="password" name<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
+                <input class="modal__textfield" type="password" name=<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
                 <div class="modal__confirm-control">
                     <input class="btn btn-control" name="signin" type="submit" value="Sign In">
-                    <a class="btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Register</a>
+                    <a class="btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Haven't got an account</a>
                 </div>
 
                 <hr class="line--border-black-content-black">

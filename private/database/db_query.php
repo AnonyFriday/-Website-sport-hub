@@ -117,15 +117,16 @@ function query_authenticate_login($table, $email, $password)
     $query .= "WHERE ";
     $query .= USER_GMAIL . "=? ";
     $query .= "LIMIT 1";
-    echo $query;
 
     $stmt = mysqli_prepare($dbConnection, $query);
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_bind_result($stmt, $hash_password);
+
         while (mysqli_stmt_fetch($stmt)) {
-            echo $hash_password;
+            mysqli_stmt_close($stmt);
+            return password_verify($password, $hash_password);
         }
     } else {
         mysqli_stmt_close($stmt);
