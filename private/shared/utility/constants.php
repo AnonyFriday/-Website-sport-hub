@@ -66,4 +66,5 @@ define("USER_TABLE", "user");
 define("USER_ID", "user_id");
 define("USER_NAME", "user_name");
 define("USER_PASSWORD", "user_password");
+define("USER_RETYPE_PASSWORD", "user_retype_password");
 define("USER_GMAIL", "user_gmail");

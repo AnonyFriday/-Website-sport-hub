@@ -6,11 +6,17 @@ include_once(SHARED_PATH . "/component/header.php") ?>
 
 <?php
 
-if (is_request("POST")) {
-    if (isset($_POST["register"])) {
-        redirect_to("inc/register.php");
+if (isset($_POST["signin"])) {
+    $user_email    = $_POST[USER_GMAIL];
+    $user_password = $_POST[USER_PASSWORD];
+
+    $result = query_authenticate_login(USER_TABLE, $user_email, $user_password);
+    if ($result) {
+        redirect_to("/index.php");
+    } else {
     }
 }
+
 ?>
 
 
@@ -22,13 +28,11 @@ if (is_request("POST")) {
 
             <!-- FORM CONTENT -->
             <form class="form__content" action=<?= url_for("/inc/signin.php") ?> method="POST">
-                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off"
-                    spellcheck="false">
-                <input class="modal__textfield" type="password" name="password" placeholder="Password"
-                    autocomplete="off" spellcheck="false">
+                <input class="modal__textfield" type="email" name=<?= USER_GMAIL ?> placeholder="Email" autocomplete="off" spellcheck="false" required>
+                <input class="modal__textfield" type="password" name<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
                 <div class="modal__confirm-control">
                     <input class="btn btn-control" name="signin" type="submit" value="Sign In">
-                    <input class="btn btn-control" name="register" type="submit" value="Register">
+                    <a class="btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Register</a>
                 </div>
 
                 <hr class="line--border-black-content-black">
