@@ -9,14 +9,14 @@ if (is_request("post")) {
     $lname = $_POST[FORM_LAST_NAME];
     $email = $_POST[FORM_EMAIL];
     $message = $_POST[FORM_MESSAGE];
+
+    $result = insert_submit_form(FORM_TABLE, $fname, $lname, $email, $message);
+    if ($result) {
+        redirect_to("/inc/contactus.php");
+    }
 }
 
 ?>
-
-
-
-
-
 
 <!-- MAIN -->
 <main>

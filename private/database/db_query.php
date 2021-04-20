@@ -12,7 +12,6 @@ function query_all_records($table)
     return $result_set;
 }
 
-
 // ===============================================/
 // Query all records where condition
 // ! Currently available for 1 condition
@@ -62,5 +61,39 @@ function insert_random_records($table, $props)
     foreach ($props as $key => $value) {
         $queryKeys   .= $key . ",";
         $queryValues .= $value . ",";
+    }
+}
+
+
+
+
+/* ================================================== PREPARE STATEMENT ================================================ */
+
+
+// ===============================================/
+function insert_submit_form($table, $firstname, $lastname, $email, $message)
+{
+    global $dbConnection;
+    $query  = "INSERT INTO $table (";
+    $query .= FORM_FIRST_NAME . ",";
+    $query .= FORM_LAST_NAME . ",";
+    $query .= FORM_EMAIL . ",";
+    $query .= FORM_MESSAGE . ")";
+    $query .= "VALUES (?,?,?,?);";
+
+    $stmt   = mysqli_prepare($dbConnection, $query);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $message);
+        $status = mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_close($stmt);
+
+        if (!$result) {
+            exit("Some thing was wrong. Please check again");
+        } else {
+            return true;
+        }
+    } else {
+        echo mysqli_error($dbConnection);
+        exit();
     }
 }
