@@ -7,22 +7,19 @@
     background-color: black;
     position: sticky;
     top: 0;
+    left: 0;
 
     &__content {
-        height: max-content;
+        height: 80px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         max-width: 100%;
-        margin: 0 auto;
-    }
-
-    &__logo {
-        margin-left: 20px;
+        padding-top: 20px;
     }
 
     &__search-bar {
-        max-width: 380px;
+        width: 380px;
     }
 }

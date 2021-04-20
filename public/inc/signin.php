@@ -11,7 +11,6 @@ if (is_request("POST")) {
         redirect_to("inc/register.php");
     }
 }
-
 ?>
 
 
@@ -23,10 +22,8 @@ if (is_request("POST")) {
 
             <!-- FORM CONTENT -->
             <form class="form__content" action=<?= url_for("/inc/signin.php") ?> method="POST">
-                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off"
-                    spellcheck="false">
-                <input class="modal__textfield" type="password" name="password" placeholder="Password"
-                    autocomplete="off" spellcheck="false">
+                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off" spellcheck="false">
+                <input class="modal__textfield" type="password" name="password" placeholder="Password" autocomplete="off" spellcheck="false">
                 <div class="modal__confirm-control">
                     <input class="btn btn-control" name="signin" type="submit" value="Sign In">
                     <input class="btn btn-control" name="register" type="submit" value="Register">

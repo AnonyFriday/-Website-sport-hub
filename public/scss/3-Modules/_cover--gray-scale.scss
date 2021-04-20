@@ -1,0 +1,47 @@
+.overlay--relative {
+    position: relative;
+}
+
+.overlay--relative:hover {
+    .overlay {
+        visibility: visible;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    img {
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+    }
+}
+
+.overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+}
+
+.overlay__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    a {
+        cursor: pointer;
+        color: black;
+        display: inline-block;
+        opacity: 1;
+        width: 7em;
+        background-color: #eab92d;
+        border-radius: 10px;
+        line-height: 2em;
+        box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+    }
+}

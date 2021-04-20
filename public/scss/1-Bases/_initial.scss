@@ -12,43 +12,9 @@ html {
 
 body {
     font-family: $font-family-1, $font-typeface-1;
-    background-color: $color-transparent-bg;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-header {
-    z-index: 3;
-    max-width: 100%;
-}
-
-main {
-    z-index: 2;
-    height: fit-content;
     background: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
-    overflow: auto;
 }
 
 button {
     cursor: pointer;
-}
-
-form {
-    text-align: center;
-
-    input:not([type="checkbox"]) {
-        width: 100%;
-    }
-
-    &:focus {
-        border: 1px solid black;
-    }
-
-    textarea {
-        resize: none;
-        overflow: auto;
-    }
 }

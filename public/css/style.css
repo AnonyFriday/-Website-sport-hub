@@ -8,14 +8,10 @@
   text-decoration: none;
 }
 
-div {
-  border: 0;
-  outline: 0;
-}
-
 a:visited,
-a:link {
-  color: initial;
+a:link,
+a:focus {
+  text-decoration: none;
 }
 
 ul {
@@ -24,6 +20,117 @@ ul {
 
 button {
   font-family: inherit;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px;
+}
+
+/* File Uploads
+-----------------------------------------------*/
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none;
+}
+
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type=reset],
+input[type=button],
+input[type=submit] {
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto;
+}
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/* Textarea
+-----------------------------------------------*/
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+}
+
+/* Selects
+-----------------------------------------------*/
+select[multiple] {
+  /* Move the label to the top */
+  vertical-align: top;
 }
 
 html {
@@ -38,42 +145,11 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
-}
-
-html,
-body {
-  height: 100%;
-}
-
-header {
-  z-index: 3;
-  max-width: 100%;
-}
-
-main {
-  z-index: 2;
-  height: fit-content;
   background: linear-gradient(45deg, #eab92d 0%, #c79810 69%);
-  overflow: auto;
 }
 
 button {
   cursor: pointer;
-}
-
-form {
-  text-align: center;
-}
-form input:not([type=checkbox]) {
-  width: 100%;
-}
-form:focus {
-  border: 1px solid black;
-}
-form textarea {
-  resize: none;
-  overflow: auto;
 }
 
 .modal-cover {
@@ -112,21 +188,19 @@ form textarea {
   background-color: black;
   position: sticky;
   top: 0;
+  left: 0;
 }
 .header__content {
-  height: max-content;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-width: 100%;
-  margin: 0 auto;
-}
-.header__logo {
-  margin-left: 20px;
+  padding-top: 20px;
 }
 .header__search-bar {
-  max-width: 380px;
+  width: 380px;
 }
 
 .navigation > li {
@@ -138,6 +212,12 @@ form textarea {
 }
 .navigation__sub-list {
   display: none;
+}
+.navigation > li:last-child {
+  padding-right: 0;
+}
+.navigation > li:first-child {
+  padding-left: 0;
 }
 
 .navigation__item {
@@ -156,8 +236,7 @@ form textarea {
   border: 1px solid #f0c300;
 }
 
-.navigation__item:link,
-.navigation__item:visited {
+.navigation__item {
   color: #f0c300;
 }
 
@@ -198,10 +277,9 @@ form textarea {
   display: none;
 }
 
-.container--center {
+.container {
   width: 80vw;
   max-width: 80%;
-  height: inherit;
   margin: 0 auto;
 }
 
@@ -277,7 +355,7 @@ form textarea {
 
 .btn {
   text-align: start;
-  border: none;
+  border: 0;
   color: white;
   padding: 1em 2em;
   text-decoration: none;
@@ -372,18 +450,18 @@ form textarea {
 
 .logo {
   display: inline-block;
+  vertical-align: middle;
 }
-.logo > a {
-  font-size: 30px;
-  color: #f0c300;
-  text-shadow: 2px 4px 3px rgba(124, 155, 11, 0.747);
+.logo img {
+  display: block;
+  max-width: 100%;
+  object-position: center center;
 }
 
 .search-bar {
   background-color: #f0c300;
   height: 40px;
   width: 360px;
-  margin-right: 20px;
   border-radius: 20px;
   padding: 5px 0px 5px 5px;
   display: flex;
@@ -448,25 +526,35 @@ form textarea {
 .form__content input {
   line-height: 1em;
 }
-.form__content input,
-.form__content textarea {
+.form__content textarea,
+.form__content input {
+  border: 1px solid transparent;
   margin: 5px 0;
   width: 100%;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-  box-shadow: inset 0 0 0.25rem #ddd;
+  box-shadow: inset 0 0 0.25rem #cfc3c3;
+  padding: 1em;
 }
-.form__content input:focus,
-.form__content textarea:focus {
-  outline: none;
-  border: 1px solid #d0d0d0;
-  box-shadow: inset 0 0 0.5rem #d0d0d0;
+.form__content textarea:focus,
+.form__content input:focus {
+  box-shadow: inset 0 0 0.7rem #d0d0d0;
+  border: 1px solid black;
 }
-.form__content input::placeholder,
-.form__content textarea::placeholder {
+.form__content textarea::placeholder,
+.form__content input::placeholder {
   font-style: italic;
   font-size: 0.875rem;
+}
+.form__content input::not([type="submit"]) {
+  background-color: #ddd;
+}
+.form__content textarea {
+  resize: none;
+}
+
+.form__btn {
+  background-color: black;
+  color: #f0c300;
 }
 
 .category {
@@ -532,11 +620,15 @@ form textarea {
   color: black;
   display: block;
   height: 2em;
-  width: 7em;
+  width: 150px;
   background-color: #eab92d;
   border-radius: 10px;
   line-height: 2em;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0 10px;
+  font-weight: bold;
 }
 
 .category:hover .category__img {
@@ -549,7 +641,8 @@ form textarea {
   opacity: 1;
 }
 
-.list_thumbnail-product {
+.list__thumbnail-product {
+  margin-top: 1em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -557,21 +650,50 @@ form textarea {
   width: 100%;
   height: auto;
 }
-.list_thumbnail-product > * {
-  margin: 0 0 3% 0;
-  flex: 0 0 calc((100% - calc(3% * (4 - 1))) / 4);
+.list__thumbnail-product > * {
+  margin: 0 0 0% 0;
+  flex: 0 0 calc((100% - calc(0% * (4 - 1))) / 4);
 }
 
 .thumbnail-product {
   flex-basis: 25%;
-  padding: 20px;
-  box-shadow: 5px 5px 10 12 black;
+  padding: 1em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.thumbnail-product__image {
+  flex-basis: 2;
+}
 .thumbnail-product__image img {
   width: 100%;
   height: 100%;
+  transform: scale(0.8, 0.8);
+}
+
+.thumbnail-product__info {
+  flex-basis: 1;
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.thumbnail-product__title {
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+.thumbnail-product__price {
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #f0c303;
+  padding: 0.5em;
+  background-image: url(/public/asset/icons/dollar.png);
+  background-repeat: no-repeat;
+  background-position: calc(50% + 40px) center;
 }
 
 .category {
@@ -637,11 +759,15 @@ form textarea {
   color: black;
   display: block;
   height: 2em;
-  width: 7em;
+  width: 150px;
   background-color: #eab92d;
   border-radius: 10px;
   line-height: 2em;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0 10px;
+  font-weight: bold;
 }
 
 .category:hover .category__img {
@@ -656,7 +782,6 @@ form textarea {
 
 .section-header {
   display: inline-block;
-  margin-bottom: 0em;
   text-transform: uppercase;
   font-size: 2em;
   padding: 5px 10px;
@@ -785,6 +910,50 @@ hr::after {
   background-color: #4c6ef5;
 }
 
+.overlay--relative {
+  position: relative;
+}
+
+.overlay--relative:hover .overlay {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.overlay--relative:hover img {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.overlay__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.overlay__link a {
+  cursor: pointer;
+  color: black;
+  display: inline-block;
+  opacity: 1;
+  width: 7em;
+  background-color: #eab92d;
+  border-radius: 10px;
+  line-height: 2em;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+}
+
 .categories {
   padding-top: 2rem;
   display: flex;
@@ -798,7 +967,7 @@ hr::after {
   margin: 0 0 3% 0;
   flex: 0 0 calc((100% - calc(3% * (2 - 1))) / 2);
 }
-.categories .category:nth-child(1) {
+.categories .category:nth-of-type(1) {
   flex-basis: 100%;
   max-height: 50em;
 }
@@ -874,6 +1043,7 @@ hr::after {
 }
 .product__image {
   float: left;
+  max-width: 50%;
   width: 50%;
   border-radius: 10px;
   overflow: hidden;

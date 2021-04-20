@@ -12,30 +12,51 @@ include_once(SHARED_PATH . "/component/header.php")
 <?php
 // | Get list of category from database
 $categories = query_all_records("category");
+$hotPicks   = query_random_records("product", 4);
+$topFeatures   = query_random_records("product", 4);
 
 ?>
 
 <!-- MAIN -->
 <main>
-    <div class="container--center">
+    <div class="container">
         <section class="container__categories">
             <ul class="categories">
-                <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
+
+                <!-- ALL PRODUCT CATEGORY -->
                 <li class="category">
                     <div class="category__content">
                         <div class="category__thumbnail-cover">
-                            <img class="category__img" src=<?= $category["image_url"] ?> alt=" Category thumbnail">
+                            <img class="category__img" src="https://res.cloudinary.com/dyio102qf/image/upload/v1617528003/category/category_all-products_gzgayh.jpg" alt="Category thumbnail">
                         </div>
+
                         <div class="category__info">
                             <div class="category__desc">
-                                <p> <?= $category["category_name"] ?></p>
+                                <p>all products</p>
                             </div>
-                            <div class="category__links"><a
-                                    href=<?php echo url_for("/inc/collection.php?category_id=" . $category["category_id"]) ?>>Buy
-                                    Now</a></div>
+                            <div class="category__links"><a href=<?= url_for("/inc/collection.php") ?>>know
+                                    more</a>
+                            </div>
                         </div>
                     </div>
                 </li>
+
+                <!-- CATEGORIES -->
+                <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
+                    <li class=" category">
+                        <div class="category__content">
+                            <div class="category__thumbnail-cover">
+                                <img class="category__img" src=<?= $category[CATEGORY_IMAGE_URL] ?> alt="Category thumbnail">
+                            </div>
+                            <div class="category__info">
+                                <div class="category__desc">
+                                    <p> <?= $category[CATEGORY_NAME] ?></p>
+                                </div>
+                                <div class="category__links"><a href=<?php echo url_for("/inc/collection.php?category_id=" . $category[CATEGORY_ID]) ?>>Buy
+                                        Now</a></div>
+                            </div>
+                        </div>
+                    </li>
 
                 <?php };
                 mysqli_free_result($categories);
@@ -43,95 +64,67 @@ $categories = query_all_records("category");
             </ul>
         </section>
 
+
+
+
         <section class="container__top-pick">
             <h2 class="section-header top-pick__header">top picks</h2>
-            <ul class="list_thumbnail-product">
-                <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img
-                            src="https://res.cloudinary.com/dyio102qf/image/upload/v1617711073/products/ultrezza_290__soccerboots_vkc2ba.png"
-                            alt="thumbnail-product Image"></div>
-                    <div class="thumbnail-product__info">
-                        <div class="thumbnail-product__title">
-                            <h3>Shin Guard</h3>
+            <ul class="list__thumbnail-product">
+                <!-- Loop random product inside the product table-->
+                <?php while ($product = mysqli_fetch_assoc($hotPicks)) { ?>
+                    <li class="thumbnail-product">
+                        <div class="thumbnail-product__image overlay--relative">
+                            <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="thumbnail-product Image" />
+                            <div class="overlay">
+                                <div class="overlay__link">
+                                    <a href=<?= url_for("/inc/product.php?id=" . $product[PRODUCT_ID]) ?>>Buy Now</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="thumbnail-product__price">
-                            <p>23.33$</p>
+                        <div class="thumbnail-product__info">
+                            <div class="thumbnail-product__title">
+                                <h3>
+                                    <?= $product[PRODUCT_NAME] ?></h3>
+                            </div>
+                            <div class="thumbnail-product__price">
+                                <p><?= $product[PRODUCT_PRICE] ?></p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img
-                            src="https://res.cloudinary.com/dyio102qf/image/upload/v1617711073/products/ultrezza_290__soccerboots_vkc2ba.png"
-                            alt="thumbnail-product Image"></div>
-                    <div class="thumbnail-product__info">
-                        <div class="thumbnail-product__title">
-                            <h3>Shin Guard</h3>
-                        </div>
-                        <div class="thumbnail-product__price">
-                            <p>23.33$</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img
-                            src="https://res.cloudinary.com/dyio102qf/image/upload/v1617711073/products/ultrezza_290__soccerboots_vkc2ba.png"
-                            alt="thumbnail-product Image"></div>
-                    <div class="thumbnail-product__info">
-                        <div class="thumbnail-product__title">
-                            <h3>Shin Guard</h3>
-                        </div>
-                        <div class="thumbnail-product__price">
-                            <p>23.33$</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img
-                            src="https://res.cloudinary.com/dyio102qf/image/upload/v1617711073/products/ultrezza_290__soccerboots_vkc2ba.png"
-                            alt="thumbnail-product Image"></div>
-                    <div class="thumbnail-product__info">
-                        <div class="thumbnail-product__title">
-                            <h3>Shin Guard</h3>
-                        </div>
-                        <div class="thumbnail-product__price">
-                            <p>23.33$</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                <?php };
+                mysqli_free_result($hotPicks);
+                ?>
             </ul>
         </section>
-
 
         <section class="container__featured-collection">
             <h2 class="section-header featured-collection__header">featured collection</h2>
-            <ul class="list_thumbnail-product">
-                <li class="thumbnail-product">
-                    <div class="thumbnail-product__image"><img
-                            src="https://res.cloudinary.com/dyio102qf/image/upload/v1617711073/products/ultrezza_290__soccerboots_vkc2ba.png"
-                            alt="thumbnail-product Image" width="300px" height="300px"></div>
-                    <div class="thumbnail-product__info">
-                        <div class="thumbnail-product__title">
-                            <h3>Shin Guard</h3>
+            <ul class="list__thumbnail-product">
+                <?php while ($product = mysqli_fetch_assoc($topFeatures)) { ?>
+                    <li class="thumbnail-product">
+                        <div class="thumbnail-product__image overlay--relative">
+                            <img src=<?= $product[PRODUCT_IMAGE_URL] ?> alt="thumbnail-product Images">
+                            <div class="overlay">
+                                <div class="overlay__link">
+                                    <a href=<?= url_for("/inc/product.php?id=" . $product[PRODUCT_ID]) ?>>Buy Now</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="thumbnail-product__price">
-                            <p>23.33$</p>
+                        <div class="thumbnail-product__info">
+                            <div class="thumbnail-product__title">
+                                <h3><?= $product[PRODUCT_NAME] ?></h3>
+                            </div>
+                            <div class="thumbnail-product__price">
+                                <p><?= $product[PRODUCT_PRICE] ?></p>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                <?php };
+                mysqli_free_result($topFeatures);
+                ?>
             </ul>
         </section>
     </div>
-</main>
-
-
-<!-- FOOTER -->
-<?php include_once(SHARED_PATH . "/component/footer.php") ?>
-</div>
-</div>
-</li>
-</ul>
-</section>
-</div>
 </main>
 
 

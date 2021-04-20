@@ -3,14 +3,13 @@ require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php") ?>
 
 <?php
-
 if (is_request("POST")) {
     if (isset($_POST["signin"])) {
         redirect_to("inc/signin.php");
     }
 }
-
 ?>
+
 <main>
     <div class="modal-cover">
         <div class="modal form">
@@ -19,12 +18,9 @@ if (is_request("POST")) {
 
             <!-- FORM CONTENT -->
             <form class="form__content" method="POST">
-                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off"
-                    spellcheck="false">
-                <input class="modal__textfield" type="password" name="password" placeholder="Password"
-                    autocomplete="off" spellcheck="false">
-                <input class="modal__textfield" type="retype-password" placeholder="Confirm Password" autocomplete="off"
-                    spellcheck="false">
+                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off" spellcheck="false">
+                <input class="modal__textfield" type="password" name="password" placeholder="Password" autocomplete="off" spellcheck="false">
+                <input class="modal__textfield" type="retype-password" placeholder="Confirm Password" autocomplete="off" spellcheck="false">
                 <div class="modal__confirm-control">
                     <input class="btn btn-control" type="submit" name="register" value="Register">
                     <input class="btn btn-control" type="submit" name="signin" value=" Already have account">

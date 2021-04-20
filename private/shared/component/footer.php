@@ -1,8 +1,9 @@
 <footer class="footer">
-    <div class="container--center">
+    <div class="container">
         <div class="footer__logo">
-            <h1 class="logo ">
-                <a ref="#">🅂🄿🄾🅁🅃 🄷🅄🄱</a>
+            <h1>
+                <a ref="#" class="logo">
+                    <img src=<?= url_for("/asset/logo/Logo-3.png") ?>></a>
             </h1>
         </div>
         <hr class="line--border-yellow-content-yellow">
