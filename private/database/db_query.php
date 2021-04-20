@@ -12,6 +12,7 @@ function query_all_records($table)
     return $result_set;
 }
 
+
 // ===============================================/
 // Query all records where condition
 // ! Currently available for 1 condition
@@ -65,11 +66,10 @@ function insert_random_records($table, $props)
 }
 
 
-
-
 /* ================================================== PREPARE STATEMENT ================================================ */
 
-
+// ===============================================/
+// Insert value from 
 // ===============================================/
 function insert_submit_form($table, $firstname, $lastname, $email, $message)
 {
@@ -84,7 +84,7 @@ function insert_submit_form($table, $firstname, $lastname, $email, $message)
     $stmt   = mysqli_prepare($dbConnection, $query);
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $message);
-        $status = mysqli_stmt_execute($stmt);
+        mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_close($stmt);
 
         if (!$result) {
@@ -94,6 +94,27 @@ function insert_submit_form($table, $firstname, $lastname, $email, $message)
         }
     } else {
         echo mysqli_error($dbConnection);
+        db_disconnect($dbConnection);
         exit();
+    }
+}
+
+
+// ===============================================/
+// Select product function based on product's name
+// ===============================================/
+function query_products_where_search_condition_in_product_name($table, $keyword)
+{
+    global $dbConnection;
+    $query  = "SELECT * FROM $table ";
+    $query .= "WHERE " . PRODUCT_NAME . " LIKE CONCAT('%', ? ,'%')";
+
+    $stmt   = mysqli_prepare($dbConnection, $query);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $keyword);
+        mysqli_stmt_execute($stmt);
+        $result_set = mysqli_stmt_get_result($stmt);
+        db_confirm_result_set($result_set, $query);
+        return $result_set;
     }
 }

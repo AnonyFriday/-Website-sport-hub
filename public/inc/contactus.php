@@ -27,9 +27,9 @@ if (is_request("post")) {
             <form class="form__content contactus__content" method="POST" action=<?= url_for("/inc/contactus.php") ?>>
                 <input type="text" name=<?= FORM_FIRST_NAME ?> placeholder="First name" required>
                 <input type="text" name=<?= FORM_LAST_NAME ?> placeholder="Last name" required>
-                <input type="text" name=<?= FORM_EMAIL ?> placeholder="Email" maxlength="100" required>
+                <input type="email" name=<?= FORM_EMAIL ?> placeholder="Email" maxlength="100" required>
                 <textarea placeholder="Write your comments..." rows="20" wrap="off" required name=<?= FORM_MESSAGE ?>
-                    autocapitalize="none"></textarea>
+                    autocapitalize="none" minlength="50" maxlength="255"></textarea>
                 <input class="form__btn btn btn-control" type="submit" name="Submit">
             </form>
         </div>

@@ -98,13 +98,20 @@ $categories = query_all_records("category");
                         <?php mysqli_free_result($categories); ?>
                     </ul>
 
-                    <form class="header__search-bar search-bar">
-                        <input type="search" class="search-bar__input" name="query" placeholder="Search products..."
+
+
+                    <form class="header__search-bar search-bar" method="GET"
+                        action=<?= url_for("/inc/collection.php") ?>>
+                        <input type="search" class="search-bar__input" name="search" placeholder="Search products..."
                             autocomplete="off" spellcheck="false">
-                        <button type="submit" class="search-bar__button" name="submit">
+                        <button type="submit" class="search-bar__button" value="Search">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
+
+
+
+
                 </section>
             </div>
         </header>
