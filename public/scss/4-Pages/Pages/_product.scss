@@ -27,13 +27,16 @@
         font-size: 2em;
     }
 
-    &__price {
-        margin-bottom: 20px;
-    }
-
     @include clearfix();
     @include compatible-with-device("tablet") {
         font-size: 1rem;
+    }
+
+    &__text {
+        margin: 30px 0;
+        font-size: 30px;
+        text-transform: lowercase;
+        line-height: 35px;
     }
 }
 

@@ -1248,9 +1248,6 @@ hr::after {
   margin-bottom: 10px;
   font-size: 2em;
 }
-.product__price {
-  margin-bottom: 20px;
-}
 .product::after {
   content: "";
   clear: both;
@@ -1260,6 +1257,12 @@ hr::after {
   .product {
     font-size: 1rem;
   }
+}
+.product__text {
+  margin: 30px 0;
+  font-size: 30px;
+  text-transform: lowercase;
+  line-height: 35px;
 }
 
 .info-container {

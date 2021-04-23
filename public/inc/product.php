@@ -23,7 +23,7 @@ if (is_request("GET")) {
                 <div class="product__info">
                     <div class="bottom-info">
                         <h2 class="product__title section-header"><?= $product[PRODUCT_NAME] ?></h2>
-                        <p class="product__price"><?= $product[PRODUCT_PRICE] ?> $</p>
+                        <p class="product__text"><?= $product[PRODUCT_PRICE] ?> $</p>
 
                         <!-- Populate on size -->
                         <div class="info-container">
@@ -34,14 +34,14 @@ if (is_request("GET")) {
                                 $sizes = query_all_records_where_condition("size", [SIZE_ID => $product[SIZE_ID]]);
                                 while ($size = mysqli_fetch_assoc($sizes)) {
                                 ?>
-                                    <p><?= $size[SIZE_NAME]; ?></p>
+                                    <p class="product__text"><?= $size[SIZE_NAME]; ?></p>
                                 <?php }; ?>
                                 <?php mysqli_free_result($sizes); ?>
                             </div>
 
                             <div class="info-container__item">
                                 <h3 class="section-header">information</h3>
-                                <p> <?= $product[PRODUCT_INFORMATION] ?></p>
+                                <p class="product__text"> <?= $product[PRODUCT_INFORMATION] ?></p>
                             </div>
                         </div>
                     <?php };
