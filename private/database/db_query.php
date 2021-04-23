@@ -53,6 +53,42 @@ function query_random_records($table, $limit)
 /* ================================================== PREPARE STATEMENT ================================================ */
 
 // ===============================================/
+// Query Single Record 
+// Example: User, Product, ...
+//! ERROR, need to compare hash password
+// ===============================================/
+/*
+function query_select_single_user_where_password_gmail($table, $gmail, $password)
+{
+    global $dbConnection;
+    $query  = "SELECT * FROM  $table ";
+    $query .= "WHERE " . USER_GMAIL . "=? ";
+    $query .= "LIMIT 1";
+    echo $query;
+
+    $stmt   = mysqli_prepare($dbConnection, $query);
+    if (!$stmt) {
+        echo mysqli_stmt_error($stmt);
+        db_disconnect($dbConnection);
+        exit();
+    } else {
+        mysqli_stmt_bind_param($stmt, "ss", $gmail, $password);
+        mysqli_stmt_execute($stmt);
+        $result_set = mysqli_stmt_get_result($stmt);
+        if (mysqli_stmt_num_rows($stmt) != 1 && mysqli_stmt_close($stmt)) {
+            exit();
+        } else {
+            while ($result = mysqli_fetch_array($result_set)) {
+                echo $result;
+                return $result;
+            }
+        }
+    }
+}
+*/
+
+
+// ===============================================/
 // Insert value from form
 // ===============================================/
 function query_insert_submit_form($table, $firstname, $lastname, $email, $message)

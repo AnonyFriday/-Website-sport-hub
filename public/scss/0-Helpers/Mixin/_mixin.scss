@@ -102,7 +102,7 @@
 //  =========================================
 //  CLEAR FIX FOR FLOATTING ITEMS
 //  =========================================
-@mixin cleafix() {
+@mixin clearfix() {
     &::after {
         content: "";
         clear: both;

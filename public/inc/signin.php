@@ -7,18 +7,20 @@ include_once(SHARED_PATH . "/component/header.php") ?>
 <?php
 
 if (isset($_POST["signin"])) {
-    $user_email    = $_POST[USER_GMAIL];
-    $user_password = $_POST[USER_PASSWORD];
+    $user_email    = $_POST[USER_GMAIL] ?? "";
+    $user_password = $_POST[USER_PASSWORD] ?? "";
 
     $result = query_authenticate_login(USER_TABLE, $user_email, $user_password);
     if ($result) {
+        // Save user_id inside session 
+        // Redirect home page if result is successfull
         redirect_to("/index.php");
     } else {
         redirect_to("/inc/signin.php");
     }
 }
-
 ?>
+
 
 
 <main>

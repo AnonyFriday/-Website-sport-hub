@@ -1,5 +1,9 @@
 <?php
 
+/**========================= Constant Session ============================= */
+define("SESSION_CARTS", "SESSION_CARTS");
+
+/**========================= Constant Table's Names ======================= */
 // ALL PRODUCT
 define("ALL_PRODUCT", "all_product");
 

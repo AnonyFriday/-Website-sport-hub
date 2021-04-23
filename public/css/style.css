@@ -1033,6 +1033,111 @@ hr::after {
   background-color: transparent;
 }
 
+.checkout {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fcf9d0;
+  margin: 20vh 0;
+  border-radius: 10px;
+  padding: 20px;
+}
+.checkout__header {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: black;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart {
+  padding: 20px;
+}
+.cart__item {
+  box-sizing: content-box;
+  border-radius: 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0 0;
+  box-shadow: 0 1.1px 20.3px -33px rgba(0, 0, 0, 0.009), 0 3.7px 40.2px -33px rgba(0, 0, 0, 0.016), 0 9px 61.1px -33px rgba(0, 0, 0, 0.023), 0 19px 87.7px -33px rgba(0, 0, 0, 0.03), 0 39.8px 134.6px -33px rgba(0, 0, 0, 0.041), 0 100px 232px -33px rgba(0, 0, 0, 0.07);
+}
+.cart__image {
+  margin-right: 50px;
+  width: 150px;
+  min-width: 150px;
+  height: 150px;
+}
+.cart__image img {
+  max-width: 100%;
+}
+.cart__delete-btn {
+  font-size: 20px;
+  line-height: 40px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  margin-left: 50px;
+  background-color: #efac9d;
+  border-radius: 10px;
+}
+.cart__product-price {
+  color: #666666;
+  font-weight: lighter;
+  min-width: 150px;
+  font-size: 20px;
+  line-height: 25px;
+  height: 25px;
+  margin-left: 20px;
+  padding-left: 25px;
+  background-image: url(/public/asset/icons/dollar.png);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: 15px;
+}
+.cart__product-info {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.cart__header {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  line-height: 36px;
+  height: 36px;
+  color: #6e6e6e;
+}
+
+.cart__content {
+  margin-top: 20px;
+}
+
+.info__name {
+  margin-top: 10px;
+  max-height: 50px;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  overflow: hidden;
+}
+.info__desc {
+  height: calc(100% - 60px - 10px);
+  font-size: 18px;
+  line-height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .product {
   border: none;
   outline: none;
