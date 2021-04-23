@@ -1,6 +1,3 @@
-.container {
-}
-
 .checkout {
     margin: 0 auto;
     width: 100%;
@@ -48,21 +45,11 @@
             }
         }
 
-        &__delete-btn {
-            font-size: 20px;
-            line-height: 40px;
-            padding: 0 15px;
-            text-transform: uppercase;
-            margin-left: 50px;
-            background-color: #efac9d;
-            border-radius: 10px;
-        }
-
         &__product-price {
             color: #666666;
             font-weight: lighter;
             min-width: 150px;
-            font-size: 20px;
+            font-size: 30px;
             line-height: 25px;
             height: 25px;
             margin-left: 20px;
@@ -117,26 +104,6 @@
         line-height: 25px;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
-}
-
-.payment {
-    margin: 50px 0 0 auto;
-    min-width: 300px;
-    width: 400px;
-    height: 300px;
-
-    &__option {
-        line-height: 30px;
-        width: 100%;
-        height: 30px;
-        background-image: url(/public/asset/icons/paypall.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: 60px;
-    }
-
-    &__buy-options {
     }
 }
 

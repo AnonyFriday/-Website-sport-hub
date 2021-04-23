@@ -47,19 +47,11 @@ if (is_request("GET")) {
                     <?php };
                 mysqli_free_result($products); ?>
                     </div>
-                    <div class="bottom-controls">
 
-                        <select class="bottom-controls__quantity-select" name="quantity">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-
-                        <div class="bottom-controls__addToCart-button">
-                            <a>add to cart</a>
-                        </div>
+                    <div class="btn-addToCart">
+                        <a>add to cart</a>
                     </div>
+
 
                     <div class="bottom-texts">
                         <div>
