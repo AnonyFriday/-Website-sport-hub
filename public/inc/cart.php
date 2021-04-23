@@ -51,13 +51,25 @@ include_once(SHARED_PATH . "/component/header.php"); ?>
 
                 </div>
             </div>
-            <p class="cart__total-price">222.222$</p>
+
             <div class="payment">
-                <p class="cart__header">payment options</p>
-                <div class="payment__options"></div>
+
+                <div class="total">
+                    <p class="cart__header total__header">total</p>
+                    <p class="total__price">2222222.2</p>
+                </div>
+
+                <div class="payment__options">
+                    <p class="cart__header">payment options</p>
+                    <div class="payment__option"><input type="radio" name="payment" value="paypall"></div>
+
+                </div>
+
                 <button class="payment__buy-btn" type="button">buy now</button>
             </div>
         </section>
+
+
     </div>
 </main>
 
