@@ -481,20 +481,19 @@ button {
   display: block;
   text-align: center;
   margin: 2em 0 2em 0;
-}
-.btn-addToCart a {
   text-transform: uppercase;
   font-weight: bolder;
   cursor: pointer;
   color: black;
-  display: block;
   height: 3em;
   width: 100%;
   line-height: 3em;
-  background-color: #eab92d;
+  background-color: #ffd12c;
   border-radius: 2px;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
-  overflow: hidden;
+}
+.btn-addToCart:hover {
+  background-color: #ffdc5f;
 }
 
 .logo {
@@ -1260,9 +1259,8 @@ hr::after {
 }
 .product__text {
   margin: 30px 0;
-  font-size: 30px;
-  text-transform: lowercase;
-  line-height: 35px;
+  font-size: 25px;
+  line-height: 31px;
 }
 
 .info-container {

@@ -111,18 +111,18 @@
     text-align: center;
     margin: 2em 0 2em 0;
 
-    a {
-        text-transform: uppercase;
-        font-weight: bolder;
-        cursor: pointer;
-        color: black;
-        display: block;
-        height: 3em;
-        width: 100%;
-        line-height: 3em;
-        background-color: #eab92d;
-        border-radius: 2px;
-        box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
-        overflow: hidden;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    color: black;
+    height: 3em;
+    width: 100%;
+    line-height: 3em;
+    background-color: #ffd12c;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+
+    &:hover {
+        background-color: #ffdc5f;
     }
 }

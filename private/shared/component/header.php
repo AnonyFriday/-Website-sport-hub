@@ -38,7 +38,7 @@ $categories = query_all_records("category");
     <link rel="stylesheet" href=<?php echo url_for("/css/style.css") ?>>
 
     <!-- Java Script-->
-    <script src=<?= url_for("/js/index.js") ?>></script>
+    <script src=<?= url_for("/js/index.js") ?> type="module"></script>
 
     <title>
         <?= $page_title ?>

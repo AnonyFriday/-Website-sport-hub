@@ -18,7 +18,7 @@ include_once(SHARED_PATH . "/component/header.php"); ?>
                             <p class="info__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates itaque sed commodi repellendus. Quod voluptate distinctio, dolore obcaecati magnam sunt culpa necessitatibus non maxime repudiandae explicabo vero asperiores, expedita a!</p>
                             <p class="info__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, aliquam ad debitis beatae tempora obcaecati, repudiandae quia vel ab nihil reiciendis cupiditate maiores nemo dignissimos omnis expedita accusamus, quibusdam rerum!</p>
                         </div>
-                        <button id="btn-remove-cart" class="btn-delete" type=" button">remove</button>
+                        <button id="id_btn__remove-cart" class="btn-delete" type=" button">remove</button>
                         <p class="cart__product-price">12323 </p>
                     </div>
                 </div>

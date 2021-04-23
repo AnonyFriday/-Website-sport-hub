@@ -27,7 +27,6 @@ if (is_request("GET")) {
 
                         <!-- Populate on size -->
                         <div class="info-container">
-
                             <div class="info-container__item">
                                 <h3 class="section-header">size</h3>
                                 <?php
@@ -44,23 +43,13 @@ if (is_request("GET")) {
                                 <p class="product__text"> <?= $product[PRODUCT_INFORMATION] ?></p>
                             </div>
                         </div>
-                    <?php };
-                mysqli_free_result($products); ?>
+
+                    <?php }; ?>
+                    <?php mysqli_free_result($products); ?>
                     </div>
 
-                    <div class="btn-addToCart">
-                        <a>add to cart</a>
-                    </div>
-
-
-                    <div class="bottom-texts">
-                        <div>
-                            <p>Free Shipping</p>
-                        </div>
-                        <div>
-                            <p>Free Shipping</p>
-                        </div>
-                    </div>
+                    <button id="id_btn__add-to-cart" class="btn-addToCart">add to cart</button>
+                </div>
         </section>
 
         <section class="container__top-pick">

@@ -22,7 +22,6 @@ if (isset($_POST["signin"])) {
 ?>
 
 
-
 <main>
     <div class="modal-cover">
         <div class="modal form">
