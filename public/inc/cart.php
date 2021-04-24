@@ -2,25 +2,42 @@
 
 <?php
 require_once("../../private/initializer.php");
-include_once(SHARED_PATH . "/component/header.php"); ?>
+include_once(SHARED_PATH . "/component/header.php");
+
+if (!isset($_SESSION[SESSION_CARTS])) {
+    $_SESSION[SESSION_CARTS] = [];
+} else {
+    $cartItems = $_SESSION[SESSION_CARTS];
+}
+
+?>
+
 
 <!-- MAIN -->
 <main>
     <div class="container">
         <section class="checkout">
             <h2 class="checkout__header">checkout</h2>
+
             <div class="cart">
                 <p class="cart__header">shopping cart</p>
-                <div class="cart__content">
-                    <div class="cart__item">
-                        <div class="cart__image"><img src=<?= url_for("/asset/TestingImages/testing-product.png"); ?> alt="Product Image"></div>
-                        <div class="cart__product-info info">
-                            <p class="info__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates itaque sed commodi repellendus. Quod voluptate distinctio, dolore obcaecati magnam sunt culpa necessitatibus non maxime repudiandae explicabo vero asperiores, expedita a!</p>
-                            <p class="info__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, aliquam ad debitis beatae tempora obcaecati, repudiandae quia vel ab nihil reiciendis cupiditate maiores nemo dignissimos omnis expedita accusamus, quibusdam rerum!</p>
-                        </div>
-                        <button id="id_btn__remove-cart" class="btn-delete" type=" button">remove</button>
-                        <p class="cart__product-price">12323 </p>
-                    </div>
+                <div id="id_cart-holder" class="cart__content">
+                    <!-- Render Products from Session -->
+                    <?php foreach ($cartItems as $product_id) { ?>
+                        <?php
+                        $product_result_set = query_all_records_where_condition(PRODUCT_TABLE, [PRODUCT_ID => $product_id]);
+                        while ($product = mysqli_fetch_assoc($product_result_set)) { ?>
+                            <div class="cart__item">
+                                <div class="cart__image"><img src=<?= $product[PRODUCT_IMAGE_URL]; ?> alt="Product Image"></div>
+                                <div class="cart__product-info info">
+                                    <p class="info__name"><?= $product[PRODUCT_NAME]; ?></p>
+                                    <p class="info__desc"><?= $product[PRODUCT_INFORMATION]; ?></p>
+                                </div>
+                                <button id="id_btn__remove-cart" class="btn-delete" type=" button">remove</button>
+                                <p class="cart__product-price"><?= $product[PRODUCT_PRICE]; ?></p>
+                            </div>
+                        <?php }; ?>
+                    <?php }; ?>
                 </div>
             </div>
 

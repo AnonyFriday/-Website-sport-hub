@@ -18,7 +18,6 @@ if (is_request("GET")) {
 ?>
 <main>
     <div class="container">
-
         <section class="product">
             <?php while ($product = mysqli_fetch_assoc($products)) { ?>
                 <div class="product__image">
