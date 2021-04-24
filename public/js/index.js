@@ -59,6 +59,7 @@ function addProductToCart(product_id) {
 // ================================
 // Delete Product from to the cart
 // Using AJAX technology
+//! Wrong appoarch when using this technique
 // ================================
 function deleteProductFromCart(product_id){
     var xhr = new XMLHttpRequest();
@@ -71,7 +72,6 @@ function deleteProductFromCart(product_id){
         else {
             if (xhr.status == 200) {
                 if(xhr.responseText) {
-                    console.log(xhr.responseText);
                     window.location.reload();
                 } else {
                     alert("Something wrong. Please try again!");

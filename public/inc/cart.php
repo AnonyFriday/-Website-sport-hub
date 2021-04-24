@@ -6,7 +6,6 @@ include_once(SHARED_PATH . "/component/header.php");
 
 if (!isset($_SESSION[SESSION_CARTS])) {
     $_SESSION[SESSION_CARTS] = [];
-} else {
 }
 
 ?>
