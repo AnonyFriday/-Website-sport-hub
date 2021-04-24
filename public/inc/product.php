@@ -48,7 +48,7 @@ if (is_request("GET")) {
                     <?php mysqli_free_result($products); ?>
                     </div>
 
-                    <button id="id_btn__add-to-cart" class="btn-addToCart">add to cart</button>
+                    <button type="button" id="id_btn__add-to-cart" class="btn-addToCart" onclick="addProductToCart(<?= $product_id ?>)">add to cart</button>
                 </div>
         </section>
 

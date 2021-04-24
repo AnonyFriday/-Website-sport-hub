@@ -1,5 +1,6 @@
 <?php
 
+// Start the Session 
 session_start();
 
 if (!isset($page_title)) {
@@ -38,7 +39,7 @@ $categories = query_all_records("category");
     <link rel="stylesheet" href=<?php echo url_for("/css/style.css") ?>>
 
     <!-- Java Script-->
-    <script src=<?= url_for("/js/index.js") ?> type="module"></script>
+    <script src=<?= url_for("/js/index.js") ?> type="text/javascript"></script>
 
     <title>
         <?= $page_title ?>
@@ -106,9 +107,6 @@ $categories = query_all_records("category");
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
-
-
-
 
             </section>
         </div>
