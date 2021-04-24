@@ -62,7 +62,7 @@ $categories = query_all_records("category");
                     </li>
                     <li><a class="navigation__item" href="<?= url_for("/inc/cart.php") ?>"><i class="fas fa-shopping-cart"></i><span>
                                 <?= $headerTitles["navigation_up"]["cart"]; ?></span></a></li>
-                    <li><a class="navigation__item" href=<?php echo url_for("/inc/signin.php") ?>><i class="fas fa-user-alt"></i><span>
+                    <li><a class="navigation__item" href=<?php echo url_for("/inc/signin.php") ?>><i class="fas fa-user-alt"></i><span class="id_login-title">
                                 <?= $headerTitles["navigation_up"]["login"]; ?></span></a></li>
                 </ul>
             </section>

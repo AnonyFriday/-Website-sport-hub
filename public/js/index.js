@@ -4,7 +4,8 @@
 const Constants = {
   ID_BUTTON_ADD_TO_CART: "id_btn__add-to-cart",
   ID_BUTTON_REMOVE_CART: "id_btn__remove-cart",
-  ID_CART_HOLDER: "id_cart-holder"
+  ID_CART_HOLDER: "id_cart-holder",
+  ID_LOGIN_TITLE: "id_login-title"
 };
 
 //================================
@@ -61,32 +62,54 @@ function addProductToCart(product_id) {
 // Using AJAX technology
 //! Wrong appoarch when using this technique
 // ================================
-function deleteProductFromCart(product_id){
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST",FileName.PHP.DELETE_FROM_CART,true);
-    xhr.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = (event) => {
-        event.preventDefault();
-        if (xhr.readyState !== xhr.DONE) { return;}
-        else {
-            if (xhr.status == 200) {
-                if(xhr.responseText) {
-                    window.location.reload();
-                } else {
-                    alert("Something wrong. Please try again!");
-                }
-            }
+function deleteProductFromCart(product_id) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", FileName.PHP.DELETE_FROM_CART, true);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = event => {
+    event.preventDefault();
+    if (xhr.readyState !== xhr.DONE) {
+      return;
+    } else {
+      if (xhr.status == 200) {
+        if (xhr.responseText) {
+          window.location.reload();
+        } else {
+          alert("Something wrong. Please try again!");
         }
+      }
     }
-    xhr.send("product_id=" + product_id);
+  };
+  xhr.send("product_id=" + product_id);
 }
 
 // ================================
-// Delete Product from to the cart
+// Login 
 // Using AJAX technology
 // ================================
+function login(product_id) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", FileName.PHP.DELETE_FROM_CART, true);
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = event => {
+      event.preventDefault();
+      if (xhr.readyState !== xhr.DONE) {
+        return;
+      } else {
+        if (xhr.status == 200) {
+          if (xhr.responseText) {
+            window.location.reload();
+          } else {
+            alert("Something wrong. Please try again!");
+          }
+        }
+      }
+    };
+    xhr.send("product_id=" + product_id);
+  }
 
 window.onload = () => {
-    //   displayShoppingCart();
-  };
+  //   displayShoppingCart();
+};
