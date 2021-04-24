@@ -43,10 +43,26 @@ function redirect_to(string $destination)
     exit("Redirect successfully");
 }
 
+// =======================================================================/
+// Remove value from the array
+// Reorder array after removing item
+// Do not use unset() due to the sustanable order after removing the array
+// =======================================================================/
+function remove_from_array($value, array $array)
+{
+    $index = array_search($value, $array);
+    if ($index) {
+        array_splice($array, $index, 1);
+        return $array;
+    } else {
+        return $array;
+    }
+}
+
 // =========================================================/
 // Checking AJAX request from the client
 // =========================================================/
-function is_ajax_requrest()
+function is_ajax_request()
 {
     return isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && !empty($_SERVER["HTTP_X_REQUESTED_WITH"]) && (strcmp($_SERVER["HTTP_X_REQUESTED_WITH"], "XMLHttpRequest") == 0);
 }

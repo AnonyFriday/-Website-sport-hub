@@ -1,13 +1,10 @@
 <!-- HEADER -->
 <?php
-session_start();
 require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php");
 
 if (!isset($_SESSION[SESSION_CARTS])) {
     $_SESSION[SESSION_CARTS] = [];
-} else {
-    print_r($_SESSION[SESSION_CARTS]);
 }
 
 $topPicks = query_random_records("product", 4);
