@@ -7,11 +7,9 @@ include_once(SHARED_PATH . "/component/header.php");
 if (!isset($_SESSION[SESSION_CARTS])) {
     $_SESSION[SESSION_CARTS] = [];
 } else {
-    $cartItems = $_SESSION[SESSION_CARTS];
 }
 
 ?>
-
 
 <!-- MAIN -->
 <main>
@@ -23,21 +21,26 @@ if (!isset($_SESSION[SESSION_CARTS])) {
                 <p class="cart__header">shopping cart</p>
                 <div id="id_cart-holder" class="cart__content">
                     <!-- Render Products from Session -->
-                    <?php foreach ($cartItems as $product_id) { ?>
-                        <?php
-                        $product_result_set = query_all_records_where_condition(PRODUCT_TABLE, [PRODUCT_ID => $product_id]);
-                        while ($product = mysqli_fetch_assoc($product_result_set)) { ?>
-                            <div class="cart__item">
-                                <div class="cart__image"><img src=<?= $product[PRODUCT_IMAGE_URL]; ?> alt="Product Image"></div>
-                                <div class="cart__product-info info">
-                                    <p class="info__name"><?= $product[PRODUCT_NAME]; ?></p>
-                                    <p class="info__desc"><?= $product[PRODUCT_INFORMATION]; ?></p>
+                    <?php
+                    $cartItems = $_SESSION[SESSION_CARTS];
+                    if (count($cartItems) != 0 || !isset($cartItems)) {
+                        foreach ($cartItems as $product_id) {
+                            $product_result_set = query_all_records_where_condition(PRODUCT_TABLE, [PRODUCT_ID => $product_id]);
+                            while ($product = mysqli_fetch_assoc($product_result_set)) { ?>
+                                <div class="cart__item">
+                                    <div class="cart__image"><img src=<?= $product[PRODUCT_IMAGE_URL]; ?> alt="Product Image"></div>
+                                    <div class="cart__product-info info">
+                                        <p class="info__name"><?= $product[PRODUCT_NAME]; ?></p>
+                                        <p class="info__desc"><?= $product[PRODUCT_INFORMATION]; ?></p>
+                                    </div>
+                                    <button id="id_btn__remove-cart" class="btn-delete" type="button" onclick="deleteProductFromCart(<?= $product[PRODUCT_ID]; ?>);">remove</button>
+                                    <p class="cart__product-price"><?= $product[PRODUCT_PRICE]; ?></p>
                                 </div>
-                                <button id="id_btn__remove-cart" class="btn-delete" type=" button">remove</button>
-                                <p class="cart__product-price"><?= $product[PRODUCT_PRICE]; ?></p>
-                            </div>
+                            <?php }; ?>
                         <?php }; ?>
+                        <?php mysqli_free_result($product_result_set); ?>
                     <?php }; ?>
+
                 </div>
             </div>
 

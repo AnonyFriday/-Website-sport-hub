@@ -54,8 +54,6 @@ function remove_from_array($value, array $array)
     if ($index) {
         array_splice($array, $index, 1);
         return $array;
-    } else {
-        return $array;
     }
 }
 
