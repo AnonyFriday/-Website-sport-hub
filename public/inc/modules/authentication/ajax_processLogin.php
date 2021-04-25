@@ -1,21 +1,18 @@
 <?php
-session_start();
 require("../../../../private/initializer.php");
-
-// Check if session of the carts exists or not
-if (!isset($_SESSION[SESSION_CARTS])) {
-    $_SESSION[SESSION_CARTS] = [];
-}
 
 // Check if it's the ajax request
 if (!is_ajax_request()) {
     exit();
 } else {
-    $product_id = isset($_POST[PRODUCT_ID]) ? $_POST[PRODUCT_ID] : 0;
-    if (!in_array($product_id, $_SESSION[SESSION_CARTS])) {
-        // If it's not inside the session
-        $_SESSION[SESSION_CARTS][] = $product_id;
-        echo true;
+
+    $user_email    = $_POST[USER_GMAIL] ?? "";
+    $user_password = $_POST[USER_PASSWORD] ?? "";
+    $result = query_authenticate_login(USER_TABLE, $user_email, $user_password);
+
+    // If verified, return username, else return false
+    if ($result) {
+        echo $result;
     } else {
         echo false;
     }

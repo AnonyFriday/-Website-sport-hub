@@ -4,23 +4,6 @@
 require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php") ?>
 
-<?php
-
-if (isset($_POST["signin"])) {
-    $user_email    = $_POST[USER_GMAIL] ?? "";
-    $user_password = $_POST[USER_PASSWORD] ?? "";
-
-    $result = query_authenticate_login(USER_TABLE, $user_email, $user_password);
-    if ($result) {
-        // Save user_id inside session 
-        // Redirect home page if result is successfull
-        redirect_to("/index.php");
-    } else {
-        redirect_to("/inc/signin.php");
-    }
-}
-?>
-
 
 <main>
     <div class="modal-cover">
@@ -33,11 +16,11 @@ if (isset($_POST["signin"])) {
                 <input class="modal__textfield" type="email" name=<?= USER_GMAIL ?> placeholder="Email" autocomplete="off" spellcheck="false" required>
                 <input class="modal__textfield" type="password" name=<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
                 <div class="modal__confirm-control">
-                    <input id="id_login-btn" class="btn btn-control" type="button" value="Sign In">
-                    <a class="btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Haven't got an account</a>
+                    <input id="id_login-btn" class="btn btn-control" type="button" value="Sign In" onclick="login();">
+                    <a class=" btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Haven't got an account</a>
                 </div>
 
-                <hr class="line--border-black-content-black">
+                <hr class=" line--border-black-content-black">
 
                 <ul class="modal__social-media">
                     <li>

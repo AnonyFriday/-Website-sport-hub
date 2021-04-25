@@ -143,12 +143,17 @@ function query_products_where_search_condition_in_product_name($table, $keyword)
 
 // ===============================================/
 // Authenticate account by login
-// ===============================================/
+// Return
+//  TRUE  => Username
+//  FALSE => false
+// ================================================/
 function query_authenticate_login($table, $email, $password)
 {
     global $dbConnection;
     //Get hash from $email
-    $query  = "SELECT " . USER_PASSWORD . " ";
+    $query  = "SELECT " . USER_PASSWORD . ",";
+    $query .= " " . USER_NAME . ",";
+    $query .= " " . USER_ID . " ";
     $query .= "FROM $table ";
     $query .= "WHERE ";
     $query .= USER_GMAIL . "=? ";
@@ -158,11 +163,15 @@ function query_authenticate_login($table, $email, $password)
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $hash_password);
+        mysqli_stmt_bind_result($stmt, $hash_password, $user_name, $user_id);
 
         while (mysqli_stmt_fetch($stmt)) {
             mysqli_stmt_close($stmt);
-            return password_verify($password, $hash_password);
+            if (!password_verify($password, $hash_password)) {
+                return false;
+            } else {
+                return json_encode([USER_NAME => $user_name, USER_ID => $user_id]);
+            }
         }
     } else {
         mysqli_stmt_close($stmt);
