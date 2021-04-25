@@ -1,8 +1,11 @@
 <!-- HEADER -->
-
 <?php
 require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php");
+
+if (!isset($_SESSION[SESSION_CARTS])) {
+    $_SESSION[SESSION_CARTS] = [];
+}
 
 $topPicks = query_random_records("product", 4);
 if (is_request("GET")) {
@@ -23,52 +26,33 @@ if (is_request("GET")) {
                 <div class="product__info">
                     <div class="bottom-info">
                         <h2 class="product__title section-header"><?= $product[PRODUCT_NAME] ?></h2>
-                        <p class="product__price"><?= $product[PRODUCT_PRICE] ?> $</p>
+                        <p class="product__text"><?= $product[PRODUCT_PRICE] ?> $</p>
 
                         <!-- Populate on size -->
                         <div class="info-container">
-
                             <div class="info-container__item">
                                 <h3 class="section-header">size</h3>
                                 <?php
                                 $sizes = query_all_records_where_condition("size", [SIZE_ID => $product[SIZE_ID]]);
                                 while ($size = mysqli_fetch_assoc($sizes)) {
                                 ?>
-                                    <p><?= $size[SIZE_NAME]; ?></p>
+                                    <p class="product__text"><?= $size[SIZE_NAME]; ?></p>
                                 <?php }; ?>
                                 <?php mysqli_free_result($sizes); ?>
                             </div>
 
                             <div class="info-container__item">
                                 <h3 class="section-header">information</h3>
-                                <p> <?= $product[PRODUCT_INFORMATION] ?></p>
+                                <p class="product__text"> <?= $product[PRODUCT_INFORMATION] ?></p>
                             </div>
                         </div>
-                    <?php };
-                mysqli_free_result($products); ?>
-                    </div>
-                    <div class="bottom-controls">
 
-                        <select class="bottom-controls__quantity-select" name="quantity">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-
-                        <div class="bottom-controls__addToCart-button">
-                            <a>add to cart</a>
-                        </div>
+                    <?php }; ?>
+                    <?php mysqli_free_result($products); ?>
                     </div>
 
-                    <div class="bottom-texts">
-                        <div>
-                            <p>Free Shipping</p>
-                        </div>
-                        <div>
-                            <p>Free Shipping</p>
-                        </div>
-                    </div>
+                    <button type="button" id="id_btn__add-to-cart" class="btn-addToCart" onclick="addProductToCart(<?= $product_id ?>)">add to cart</button>
+                </div>
         </section>
 
         <section class="container__top-pick">

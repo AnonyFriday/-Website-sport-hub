@@ -1,12 +1,26 @@
 <?php
+
+// Start the Session 
+session_start();
+
+
 if (!isset($page_title)) {
-    $page_title = "Sport Hub";
-};
+    $page_title  = "Sport Hub";
+}
+
+if (!isset($_SESSION[SESSION_USER_LOGIN])) {
+    $login_title    = "login";
+    $destinationUrl = url_for("/inc/signin.php");
+} else {
+    $login_title = "logout";
+    $destinationUrl = url_for("/inc/signout.php");
+}
+
+
 
 $headerTitles = [
     "navigation_up" => [
         "contact_us" => "contact us",
-        "login" => "login",
         "cart"  => "cart"
     ],
     "navigation_bottom" => [
@@ -35,7 +49,7 @@ $categories = query_all_records("category");
     <link rel="stylesheet" href=<?php echo url_for("/css/style.css") ?>>
 
     <!-- Java Script-->
-    <script src=<?= url_for("/js/index.js") ?>></script>
+    <script src=<?= url_for("/js/index.js") ?> type="text/javascript"></script>
 
     <title>
         <?= $page_title ?>
@@ -54,12 +68,23 @@ $categories = query_all_records("category");
                 </h1>
 
                 <ul class="navigation">
-                    <li><a class="navigation__item" href=<?php echo url_for("/inc/contactus.php") ?>><i class="fas fa-comment"></i><span><?= $headerTitles["navigation_up"]["contact_us"]; ?></span></a>
+                    <li>
+                        <a class="navigation__item" href=<?php echo url_for("/inc/contactus.php") ?>>
+                            <i class="fas fa-comment"></i>
+                            <span><?= $headerTitles["navigation_up"]["contact_us"]; ?></span>
+                        </a>
                     </li>
-                    <li><a class="navigation__item" href=<?php echo url_for("/inc/signin.php") ?>><i class="fas fa-user-alt"></i><span>
-                                <?= $headerTitles["navigation_up"]["login"]; ?></span></a></li>
-                    <li><a class="navigation__item" href="#"><i class="fas fa-shopping-cart"></i><span>
-                                <?= $headerTitles["navigation_up"]["cart"]; ?></span></a></li>
+                    <li><a class="navigation__item" href="<?= url_for("/inc/cart.php") ?>">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span><?= $headerTitles["navigation_up"]["cart"]; ?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="id_login-title" class="navigation__item" href=<?= $destinationUrl; ?>>
+                            <i class="fas fa-user-alt"></i>
+                            <span><?= $login_title; ?></span>
+                        </a>
+                    </li>
                 </ul>
             </section>
 
@@ -96,13 +121,13 @@ $categories = query_all_records("category");
                 </ul>
 
 
-
                 <form class="header__search-bar search-bar" method="GET" action=<?= url_for("/inc/collection.php") ?>>
                     <input type="search" class="search-bar__input" name="search" placeholder="Search products..." autocomplete="off" spellcheck="false">
                     <button type="submit" class="search-bar__button" value="Search">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
+
             </section>
         </div>
     </header>

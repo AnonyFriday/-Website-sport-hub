@@ -3,11 +3,25 @@ require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php") ?>
 
 <?php
-if (is_request("POST")) {
-    if (isset($_POST["signin"])) {
-        redirect_to("inc/signin.php");
+
+if (isset($_POST["register"])) {
+    $user_name = $_POST[USER_NAME];
+    $user_password = $_POST[USER_PASSWORD];
+    $user_retype_password = $_POST[USER_RETYPE_PASSWORD];
+    $user_gmail = $_POST[USER_GMAIL];
+
+    if ($user_password === $user_retype_password) {
+        $result = query_register_account(USER_TABLE, $user_name, $user_gmail, $user_password);
+        if ($result) {
+            redirect_to("/inc/signin.php");
+        } else {
+            redirect_to("/inc/register.php");
+        }
+    } else {
+        // alert user to retype password when those are not matched
     }
 }
+
 ?>
 
 <main>
@@ -18,12 +32,14 @@ if (is_request("POST")) {
 
             <!-- FORM CONTENT -->
             <form class="form__content" method="POST">
-                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off" spellcheck="false">
-                <input class="modal__textfield" type="password" name="password" placeholder="Password" autocomplete="off" spellcheck="false">
-                <input class="modal__textfield" type="retype-password" placeholder="Confirm Password" autocomplete="off" spellcheck="false">
+                <input class="modal__textfield" type="text" name=<?= USER_NAME ?> placeholder="User Name" autocomplete="off" spellcheck="false" required>
+                <input class="modal__textfield" type="email" name=<?= USER_GMAIL ?> placeholder="Email" autocomplete="off" spellcheck="false" required>
+                <input class="modal__textfield" type="text" name=<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
+                <input class="modal__textfield" type="password" name=<?= USER_RETYPE_PASSWORD ?> placeholder="Confirm Password" autocomplete="off" spellcheck="false" required>
+
                 <div class="modal__confirm-control">
                     <input class="btn btn-control" type="submit" name="register" value="Register">
-                    <input class="btn btn-control" type="submit" name="signin" value=" Already have account">
+                    <a class="btn btn-control" href=<?= url_for("/inc/signin.php"); ?>>Already have an account</a>
                 </div>
 
                 <hr class=" line--border-black-content-black">

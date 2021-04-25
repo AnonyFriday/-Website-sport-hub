@@ -2,15 +2,7 @@
 
 <?php
 require_once("../../private/initializer.php");
-include_once(SHARED_PATH . "/component/header.php") ?>
-
-<?php
-
-if (is_request("POST")) {
-    if (isset($_POST["register"])) {
-        redirect_to("inc/register.php");
-    }
-}
+include_once(SHARED_PATH . "/component/header.php");
 ?>
 
 
@@ -21,15 +13,15 @@ if (is_request("POST")) {
             <h3 class="form__title modal__title ">Sign in with us</h3>
 
             <!-- FORM CONTENT -->
-            <form class="form__content" action=<?= url_for("/inc/signin.php") ?> method="POST">
-                <input class="modal__textfield" type="email" name="email" placeholder="Email" autocomplete="off" spellcheck="false">
-                <input class="modal__textfield" type="password" name="password" placeholder="Password" autocomplete="off" spellcheck="false">
+            <form id="id_form-login" class="form__content" action=<?= url_for("/inc/modules/authentication/ajax_processLogin.php") ?>>
+                <input class="modal__textfield" type="email" name=<?= USER_GMAIL ?> placeholder="Email" autocomplete="off" spellcheck="false" required>
+                <input class="modal__textfield" type="password" name=<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
                 <div class="modal__confirm-control">
-                    <input class="btn btn-control" name="signin" type="submit" value="Sign In">
-                    <input class="btn btn-control" name="register" type="submit" value="Register">
+                    <input id="id_login-btn" class="btn btn-control" type="button" value="Sign In" onclick="login();">
+                    <a class=" btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Haven't got an account</a>
                 </div>
 
-                <hr class="line--border-black-content-black">
+                <hr class=" line--border-black-content-black">
 
                 <ul class="modal__social-media">
                     <li>

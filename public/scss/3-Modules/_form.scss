@@ -10,21 +10,19 @@
     &__content {
         .btn,
         input {
-            line-height: 1em;
+            line-height: 40px;
         }
 
         textarea,
         input {
-            border: 1px solid transparent;
+            border: none;
             margin: 5px 0;
             width: 100%;
             border-radius: 8px;
             box-shadow: inset 0 0 0.25rem rgb(207, 195, 195);
-            padding: 1em;
 
             &:focus {
                 box-shadow: inset 0 0 0.7rem darken(#ddd, 5%);
-                border: 1px solid black;
             }
 
             &::placeholder {

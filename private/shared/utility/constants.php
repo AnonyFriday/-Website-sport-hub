@@ -1,5 +1,10 @@
 <?php
 
+/**========================= Constant Session ============================= */
+define("SESSION_CARTS", "SESSION_CARTS");
+define("SESSION_USER_LOGIN", "SESSION_USER_LOGIN");
+
+/**========================= Constant Table's Names ======================= */
 // ALL PRODUCT
 define("ALL_PRODUCT", "all_product");
 
@@ -66,4 +71,5 @@ define("USER_TABLE", "user");
 define("USER_ID", "user_id");
 define("USER_NAME", "user_name");
 define("USER_PASSWORD", "user_password");
+define("USER_RETYPE_PASSWORD", "user_retype_password");
 define("USER_GMAIL", "user_gmail");

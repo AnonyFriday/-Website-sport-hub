@@ -80,25 +80,26 @@ if (isset($collection_id)) {
             <h2 class="collection__title">PRODUCTS</h2>
             <ul class="collection__list__thumbnail-thumbnail-product">
                 <?php while ($product = mysqli_fetch_array($products, MYSQLI_ASSOC)) { ?>
-                <li class="thumbnail-product">
-                    <div class="thumbnail-product__image overlay--relative">
-                        <img src=<?= $product[PRODUCT_IMAGE_URL]; ?> alt="thumbnail-product Image">
-                        <div class="overlay">
-                            <div class="overlay__link">
-                                <a href=<?= url_for("/inc/product.php?id=" . $product[PRODUCT_ID]) ?>>Buy Now</a>
+                    <li class="thumbnail-product">
+                        <div class="thumbnail-product__image overlay--relative">
+                            <img src=<?= $product[PRODUCT_IMAGE_URL]; ?> alt="thumbnail-product Image">
+                            <div class="overlay">
+                                <div class="overlay__link">
+                                    <a href=<?= url_for("/inc/product.php?id=" . $product[PRODUCT_ID]) ?>>Buy Now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="thumbnail-product__info">
-                        <div class="thumbnail-product__title">
-                            <h3><?= $product[PRODUCT_NAME]; ?></h3>
+                        <div class="thumbnail-product__info">
+                            <div class="thumbnail-product__title">
+                                <h3><?= $product[PRODUCT_NAME]; ?></h3>
+                            </div>
+                            <div class="thumbnail-product__price">
+                                <p><?= $product[PRODUCT_PRICE]; ?></p>
+                            </div>
                         </div>
-                        <div class="thumbnail-product__price">
-                            <p><?= $product[PRODUCT_PRICE]; ?></p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
                 <?php }; ?>
+                <?php mysqli_free_result($products); ?>
             </ul>
         </div>
     </section>

@@ -1,4 +1,9 @@
 <?php
+
+
+// ===============================================/
+// Extract absolute url to the php file
+// ===============================================/
 function url_for(string $script_path)
 {
     // add the leading '/' if not present
@@ -9,6 +14,9 @@ function url_for(string $script_path)
 }
 
 
+// ===============================================/
+// Defend from Javascript Injection
+// ===============================================/
 function secure_http(string $url)
 {
     if (isset($url)) {
@@ -17,14 +25,42 @@ function secure_http(string $url)
 }
 
 
+// =========================================================/
+// Determine the request's type (e.g., GET, POST, PUT, ... )
+// =========================================================/
 function is_request(string $res)
 {
     return $_SERVER["REQUEST_METHOD"] == strtoupper($res);
 }
 
 
+// =========================================================/
+// Redirect to other url address by modifying the header
+// =========================================================/
 function redirect_to(string $destination)
 {
     header("Location: " . url_for($destination));
     exit("Redirect successfully");
+}
+
+// =======================================================================/
+// Remove value from the array
+// Reorder array after removing item
+// Do not use unset() due to the sustanable order after removing the array
+// =======================================================================/
+function remove_from_array($value, array $array)
+{
+    $index = array_search($value, $array);
+    if ($index) {
+        array_splice($array, $index, 1);
+        return $array;
+    }
+}
+
+// =========================================================/
+// Checking AJAX request from the client
+// =========================================================/
+function is_ajax_request()
+{
+    return isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && !empty($_SERVER["HTTP_X_REQUESTED_WITH"]) && (strcmp($_SERVER["HTTP_X_REQUESTED_WITH"], "XMLHttpRequest") == 0);
 }

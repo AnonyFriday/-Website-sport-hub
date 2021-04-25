@@ -2,9 +2,11 @@
     text-align: start;
     border: 0;
     color: white;
-    padding: 1em 2em;
+    padding: 0 2em;
+    line-height: 40px;
+    height: 40px;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: 4px 0;
     cursor: pointer;
 
     text-transform: uppercase;
@@ -49,9 +51,12 @@
 //  SUBMIT APPLIED FOR MODAL FORM
 //  =================================
 .btn-control {
+    display: block;
+    border-radius: 8px;
     background-color: $color-bg;
     text-transform: uppercase;
     text-align: center;
+    font-size: 16px;
 }
 
 .btn-control[value] {
@@ -66,4 +71,58 @@
     font-weight: bold;
     transform: translate(-50%, 0);
     color: black;
+}
+
+//  ==================================
+//  BUTTONS ARE USED FOR SHOPPING CART
+//  ==================================
+.btn-delete {
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    margin-left: 50px;
+    background-color: #efac9d;
+    border-radius: 10px;
+}
+
+.btn-payment {
+    display: block;
+    margin: 0 0 0 auto;
+    padding: 0 30px;
+    font-size: large;
+    line-height: 40px;
+    text-transform: uppercase;
+
+    background-color: #5d554e;
+    color: #ebebe9;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #796e65;
+    }
+}
+
+//  ==================================
+//  BUTTONS ARE USED FOR PRODUCT PAGE
+//  ==================================
+.btn-addToCart {
+    display: block;
+    text-align: center;
+    margin: 2em 0 2em 0;
+
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    color: black;
+    height: 3em;
+    width: 100%;
+    line-height: 3em;
+    background-color: #ffd12c;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+
+    &:hover {
+        background-color: #ffdc5f;
+    }
 }
