@@ -29,11 +29,11 @@ if (isset($_POST["signin"])) {
             <h3 class="form__title modal__title ">Sign in with us</h3>
 
             <!-- FORM CONTENT -->
-            <form class="form__content" action=<?= url_for("/inc/signin.php") ?> method="POST">
+            <form id="id_form-login" class="form__content" action=<?= url_for("/inc/modules/authentication/ajax_processLogin.php") ?>>
                 <input class="modal__textfield" type="email" name=<?= USER_GMAIL ?> placeholder="Email" autocomplete="off" spellcheck="false" required>
                 <input class="modal__textfield" type="password" name=<?= USER_PASSWORD ?> placeholder="Password" autocomplete="off" spellcheck="false" required>
                 <div class="modal__confirm-control">
-                    <input class="btn btn-control" name="signin" type="submit" value="Sign In">
+                    <input id="id_login-btn" class="btn btn-control" type="button" value="Sign In">
                     <a class="btn btn-control" href=<?= url_for("/inc/register.php"); ?>>Haven't got an account</a>
                 </div>
 
