@@ -92,13 +92,9 @@ function deleteProductFromCart(product_id) {
 // Using AJAX technology
 // Using FormData object
 // ================================
-
-
-
 function login() {
-    var loginTitle = document.querySelector("#" + Constants.ID_LOGIN_TITLE);
-    var loginForm = document.querySelector("#" + Constants.ID_FORM_LOGIN);
 
+    var loginForm = document.querySelector("#" + Constants.ID_FORM_LOGIN);
     // Attach onlick to signin button
     var formAction = loginForm.getAttribute("action");
     var formData = new FormData(loginForm);
@@ -118,19 +114,17 @@ function login() {
                     loginForm.reset();
                 } else {
                     var userData = JSON.parse(xhr.responseText);
-                    console.log(userData);
-                    console.log(xhr.responseText);
+                    // console.log(userData);
+                    // console.log(xhr.responseText);
                     alert("Login Successfully!.");
-                    // window.location.replace(FileName.PHP.HOME);
+                    window.location.replace(FileName.PHP.HOME);
                 }
-
             }
         }
     };
     xhr.send(formData);
-
-    // Using FormData object to get input's values
-
 }
 
-window.onload = () => {};
+window.onload = () => {
+
+};

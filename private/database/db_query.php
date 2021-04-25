@@ -170,7 +170,7 @@ function query_authenticate_login($table, $email, $password)
             if (!password_verify($password, $hash_password)) {
                 return false;
             } else {
-                return json_encode([USER_NAME => $user_name, USER_ID => $user_id]);
+                return [USER_NAME => $user_name, USER_ID => $user_id];
             }
         }
     } else {

@@ -2,6 +2,7 @@
 
 /**========================= Constant Session ============================= */
 define("SESSION_CARTS", "SESSION_CARTS");
+define("SESSION_USER_LOGIN", "SESSION_USER_LOGIN");
 
 /**========================= Constant Table's Names ======================= */
 // ALL PRODUCT

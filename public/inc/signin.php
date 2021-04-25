@@ -2,7 +2,8 @@
 
 <?php
 require_once("../../private/initializer.php");
-include_once(SHARED_PATH . "/component/header.php") ?>
+include_once(SHARED_PATH . "/component/header.php");
+?>
 
 
 <main>
