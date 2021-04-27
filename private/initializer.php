@@ -1,5 +1,6 @@
 <?php
 ob_start();
+session_start();
 //  ===============================================/ 
 //  Assign file paths to PHP constants
 //  __FILE__ returns the current path to this file

@@ -1,12 +1,11 @@
 <!-- HEADER -->
 <?php
-session_start();
-$page_title = "Sporthub - Sport Mall";
+require_once("../private/initializer.php");
+include_once(SHARED_PATH . "/component/header.php")
 ?>
 
 <?php
-require_once("../private/initializer.php");
-include_once(SHARED_PATH . "/component/header.php")
+$page_title = "Sporthub - Sport Mall";
 ?>
 
 <?php

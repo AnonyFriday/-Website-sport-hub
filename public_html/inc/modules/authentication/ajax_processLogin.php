@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("../../../../private/initializer.php");
 
 // Check if user session exists or not 

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once("../../private/initializer.php");
 
 unset($_SESSION[SESSION_CARTS]);
