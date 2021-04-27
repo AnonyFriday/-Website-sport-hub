@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <?php
+session_start();
 $page_title = "Sporthub - Sport Mall";
-
 ?>
 
 <?php

@@ -108,7 +108,6 @@ function login() {
             return;
         } else {
             if (xhr.status == 200) {
-                console.log(xhr.responseText);
                 if (!xhr.responseText) {
                     alert("Password or Gmail is not match. Please try again!");
                     loginForm.reset();

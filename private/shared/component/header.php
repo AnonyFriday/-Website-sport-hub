@@ -1,9 +1,4 @@
 <?php
-
-// Start the Session 
-session_start();
-
-
 if (!isset($page_title)) {
     $page_title  = "Sport Hub";
 }
@@ -15,8 +10,6 @@ if (!isset($_SESSION[SESSION_USER_LOGIN])) {
     $login_title = "logout";
     $destinationUrl = url_for("/inc/signout.php");
 }
-
-
 
 $headerTitles = [
     "navigation_up" => [
