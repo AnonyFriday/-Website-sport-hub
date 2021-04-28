@@ -737,7 +737,7 @@ button {
   background-color: rgba(0, 0, 0, 0.9);
   color: #f0c303;
   padding: 0.5em;
-  background-image: url(/public/asset/icons/dollar.png);
+  background-image: url(/public_html/asset/icons/dollar.png);
   background-repeat: no-repeat;
   background-position: calc(50% + 40px) center;
 }

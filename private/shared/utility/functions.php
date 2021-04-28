@@ -48,10 +48,10 @@ function redirect_to(string $destination)
 // Reorder array after removing item
 // Do not use unset() due to the sustanable order after removing the array
 // =======================================================================/
-function remove_from_array($value, array $array)
+function remove_from_array($value, $array)
 {
     $index = array_search($value, $array);
-    if ($index) {
+    if ($index !== false) {
         array_splice($array, $index, 1);
         return $array;
     }

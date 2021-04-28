@@ -10,7 +10,7 @@ if (!isset($_SESSION[SESSION_CARTS])) {
 if (!is_ajax_request()) {
     exit();
 } else {
-    $product_id = isset($_POST[PRODUCT_ID]) ? $_POST[PRODUCT_ID] : 0;
+    $product_id = isset($_POST[PRODUCT_ID]) ? $_POST[PRODUCT_ID] : "";
     if (in_array($product_id, $_SESSION[SESSION_CARTS])) {
         // If it's not inside the session
         $postArr = remove_from_array($product_id, $_SESSION[SESSION_CARTS]);
