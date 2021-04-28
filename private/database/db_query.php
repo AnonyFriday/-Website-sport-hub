@@ -112,7 +112,6 @@ function query_insert_submit_form($table, $firstname, $lastname, $email, $messag
             return true;
         }
     } else {
-        echo mysqli_stmt_error($stmt);
         db_disconnect($dbConnection);
         exit();
     }
@@ -173,8 +172,6 @@ function query_authenticate_login($table, $email, $password)
             }
         }
     } else {
-        mysqli_stmt_close($stmt);
-        mysqli_stmt_error($stmt);
         db_disconnect($dbConnection);
         exit();
     }
@@ -206,7 +203,6 @@ function query_register_account($table, $name, $email, $password)
             return true;
         }
     } else {
-        echo mysqli_stmt_error($stmt);
         db_disconnect($dbConnection);
         exit();
     }
