@@ -6,7 +6,7 @@ define("SESSION_USER_LOGIN", "SESSION_USER_LOGIN");
 
 /**========================= Constant Table's Names ======================= */
 // ALL PRODUCT
-define("ALL_PRODUCT", "all_product");
+define("ALL_PRODUCT", "all products");
 
 // FORM
 define("FORM_TABLE", "form");

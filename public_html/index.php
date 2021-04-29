@@ -42,6 +42,9 @@ $topFeatures   = query_random_records("product", 4);
 
                 <!-- CATEGORIES -->
                 <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
+                    <?php if ($category[CATEGORY_NAME] == ALL_PRODUCT) {
+                        continue;
+                    } ?>
                     <li class=" category">
                         <div class="category__content">
                             <div class="category__thumbnail-cover">
