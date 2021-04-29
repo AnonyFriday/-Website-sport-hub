@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once("../../private/initializer.php");
 include_once(SHARED_PATH . "/component/header.php") ?>
 

@@ -10,9 +10,9 @@ $page_title = "Sporthub - Sport Mall";
 
 <?php
 // | Get list of category from database
-$categories = query_all_records("category");
-$hotPicks   = query_random_records("product", 4);
-$topFeatures   = query_random_records("product", 4);
+$categories     = query_all_records("category");
+$hotPicks       = query_random_records("product", 4);
+$topFeatures    = query_random_records("product", 4);
 
 ?>
 
